@@ -1,6 +1,6 @@
 **Ohjelmistotekniikka -- laskuharjoitukset1**
 Nämä ovat harjoitukset.
 
-[puu] (https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/laskarit/viikko1/komentorivi.txt)
+[Gitlog](https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/laskarit/viikko1/gitlog.txt)
 
-[log] (https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/laskarit/viikko1/gitlog.txt
+[Puu](https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/laskarit/viikko1/puu.txt)
