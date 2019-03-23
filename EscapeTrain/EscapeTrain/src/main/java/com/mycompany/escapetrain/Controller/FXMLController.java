@@ -3,13 +3,17 @@ package com.mycompany.escapetrain.Controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -21,6 +25,9 @@ public class FXMLController implements Initializable {
     private Label credits;
     @FXML
     private Label game;
+    
+    @FXML
+    private TextArea textArea;
     
     @FXML
     private Label title;
@@ -40,6 +47,10 @@ public class FXMLController implements Initializable {
         stage.setTitle("Credits"); 
         Pane myPane = null;
         myPane = FXMLLoader.load(getClass().getResource("/fxml/credits.fxml"));
+        ObservableList<Node> nodes = myPane.getChildren();
+        Label creditsText = (Label) nodes.get(1);
+        creditsText.setWrapText(true);
+        creditsText.setText("test test test test test testtest test  test test testtest test ");
         Scene scene = new Scene(myPane);
         stage.setScene(scene);
         stage.show();
@@ -59,7 +70,6 @@ public class FXMLController implements Initializable {
     @FXML
     private void handleBackButtonAction(ActionEvent event) throws IOException {
         Button button = (Button) event.getSource();
-        String id = button.getId();
         Stage stage = (Stage) button.getScene().getWindow();
         stage.setTitle("Escape train"); 
         Pane myPane = null;
