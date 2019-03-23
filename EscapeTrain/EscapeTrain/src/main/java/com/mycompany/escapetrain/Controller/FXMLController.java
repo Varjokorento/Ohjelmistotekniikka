@@ -27,8 +27,6 @@ public class FXMLController implements Initializable {
     @FXML
     private Label game;
     
-    @FXML
-    private TextField commandInput;
     
     @FXML
     private TextArea textArea;
@@ -45,6 +43,7 @@ public class FXMLController implements Initializable {
         this.prevStage = stage;
     }
     
+   
     @FXML
     private void handleCreditsButtonAction(ActionEvent event) throws IOException {
         Stage stage = (Stage) label.getScene().getWindow();
@@ -73,23 +72,6 @@ public class FXMLController implements Initializable {
         stage.show();
     }
     
-    @FXML
-    private void handleBackButtonAction(ActionEvent event) throws IOException {
-        Button button = (Button) event.getSource();
-        Stage stage = (Stage) button.getScene().getWindow();
-        stage.setTitle("Escape train"); 
-        Pane myPane = null;
-        myPane = FXMLLoader.load(getClass().getResource("/fxml/Scene.fxml"));
-        Scene scene = new Scene(myPane);
-        stage.setScene(scene);
-        stage.show();
-    }
-    
-    @FXML
-    private void parseCommand(ActionEvent event)  {
-         String input = commandInput.getText();
-         System.out.println(input);
-    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
