@@ -4,11 +4,14 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml" fx:controller="com.mycompany.escapetrain.Controller.FXMLController">
+<StackPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="804.0" prefWidth="1379.0" style="-fx-background-color: #040d1b" styleClass="main" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.escapetrain.Controller.FXMLController">
+<children> 
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320">
     <children>
         <Label layoutX="126" layoutY="10" minHeight="16" minWidth="69" fx:id="credits" />
-        <Label wrapText="true" layoutX="126" layoutY="10" minHeight="16" maxWidth="10" minWidth="70" fx:id="creditsText"/> 
-        <Button layoutX="126" layoutY="40" text="Launch" onAction="#handleBackButtonAction" fx:id="backCredits" />
+        <Label layoutX="126" layoutY="10" minHeight="16" maxWidth="10" minWidth="70" fx:id="creditsText"/> 
+        <Button layoutX="126" layoutY="40" text="Exit" onAction="#handleBackButtonAction" fx:id="backCredits" />
     </children>
 </AnchorPane>
+</children>
+</StackPane>

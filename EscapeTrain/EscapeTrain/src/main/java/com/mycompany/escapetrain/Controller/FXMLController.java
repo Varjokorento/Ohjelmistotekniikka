@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -25,6 +26,9 @@ public class FXMLController implements Initializable {
     private Label credits;
     @FXML
     private Label game;
+    
+    @FXML
+    private TextField commandInput;
     
     @FXML
     private TextArea textArea;
@@ -48,7 +52,9 @@ public class FXMLController implements Initializable {
         Pane myPane = null;
         myPane = FXMLLoader.load(getClass().getResource("/fxml/credits.fxml"));
         ObservableList<Node> nodes = myPane.getChildren();
-        Label creditsText = (Label) nodes.get(1);
+        AnchorPane anchorPane = (AnchorPane) nodes.get(0);
+        ObservableList<Node> anchorPaneNodes = anchorPane.getChildren();
+        Label creditsText = (Label) anchorPaneNodes.get(1);
         creditsText.setWrapText(true);
         creditsText.setText("test test test test test testtest test  test test testtest test ");
         Scene scene = new Scene(myPane);
@@ -79,6 +85,11 @@ public class FXMLController implements Initializable {
         stage.show();
     }
     
+    @FXML
+    private void parseCommand(ActionEvent event)  {
+         String input = commandInput.getText();
+         System.out.println(input);
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

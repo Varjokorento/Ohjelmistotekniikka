@@ -5,8 +5,9 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml" fx:controller="com.mycompany.escapetrain.Controller.FXMLController">
+<StackPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="804.0" prefWidth="1379.0" style="-fx-background-color: #040d1b" styleClass="main" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.escapetrain.Controller.FXMLController">
+<children>
+    <AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320">
     <children>
         <Label layoutX="126" layoutY="10" minHeight="16" minWidth="69" fx:id="title" />
         <Button layoutX="126" layoutY="40" text="Launch" onAction="#handleStartButtonAction" fx:id="Launch" />
@@ -14,3 +15,5 @@
         <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
     </children>
 </AnchorPane>
+</children>
+</StackPane>

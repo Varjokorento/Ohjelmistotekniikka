@@ -4,11 +4,16 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml" fx:controller="com.mycompany.escapetrain.Controller.FXMLController">
-    <children>
+<?import javafx.scene.text.*?>
+<StackPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="804.0" prefWidth="1379.0" style="-fx-background-color: #040d1b" styleClass="main" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.escapetrain.Controller.FXMLController">
+<children> 
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320">
+    <children>   
         <Label layoutX="126" layoutY="10" minHeight="16" minWidth="69" fx:id="game" />
-        <Button layoutX="126" layoutY="40" text="Launch" onAction="#handleBackButtonAction" fx:id="backGame" />
+         <TextField fx:id="commandInput" layoutX="24.0" layoutY="200.0" prefHeight="45.0" prefWidth="413.0" styleClass="commandBar" />
+         <Button fx:id="action" defaultButton="true" layoutX="460.0" layoutY="200.0" mnemonicParsing="false" onAction="#parseCommand" prefHeight="45.0" prefWidth="105.0" styleClass="btn" text="Command" />
+        <Button layoutX="24" layoutY="250" text="Launch" onAction="#handleBackButtonAction" fx:id="backGame" />
     </children>
 </AnchorPane>
-
+</children>
+</StackPane>
