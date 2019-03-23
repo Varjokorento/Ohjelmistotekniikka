@@ -11,7 +11,8 @@
     <children>
         <Label layoutX="126" layoutY="10" minHeight="16" minWidth="69" fx:id="title" />
         <Button layoutX="126" layoutY="40" text="Launch" onAction="#handleStartButtonAction" fx:id="Launch" />
-        <Button layoutX="126" layoutY="90" text="Credits" onAction="#handleCreditsButtonAction" fx:id="Credits" />
+        <Button layoutX="126" layoutY="90" text="Tutorial" onAction="#handleTutorialButtonAction" fx:id="Tutorial" />
+        <Button layoutX="126" layoutY="140" text="Credits" onAction="#handleCreditsButtonAction" fx:id="Credits" />
         <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
     </children>
 </AnchorPane>

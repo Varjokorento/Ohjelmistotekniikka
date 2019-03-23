@@ -61,6 +61,18 @@ public class FXMLController implements Initializable {
         stage.show();
     }
     
+     @FXML
+    private void handleTutorialButtonAction(ActionEvent event) throws IOException {
+        Stage stage = (Stage) label.getScene().getWindow();
+        stage.setTitle("Tutorial"); 
+        Pane myPane = null;
+        myPane = FXMLLoader.load(getClass().getResource("/fxml/credits.fxml"));
+        Scene scene = new Scene(myPane);
+        stage.setScene(scene);
+        stage.show();
+    }
+    
+    
     @FXML
     private void handleStartButtonAction(ActionEvent event) throws IOException {
         Stage stage = (Stage) label.getScene().getWindow();

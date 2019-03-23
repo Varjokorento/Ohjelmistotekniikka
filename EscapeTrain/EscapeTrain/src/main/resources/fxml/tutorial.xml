@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<StackPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="804.0" prefWidth="1379.0" style="-fx-background-color: #040d1b" styleClass="main" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.escapetrain.Controller.CreditsController">
+<children> 
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320">
+    <children>
+        <Label layoutX="126" layoutY="10" minHeight="16" minWidth="69" fx:id="Tutorial" />
+        <Button layoutX="126" layoutY="40" text="Exit" onAction="#handleBackButtonAction" fx:id="backCredits" />
+    </children>
+</AnchorPane>
+</children>
+</StackPane>
