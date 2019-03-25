@@ -7,9 +7,12 @@ package com.mycompany.escapetrain.Controller;
 
 import com.mycompany.escapetrain.Engine.AreaParser;
 import com.mycompany.escapetrain.Engine.CommandParser;
+import com.mycompany.escapetrain.Engine.GameDataProcessor;
 import com.mycompany.escapetrain.GameObjects.Area.Area;
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -30,8 +33,12 @@ import javafx.stage.Stage;
  */
 public class GameController implements Initializable{
     
+    Color locationColor = Color.web("#E3AB59");
+    
     private CommandParser commandParser;
     private AreaParser areaParser;
+    private Map<Integer, Area> areas;
+ 
     
     @FXML
     private TextFlow output;
@@ -43,6 +50,7 @@ public class GameController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         this.commandParser = new CommandParser();
         this.areaParser = new AreaParser();
+        this.areas = GameDataProcessor.initializeAreas();
     }
     
     @FXML
@@ -67,8 +75,11 @@ public class GameController implements Initializable{
     }
     
     private void displayArea(String area) {
-        Area displayedArea = new Area(area, "scary place");
+        Area displayedArea = new Area(area, "scary place", null);
         Text text1 = new Text("\nYou are in: ");
+        String borderAreas = areas.get(displayedArea.getSurroundingAreas().get(0)).getAreaName();
+        Text text3 = new Text("Adjacent areas: ");
+        Text areaStyling = new Text(borderAreas + "\n\n");
         Text text5 = new Text(displayedArea.getAreaName() + "\n\n");
         Text text2 = new Text(displayedArea.getDescription() + "\n\n");
         // Updating the location on map
@@ -76,8 +87,8 @@ public class GameController implements Initializable{
         text1.setStyle("-fx-font-weight: bold;");
         text5.setStyle("-fx-font-weight: bold;");
         text2.setFill(Color.BLACK);
-
-        output.getChildren().addAll(text1, text5, text2, new Text("\n\n"));
+        areaStyling.setFill(locationColor);
+        output.getChildren().addAll(text1, text5, text3, areaStyling, text2, new Text("\n\n"));
     }
     
 }

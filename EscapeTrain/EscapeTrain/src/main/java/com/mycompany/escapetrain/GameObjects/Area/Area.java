@@ -5,17 +5,21 @@
  */
 package com.mycompany.escapetrain.GameObjects.Area;
 
+import java.util.List;
+
 /**
  *
  * @author Administrator
  */
 public class Area {
-     private String areaName;
+    private String areaName;
     private String description;
+    private List<Integer> surroundingAreas;
 
-    public Area(String areaName, String description) {
+    public Area(String areaName, String description, List<Integer> surroundingAreas) {
         this.areaName = areaName;
         this.description = description;
+        this.surroundingAreas = surroundingAreas;
     }
 
     public String getAreaName() {
@@ -33,6 +37,15 @@ public class Area {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public List<Integer> getSurroundingAreas() {
+        return surroundingAreas;
+    }
+
+    public void setSurroundingAreas(List<Integer> surroundingAreas) {
+        this.surroundingAreas = surroundingAreas;
+    }
+    
     
     
     

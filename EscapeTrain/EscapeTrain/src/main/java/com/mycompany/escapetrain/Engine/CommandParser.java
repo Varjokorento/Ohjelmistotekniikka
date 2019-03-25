@@ -14,7 +14,6 @@ public class CommandParser {
     public CommandParser() {
     }
     
-    
     public String parseCommand(String commandToBeParsed) {
         String[] parts = commandToBeParsed.split(" ");
         return parts[0];
