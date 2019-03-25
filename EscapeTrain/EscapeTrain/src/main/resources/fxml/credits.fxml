@@ -8,9 +8,9 @@
 <children> 
 <AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320">
     <children>
-        <Label layoutX="126" layoutY="10" minHeight="16" minWidth="69" fx:id="credits" />
-        <Label layoutX="126" layoutY="10" minHeight="16" maxWidth="10" minWidth="70" fx:id="creditsText"/> 
-        <Button layoutX="126" layoutY="40" text="Exit" onAction="#handleBackButtonAction" fx:id="backCredits" />
+        <Label layoutX="400" layoutY="10" minHeight="16" minWidth="69" fx:id="credits" />
+        <Label layoutX="400" layoutY="10" minHeight="16" maxWidth="10" minWidth="70" fx:id="creditsText"/> 
+        <Button layoutX="400" layoutY="40" text="Exit" onAction="#handleBackButtonAction" fx:id="backCredits" />
     </children>
 </AnchorPane>
 </children>

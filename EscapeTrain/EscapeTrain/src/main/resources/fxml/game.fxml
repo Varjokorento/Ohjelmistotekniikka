@@ -6,14 +6,40 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 <StackPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="804.0" prefWidth="1379.0" style="-fx-background-color: #040d1b" styleClass="main" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.escapetrain.Controller.GameController">
-<children> 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320">
-    <children>   
-        <Label layoutX="126" layoutY="10" minHeight="16" minWidth="69" fx:id="game" />
-         <TextField fx:id="commandInput" layoutX="24.0" layoutY="200.0" prefHeight="45.0" prefWidth="413.0" styleClass="commandBar" />
-         <Button fx:id="action" defaultButton="true" layoutX="460.0" layoutY="200.0" mnemonicParsing="false" onAction="#parseCommand" prefHeight="45.0" prefWidth="105.0" styleClass="btn" text="Command" />
-        <Button layoutX="24" layoutY="250" text="Launch" onAction="#handleBackButtonAction" fx:id="backGame" />
-    </children>
-</AnchorPane>
-</children>
+ <children>
+       <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="804.0" prefWidth="1379.0" style="-fx-fill: white;" styleClass="mainWindow" xmlns="http://javafx.com/javafx/2.2" xmlns:fx="http://javafx.com/fxml/1">
+           <children>     
+               <Label layoutX="176.0" layoutY="-20.0" prefHeight="106.0" prefWidth="368.0" text="ESCAPE TRAIN" textFill="#dfdfdf">
+                   <font>
+                       <Font name="System Bold" size="30.0" />
+                   </font>
+               </Label>
+               <ScrollPane fx:id="inventoryScroll" layoutX="607.0" layoutY="518.0" prefHeight="286" prefWidth="250">
+                  <content>
+                  <TextFlow fx:id="inventory" layoutX="607.0" layoutY="518.0" prefHeight="286.0" prefWidth="250.0" />
+                  </content>
+               </ScrollPane>
+               <TextField fx:id="commandInput" layoutX="24.0" layoutY="733.0" prefHeight="45.0" prefWidth="413.0" styleClass="commandBar" />
+               <Button fx:id="action" defaultButton="true" layoutX="460.0" layoutY="733.0" mnemonicParsing="false" onAction="#parseCommand" prefHeight="45.0" prefWidth="105.0" styleClass="btn" text="Command" />
+               <Label layoutX="607.0" layoutY="477.0" prefHeight="45.0" prefWidth="244.0" text="Inventory" textFill="WHITE">
+                   <font>
+                       <Font name="System Bold" size="20.0" fx:id="x1" />
+                   </font>
+               </Label>
+               <ScrollPane fx:id="Scroll" layoutX="24.0" layoutY="67.0" prefHeight="634.0" prefWidth="545.0" visible="true">
+                   <content>
+                       <TextFlow fx:id="output" prefHeight="396.0" prefWidth="523.0" style="-fx-fill: black;">
+                     <children>
+                        <Text fill="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Espace Train! Press Enter or click Command to begin!">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </TextFlow>
+                   </content>
+               </ScrollPane>           
+           </children>
+       </AnchorPane>
+   </children>
 </StackPane>

@@ -10,10 +10,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -72,7 +70,7 @@ public class FXMLController implements Initializable {
         stage.show();
     }
     
-    
+  
     @FXML
     private void handleStartButtonAction(ActionEvent event) throws IOException {
         Stage stage = (Stage) label.getScene().getWindow();
