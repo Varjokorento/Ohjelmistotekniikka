@@ -6,7 +6,7 @@ Sovelluksen tarkoitus on olla pelattava seikkailupeli nimeltä "Escape Train." P
 
 ## Käyttäjät
 
-Sovelluksen käyttäjä on tällä hetkellä Guest Player (myöhemmin tässä "Pelaaja"). Jossain vaiheessa olisi tarkoitus pystyä tallentamaan käyttäjän pelitilanne. 
+Sovelluksen käyttäjä on tällä hetkellä Guest Player (myöhemmin tässä "Pelaaja"). Jossain vaiheessa olisi tarkoitus pystyä tallentamaan käyttäjän pelitilanne, jolloin pelaaja olisi joku muu kuin Guest Player.
 
 ## Käyttöliittymäluonnos
 
