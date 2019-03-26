@@ -6,9 +6,9 @@ Sovelluksen tarkoitus on olla pelattava seikkailupeli nimeltä "Escape Train." P
 
 ## Käyttäjät
 
-Sovelluksen käyttäjä on tällä hetkellä Guest Player (myöhemmin tässä "Pelaaja"). Jossain vaiheessa olisi tarkoitus pystyä tallentamaan käyttäjän pelitilanne. 
+Sovelluksen käyttäjä on tällä hetkellä Guest Player (myöhemmin tässä "Pelaaja"). Jossain vaiheessa olisi tarkoitus pystyä tallentamaan käyttäjän pelitilanne, jolloin pelaaja olisi joku muu kuin Guest Player.
 
-## Käyttöliittymäluonnos
+## Käyttöliittymä
 
 Sovellus koostuu neljästä näkymästä: aloitusnäkymästä, Credits -näkymästä, tutoriaalinäkymästä (eli pelin ohjeista), pelinäkymästä ja lopputeksteistä. 
 
@@ -22,7 +22,7 @@ Pelaaja voi valita "Start game", "Credits" and "Tutorial."
 
 ### Pelinäkymä
 
-Pelaajalle näkyy hänen esineensä, yksinkertainen kuva sekä kartta, missä pelaaja liikkuu. Lisäksi näkymässä on komentotulkki, johon pelaaja voi kirjoittaa käskyt, mitä tehdä seuraavaksi.
+Pelaajalle näkyy hänen esineensä, yksinkertainen kuva sekä kartta, missä pelaaja liikkuu. Lisäksi näkymässä on komentotulkki, johon pelaaja voi kirjoittaa käskyt, mitä tehdä seuraavaksi. Tässä näkymässä tapahtuu suurin osa ohjelman toiminnallisuudesta. Tavoitteena on, että perusversiossa on kokonainen peli. 
 
 ### Tutoriaali
 
