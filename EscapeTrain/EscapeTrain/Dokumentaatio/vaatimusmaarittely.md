@@ -22,7 +22,7 @@ Pelaaja voi valita "Start game", "Credits" and "Tutorial."
 
 ### Pelinäkymä
 
-Pelaajalle näkyy hänen esineensä, yksinkertainen kuva sekä kartta, missä pelaaja liikkuu. Lisäksi näkymässä on komentotulkki, johon pelaaja voi kirjoittaa käskyt, mitä tehdä seuraavaksi.
+Pelaajalle näkyy hänen esineensä, yksinkertainen kuva sekä kartta, missä pelaaja liikkuu. Lisäksi näkymässä on komentotulkki, johon pelaaja voi kirjoittaa käskyt, mitä tehdä seuraavaksi. Tässä näkymässä tapahtuu suurin osa ohjelman toiminnallisuudesta. Tavoitteena on, että perusversiossa on kokonainen peli. 
 
 ### Tutoriaali
 
