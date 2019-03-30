@@ -5,14 +5,10 @@
  */
 package com.mycompany.escapetrain.Controller;
 
-import com.mycompany.escapetrain.Engine.AreaParser;
-import com.mycompany.escapetrain.Engine.CommandParser;
-import com.mycompany.escapetrain.Engine.GameDataProcessor;
 import com.mycompany.escapetrain.Engine.GameEngine;
 import com.mycompany.escapetrain.GameObjects.Area.Area;
 import java.io.IOException;
 import java.net.URL;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
