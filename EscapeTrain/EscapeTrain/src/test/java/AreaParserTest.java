@@ -1,6 +1,7 @@
 
 import com.mycompany.escapetrain.Engine.AreaParser;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -29,6 +30,13 @@ public class AreaParserTest {
         String returnedArea = parser.parseArea(parsedString);
         String expectedString ="NEXT_ROOM";
         assertEquals(expectedString, returnedArea);
+    }
+    
+    @Test
+    public void areParserReturnsNullIfTheStringCannotBeParsedIntoAnAre() {
+        String parsedString ="NOT_A_ROOM";
+        String returnedArea = parser.parseArea(parsedString);
+        assertNull(returnedArea);
     }
     
 }
