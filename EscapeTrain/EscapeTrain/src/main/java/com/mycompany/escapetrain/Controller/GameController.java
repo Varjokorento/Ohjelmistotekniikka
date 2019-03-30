@@ -70,7 +70,7 @@ public class GameController implements Initializable{
          String input = commandInput.getText();
          String command = commandParser.parseCommand(input);
          String target = commandParser.parseTarget(input);
-         String area = areaParser.areaParser(target);   
+         String area = areaParser.parseArea(target);   
          displayArea(area);
     }
     

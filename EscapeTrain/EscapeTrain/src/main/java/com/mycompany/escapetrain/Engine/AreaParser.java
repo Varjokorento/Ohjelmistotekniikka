@@ -10,8 +10,13 @@ package com.mycompany.escapetrain.Engine;
  * @author Administrator
  */
 public class AreaParser {
+
+    public AreaParser() {
+    }
     
-    public String areaParser(String possibleArea) {
+    
+    
+    public String parseArea(String possibleArea) {
         String parsedArea = parsePossibleAreaToArea(possibleArea);
         if(parsedArea == null) {
             return null;
