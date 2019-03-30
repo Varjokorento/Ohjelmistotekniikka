@@ -8,6 +8,7 @@ package com.mycompany.escapetrain.Controller;
 import com.mycompany.escapetrain.Engine.AreaParser;
 import com.mycompany.escapetrain.Engine.CommandParser;
 import com.mycompany.escapetrain.Engine.GameDataProcessor;
+import com.mycompany.escapetrain.Engine.GameEngine;
 import com.mycompany.escapetrain.GameObjects.Area.Area;
 import java.io.IOException;
 import java.net.URL;
@@ -35,8 +36,7 @@ public class GameController implements Initializable{
     
     Color locationColor = Color.web("#E3AB59");
     
-    private CommandParser commandParser;
-    private AreaParser areaParser;
+    private GameEngine engine;
     private Map<Integer, Area> areas;
  
     
@@ -48,8 +48,7 @@ public class GameController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        this.commandParser = new CommandParser();
-        this.areaParser = new AreaParser();
+        this.engine = new GameEngine(); 
         this.areas = GameDataProcessor.initializeAreas();
     }
     
@@ -68,21 +67,35 @@ public class GameController implements Initializable{
     @FXML
     private void parseCommand(ActionEvent event)  {
          String input = commandInput.getText();
-         String command = commandParser.parseCommand(input);
-         String target = commandParser.parseTarget(input);
-         String area = areaParser.parseArea(target);   
-         displayArea(area);
+         String area = engine.parseGoToCommand(input);
+         if(area != null) {
+            displayArea(area);
+         } else {
+            displayNotAValidCommand();
+         }
     }
+    
+    private void displayNotAValidCommand() {
+        Area displayedArea = new Area("not a valid command", null, null);
+        Text text1 = new Text("\nYou are in: ");
+        Text text5 = new Text(displayedArea.getAreaName() + "\n\n");
+        Text text2 = new Text(displayedArea.getDescription() + "\n\n");
+        text1.setFill(Color.BLACK);
+        text1.setStyle("-fx-font-weight: bold;");
+        text5.setStyle("-fx-font-weight: bold;");
+        text2.setFill(Color.BLACK);
+        output.getChildren().addAll(text1, text5,  text2, new Text("\n\n"));
+    }
+    
     
     private void displayArea(String area) {
         Area displayedArea = new Area(area, "scary place", null);
         Text text1 = new Text("\nYou are in: ");
-        String borderAreas = areas.get(displayedArea.getSurroundingAreas().get(0)).getAreaName();
+        String borderAreas = "pömpöm";
         Text text3 = new Text("Adjacent areas: ");
         Text areaStyling = new Text(borderAreas + "\n\n");
         Text text5 = new Text(displayedArea.getAreaName() + "\n\n");
         Text text2 = new Text(displayedArea.getDescription() + "\n\n");
-        // Updating the location on map
         text1.setFill(Color.BLACK);
         text1.setStyle("-fx-font-weight: bold;");
         text5.setStyle("-fx-font-weight: bold;");
