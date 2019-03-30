@@ -43,4 +43,22 @@ public class AreaParserTest {
         assertNull(returnedArea);
     }
     
+    @Test
+    public void areaGetFirstRoomReturnsFirstRoom() {
+        Area expectedArea = parser.getFirstRoom();
+        assertEquals("FIRST_ROOM", expectedArea.getAreaName());
+    }
+    
+    @Test
+    public void areaGetLastRoomReturnsLastRoom() {
+        Area expectedArea = parser.getLastRoom();
+        assertEquals("LAST_ROOM", expectedArea.getAreaName());
+    }
+    
+    @Test
+    public void areaGetErrorRoomReturnsErrorRoom() {
+        Area expectedArea = parser.getErrorRoom();
+        assertEquals("ERROR_ROOM", expectedArea.getAreaName());
+    }
+    
 }

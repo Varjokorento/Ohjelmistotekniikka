@@ -60,18 +60,17 @@ public class AreaParser {
         return borderingAreas.contains(targetArea);
     }
 
-    Area getFirstRoom() {
-      String jotain = appProps.getProperty("FIRST_ROOM_AREANAME");
-      
+    public Area getFirstRoom() { 
       Area firstArea = new Area(appProps.getProperty("FIRST_ROOM_AREANAME"), appProps.getProperty("FIRST_ROOM_DESCRIPTION"), appProps.getProperty("FIRST_ROOM_BORDER_AREAS"));
       return firstArea;
     }
 
-    Area getLastRoom() {
+    public Area getLastRoom() {
       Area firstArea = new Area(appProps.getProperty("LAST_ROOM_AREANAME"), appProps.getProperty("LAST_ROOM_DESCRIPTION"), appProps.getProperty("LAST_ROOM_BORDER_AREAS"));
       return firstArea;
     }
-    Area getErrorRoom() {
+    
+    public Area getErrorRoom() {
       Area firstArea = new Area(appProps.getProperty("ERROR_ROOM_AREANAME"), appProps.getProperty("ERROR_ROOM_DESCRIPTION"), appProps.getProperty("ERROR_ROOM_BORDER_AREAS"));
       return firstArea;
     }
