@@ -15,6 +15,8 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -49,7 +51,12 @@ public class GameController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         this.engine = new GameEngine(); 
-        this.areas = GameDataProcessor.initializeAreas();
+        try {
+            engine.init();
+            //this.areas = GameDataProcessor.initializeAreas();
+        } catch (IOException ex) {
+            Logger.getLogger(GameController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     @FXML
@@ -68,8 +75,8 @@ public class GameController implements Initializable{
     private void parseCommand(ActionEvent event)  {
          String input = commandInput.getText();
          commandInput.setText("");
-         String area = engine.parseGoToCommand(input);
-         if(area != null || !area.equals("CANT GO")) {
+         Area area = engine.parseGoToCommand(input);         
+         if(area != null) {
             displayArea(area);
          } else {
             displayNotAValidCommand();
@@ -87,12 +94,10 @@ public class GameController implements Initializable{
     }
     
     
-    private void displayArea(String area) {
-        Area displayedArea = new Area(area, "scary place", null);
+    private void displayArea(Area displayedArea) {
         Text text1 = new Text("\nYou are in: ");
-        String borderAreas = "pömpöm";
         Text text3 = new Text("Adjacent areas: ");
-        Text areaStyling = new Text(borderAreas + "\n\n");
+        Text areaStyling = new Text(displayedArea.getSurroundingAreas() + "\n\n");
         Text text5 = new Text(displayedArea.getAreaName() + "\n\n");
         Text text2 = new Text(displayedArea.getDescription() + "\n\n");
         text1.setFill(Color.BLACK);

@@ -14,11 +14,21 @@ import com.mycompany.escapetrain.GameObjects.Area.Area;
 public class GameState {
     private Area currentArea;
     private int turns;
-    
+    private boolean error;
     public GameState() {
         this.currentArea = null;
         this.turns = 0;
+        this.error = false;
     }
+
+    public boolean isError() {
+        return error;
+    }
+
+    public void setError(boolean error) {
+        this.error = error;
+    }
+    
 
     public Area getCurrentArea() {
         return currentArea;
@@ -36,6 +46,9 @@ public class GameState {
         this.turns = turns;
     }
 
+    public void incrementTurns() {
+        this.turns = turns +1;
+    }
    
     
     

@@ -24,14 +24,16 @@ public class AreaParser {
     }
     
     public void init() throws FileNotFoundException, IOException {
-        String appConfigPath = "C:/Users/Administrator/ohte/EscapeTrain/EscapeTrain/src/main/resources/app.properties";
+        String appConfigPath = "C:/Users/Administrator/ohte/EscapeTrain/EscapeTrain/src/main/resources/area.properties";
         appProps.load(new FileInputStream(appConfigPath));
     }
-    
 
     
-    public String parseArea(String possibleArea) {
-        String parsedArea = parsePossibleAreaToArea(possibleArea);
+    public Area parseArea(String possibleArea) {
+        if(possibleArea == null) {
+            return null;
+        }
+        Area parsedArea = parsePossibleAreaToArea(possibleArea);
         if(parsedArea == null) {
             return null;
         } 
@@ -39,17 +41,39 @@ public class AreaParser {
         
     }
     
-    private String parsePossibleAreaToArea(String possibleArea) {
-        if(possibleArea.equals("NEXT_ROOM")) {
-            return "NEXT_ROOM";
-        } else {
+    private Area parsePossibleAreaToArea(String possibleArea) {
+        
+        if(!appProps.getProperty("GAME_ROOMS").contains(possibleArea)) {
             return null;
         }
+        
+        if(appProps.getProperty(possibleArea.concat("_AREANAME")) != null) {
+            return new Area(appProps.getProperty(possibleArea.concat("_AREANAME")), 
+                    appProps.getProperty(possibleArea.concat("_DESCRIPTION")), 
+                    appProps.getProperty(possibleArea.concat("_BORDER_AREAS")));
+        }
+        return null;
     }
     
-    public Boolean canGoToArea(Area currentArea, String targetArea) {
-     
-        return currentArea.doesBorder(targetArea);
+    public Boolean canGoToArea(Area currentArea, String targetArea) {     
+        String borderingAreas = appProps.getProperty(currentArea.getAreaName().concat("_BORDER_AREAS"));
+        return borderingAreas.contains(targetArea);
+    }
+
+    Area getFirstRoom() {
+      String jotain = appProps.getProperty("FIRST_ROOM_AREANAME");
+      
+      Area firstArea = new Area(appProps.getProperty("FIRST_ROOM_AREANAME"), appProps.getProperty("FIRST_ROOM_DESCRIPTION"), appProps.getProperty("FIRST_ROOM_BORDER_AREAS"));
+      return firstArea;
+    }
+
+    Area getLastRoom() {
+      Area firstArea = new Area(appProps.getProperty("LAST_ROOM_AREANAME"), appProps.getProperty("LAST_ROOM_DESCRIPTION"), appProps.getProperty("LAST_ROOM_BORDER_AREAS"));
+      return firstArea;
+    }
+    Area getErrorRoom() {
+      Area firstArea = new Area(appProps.getProperty("ERROR_ROOM_AREANAME"), appProps.getProperty("ERROR_ROOM_DESCRIPTION"), appProps.getProperty("ERROR_ROOM_BORDER_AREAS"));
+      return firstArea;
     }
     
 }

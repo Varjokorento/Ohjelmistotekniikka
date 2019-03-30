@@ -29,7 +29,7 @@ public class GameDataProcessor {
                 String description = areaReader.nextLine();
                 String indexList = areaReader.nextLine();
                 List<Integer> borderingAreas = parseBorderingAreas(indexList);
-                areas.put(index, new Area(areaName, description, borderingAreas));
+              //  areas.put(index, new Area(areaName, description, borderingAreas));
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();

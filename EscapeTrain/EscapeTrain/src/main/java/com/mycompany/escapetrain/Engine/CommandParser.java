@@ -21,6 +21,9 @@ public class CommandParser {
             
     public String parseTarget(String commandToBeParsed) {
         String[] parts = commandToBeParsed.split(" ");
+        if(parts.length < 2) {
+            return null;
+        }
         return parts[1];
     }
     

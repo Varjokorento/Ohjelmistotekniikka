@@ -14,9 +14,9 @@ import java.util.List;
 public class Area {
     private String areaName;
     private String description;
-    private List<Integer> surroundingAreas;
+    private String surroundingAreas;
 
-    public Area(String areaName, String description, List<Integer> surroundingAreas) {
+    public Area(String areaName, String description, String surroundingAreas) {
         this.areaName = areaName;
         this.description = description;
         this.surroundingAreas = surroundingAreas;
@@ -38,11 +38,11 @@ public class Area {
         this.description = description;
     }
 
-    public List<Integer> getSurroundingAreas() {
+    public String getSurroundingAreas() {
         return surroundingAreas;
     }
 
-    public void setSurroundingAreas(List<Integer> surroundingAreas) {
+    public void setSurroundingAreas(String surroundingAreas) {
         this.surroundingAreas = surroundingAreas;
     }
 

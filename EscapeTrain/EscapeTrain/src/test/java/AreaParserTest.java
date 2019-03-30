@@ -1,5 +1,7 @@
 
 import com.mycompany.escapetrain.Engine.AreaParser;
+import com.mycompany.escapetrain.GameObjects.Area.Area;
+import java.io.IOException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import org.junit.Before;
@@ -19,15 +21,17 @@ public class AreaParserTest {
     
     private AreaParser parser;
     
+    
     @Before
-    public void init() {
+    public void init() throws IOException {
         this.parser = new AreaParser();
+        parser.init();
     }
     
     @Test
     public void areaParserReturnAnAreaForAValidString() {
         String parsedString ="NEXT_ROOM";
-        String returnedArea = parser.parseArea(parsedString);
+        String returnedArea = parser.parseArea(parsedString).getAreaName();
         String expectedString ="NEXT_ROOM";
         assertEquals(expectedString, returnedArea);
     }
@@ -35,7 +39,7 @@ public class AreaParserTest {
     @Test
     public void areParserReturnsNullIfTheStringCannotBeParsedIntoAnAre() {
         String parsedString ="NOT_A_ROOM";
-        String returnedArea = parser.parseArea(parsedString);
+        Area returnedArea = parser.parseArea(parsedString);
         assertNull(returnedArea);
     }
     
