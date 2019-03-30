@@ -45,6 +45,10 @@ public class Area {
     public void setSurroundingAreas(List<Integer> surroundingAreas) {
         this.surroundingAreas = surroundingAreas;
     }
+
+    public Boolean doesBorder(String targetArea) {
+        return true;
+    }
     
     
     

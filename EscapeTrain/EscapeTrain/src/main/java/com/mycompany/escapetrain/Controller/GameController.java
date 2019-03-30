@@ -67,8 +67,9 @@ public class GameController implements Initializable{
     @FXML
     private void parseCommand(ActionEvent event)  {
          String input = commandInput.getText();
+         commandInput.setText("");
          String area = engine.parseGoToCommand(input);
-         if(area != null) {
+         if(area != null || !area.equals("CANT GO")) {
             displayArea(area);
          } else {
             displayNotAValidCommand();
@@ -79,12 +80,10 @@ public class GameController implements Initializable{
         Area displayedArea = new Area("not a valid command", null, null);
         Text text1 = new Text("\nYou are in: ");
         Text text5 = new Text(displayedArea.getAreaName() + "\n\n");
-        Text text2 = new Text(displayedArea.getDescription() + "\n\n");
         text1.setFill(Color.BLACK);
         text1.setStyle("-fx-font-weight: bold;");
         text5.setStyle("-fx-font-weight: bold;");
-        text2.setFill(Color.BLACK);
-        output.getChildren().addAll(text1, text5,  text2, new Text("\n\n"));
+        output.getChildren().addAll(text1, text5, new Text("\n\n"));
     }
     
     

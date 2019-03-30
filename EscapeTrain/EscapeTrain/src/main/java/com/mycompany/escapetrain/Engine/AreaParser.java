@@ -5,16 +5,30 @@
  */
 package com.mycompany.escapetrain.Engine;
 
+import com.mycompany.escapetrain.GameObjects.Area.Area;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
 /**
  *
  * @author Administrator
  */
 public class AreaParser {
+    
+    private Properties appProps;
 
     public AreaParser() {
+        this.appProps = new Properties();
     }
     
+    public void init() throws FileNotFoundException, IOException {
+        String appConfigPath = "C:/Users/Administrator/ohte/EscapeTrain/EscapeTrain/src/main/resources/app.properties";
+        appProps.load(new FileInputStream(appConfigPath));
+    }
     
+
     
     public String parseArea(String possibleArea) {
         String parsedArea = parsePossibleAreaToArea(possibleArea);
@@ -31,6 +45,11 @@ public class AreaParser {
         } else {
             return null;
         }
+    }
+    
+    public Boolean canGoToArea(Area currentArea, String targetArea) {
+     
+        return currentArea.doesBorder(targetArea);
     }
     
 }
