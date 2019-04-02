@@ -1,14 +1,21 @@
-# Ohjelmistotekniikan kurssi
-
-## Ohjelmistotekniikka -- laskuharjoitukset1
-Nämä ovat harjoitukset
-
-[Gitlog](https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/laskarit/viikko1/gitlog.txt)
-
-[Puu](https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/laskarit/viikko1/puu.txt)
-
-## Escape Trains
+# Escape Train
 
 [Vaatimusmäärittely](https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/EscapeTrain/EscapeTrain/Dokumentaatio/vaatimusmaarittely.md)
 
 [Tuntikirjanpito](https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/EscapeTrain/EscapeTrain/Dokumentaatio/tuntikirjanpito.md)
+
+## Komentorivitoiminnot
+
+### Testaus
+
+Testit suoritetaan komennolla
+
+```
+mvn test
+```
+
+Testikattavuusraportti luodaan komennolla
+
+```
+mvn jacoco:report
+```
