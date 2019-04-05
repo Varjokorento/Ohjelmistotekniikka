@@ -24,7 +24,7 @@ public class AreaParser {
     }
     
     public void init() throws FileNotFoundException, IOException {
-        String appConfigPath = "C:/Users/Administrator/ohte/EscapeTrain/EscapeTrain/src/main/resources/area.properties";
+        String appConfigPath = "./src/main/resources/area.properties";
         appProps.load(new FileInputStream(appConfigPath));
     }
 

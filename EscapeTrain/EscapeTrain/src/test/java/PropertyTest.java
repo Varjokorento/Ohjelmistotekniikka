@@ -20,7 +20,7 @@ public class PropertyTest {
     
     @Test
     public void test() throws FileNotFoundException, IOException  {
-        String appConfigPath = "C:/Users/Administrator/ohte/EscapeTrain/EscapeTrain/src/main/resources/app.properties";
+        String appConfigPath = "./src/main/resources/app.properties";
         Properties appProps = new Properties();
         appProps.load(new FileInputStream(appConfigPath));
         String appVersion = appProps.getProperty("version");
