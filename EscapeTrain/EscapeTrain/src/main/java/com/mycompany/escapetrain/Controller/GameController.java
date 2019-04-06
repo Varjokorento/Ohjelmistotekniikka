@@ -8,6 +8,7 @@ package com.mycompany.escapetrain.Controller;
 import com.mycompany.escapetrain.Engine.GameEngine;
 import com.mycompany.escapetrain.Engine.GameObject;
 import com.mycompany.escapetrain.GameObjects.Area.Area;
+import com.mycompany.escapetrain.GameObjects.Events.Event;
 import com.mycompany.escapetrain.GameObjects.Inventory.Inventory;
 import com.mycompany.escapetrain.GameObjects.Inventory.InventoryMessage;
 import com.mycompany.escapetrain.GameObjects.Inventory.Item;
@@ -88,6 +89,8 @@ public class GameController implements Initializable{
          } else if(gameObject.getObjectType().equals("ITEM")){
              displayItemEvent((InventoryMessage) gameObject);
              displayCurrentRoom();
+         } else if (gameObject.getObjectType().equals("EVENT")) {
+             displayEvent((Event) gameObject);
          } else {
             displayNotAValidCommand();
          }
@@ -95,6 +98,13 @@ public class GameController implements Initializable{
     
     private void displayItemEvent(InventoryMessage inventoryMessage) {
         Text text1 = new Text(inventoryMessage.getMessage());
+        text1.setFill(Color.BLACK);
+        text1.setStyle("-fx-font-weight: bold;");
+        output.getChildren().addAll(text1, new Text("\n\n"));
+    }
+    
+    private void displayEvent(Event event) {
+        Text text1 = new Text(event.getEventMessage());
         text1.setFill(Color.BLACK);
         text1.setStyle("-fx-font-weight: bold;");
         output.getChildren().addAll(text1, new Text("\n\n"));

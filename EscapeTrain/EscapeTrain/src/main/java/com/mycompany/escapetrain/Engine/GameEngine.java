@@ -6,6 +6,8 @@
 package com.mycompany.escapetrain.Engine;
 
 import com.mycompany.escapetrain.GameObjects.Area.Area;
+import com.mycompany.escapetrain.GameObjects.Events.Event;
+import com.mycompany.escapetrain.GameObjects.Events.GameOver;
 import com.mycompany.escapetrain.GameObjects.Inventory.Inventory;
 import com.mycompany.escapetrain.GameObjects.Inventory.InventoryMessage;
 import com.mycompany.escapetrain.GameObjects.Inventory.Item;
@@ -56,13 +58,19 @@ public class GameEngine {
             gameState.setCurrentArea(areaParser.getFirstRoom());
             return areaParser.getFirstRoom();
         }
-        if(gameState.getTurns() == 2) {
-            return areaParser.getLastRoom();
+        if(gameState.getTurns() == 3) {
+            return gameOver();
         }
         if(input == null || input.trim().length() == 0) {
             return gameState.getCurrentArea();
         }
         return null;
+    }
+    
+    private GameObject gameOver() {
+        Event event = new GameOver();
+        event.setEventMessage("Game over. You lost. Press X to quit. Thank you for playing!");
+        return event;
     }
     
     public InventoryMessage parseTakeCommand(String target) {
