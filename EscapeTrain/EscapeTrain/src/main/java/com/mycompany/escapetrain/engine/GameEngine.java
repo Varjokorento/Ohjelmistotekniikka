@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.escapetrain.Engine;
+package com.mycompany.escapetrain.engine;
 
-import com.mycompany.escapetrain.GameObjects.Area.Area;
-import com.mycompany.escapetrain.GameObjects.Events.Event;
-import com.mycompany.escapetrain.GameObjects.Events.GameOver;
-import com.mycompany.escapetrain.GameObjects.Inventory.Inventory;
-import com.mycompany.escapetrain.GameObjects.Inventory.InventoryMessage;
-import com.mycompany.escapetrain.GameObjects.Inventory.Item;
+import com.mycompany.escapetrain.gameobjects.area.Area;
+import com.mycompany.escapetrain.gameobjects.events.Event;
+import com.mycompany.escapetrain.gameobjects.events.GameOver;
+import com.mycompany.escapetrain.gameobjects.inventory.Inventory;
+import com.mycompany.escapetrain.gameobjects.inventory.InventoryMessage;
+import com.mycompany.escapetrain.gameobjects.inventory.Item;
 import java.io.IOException;
 
 /**
@@ -35,33 +35,33 @@ public class GameEngine {
     
     public GameObject parseCommand(String input) {
         GameObject gameObject = this.checkSpecialCasesAndErrors(input);
-        if(gameObject != null) {
+        if (gameObject != null) {
             return gameObject;
         }
         String command = commandParser.parseCommand(input);
         String target = commandParser.parseTarget(input);
-        if(command.equalsIgnoreCase("GOTO")) {
+        if (command.equalsIgnoreCase("GOTO")) {
             return parseGoToCommand(target);
-        } else if(command.equalsIgnoreCase("TAKE")) {
+        } else if (command.equalsIgnoreCase("TAKE")) {
             return parseTakeCommand(target);
-        } else if(command.equalsIgnoreCase("USE")) {
+        } /*else if (command.equalsIgnoreCase("USE")) {
             
         } else {
             
-        }
+        }*/
         return null;
     }
     
     public GameObject checkSpecialCasesAndErrors(String input) {
-        if(gameState.getTurns() == 0) {
+        if (gameState.getTurns() == 0) {
             gameState.incrementTurns();
             gameState.setCurrentArea(areaParser.getFirstRoom());
             return areaParser.getFirstRoom();
         }
-        if(gameState.getTurns() == 3) {
+        if (gameState.getTurns() == 3) {
             return gameOver();
         }
-        if(input == null || input.trim().length() == 0) {
+        if (input == null || input.trim().length() == 0) {
             return gameState.getCurrentArea();
         }
         return null;
@@ -76,7 +76,7 @@ public class GameEngine {
     public InventoryMessage parseTakeCommand(String target) {
         InventoryMessage invmessage = new InventoryMessage();
         String message = "Error has occurred";
-        if(areaParser.hasItem(gameState.getCurrentArea(), target)) {
+        if (areaParser.hasItem(gameState.getCurrentArea(), target)) {
             message = "You picked up " + target;
             gameState.getInventory().addItem(new Item(target));
         } else {
@@ -91,22 +91,22 @@ public class GameEngine {
     }
     
     public Area parseGoToCommand(String target) {
-        if(target.trim().length() == 0) {
-             return null;
+        if (target.trim().length() == 0) {
+            return null;
         }
-        if(gameState.isError()) {
+        if (gameState.isError()) {
             gameState.setError(false);
             return gameState.getCurrentArea();
         }
         Area area = areaParser.parseArea(target);   
-        if(area == null) {
-           gameState.setError(true); 
-           return areaParser.getErrorRoom(); 
+        if (area == null) {
+            gameState.setError(true); 
+            return areaParser.getErrorRoom(); 
         }
-        if(areaParser.canGoToArea(gameState.getCurrentArea(), area.getAreaName())) {
-           gameState.setCurrentArea(area);
-           gameState.incrementTurns();
-           return gameState.getCurrentArea(); 
+        if (areaParser.canGoToArea(gameState.getCurrentArea(), area.getAreaName())) {
+            gameState.setCurrentArea(area);
+            gameState.incrementTurns();
+            return gameState.getCurrentArea(); 
         }
         return areaParser.getErrorRoom();
     }

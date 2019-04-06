@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.escapetrain.Engine;
+package com.mycompany.escapetrain.engine;
 
 /**
  *
@@ -21,7 +21,7 @@ public class CommandParser {
             
     public String parseTarget(String commandToBeParsed) {
         String[] parts = commandToBeParsed.split(" ");
-        if(parts.length < 2) {
+        if (parts.length < 2) {
             return null;
         }
         return parts[1];

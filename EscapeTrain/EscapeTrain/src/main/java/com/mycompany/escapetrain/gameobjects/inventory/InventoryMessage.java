@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.escapetrain.GameObjects.Inventory;
+package com.mycompany.escapetrain.gameobjects.inventory;
 
-import com.mycompany.escapetrain.Engine.GameObject;
+import com.mycompany.escapetrain.engine.GameObject;
 
 /**
  *
@@ -28,7 +28,7 @@ public class InventoryMessage implements GameObject {
 
     @Override
     public void setObjectType(String type) {
-       this.objectType = type;
+        this.objectType = type;
     }
 
     public String getMessage() {

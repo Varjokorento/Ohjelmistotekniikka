@@ -3,21 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.escapetrain.Controller;
+package com.mycompany.escapetrain.controller;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -25,14 +21,10 @@ import javafx.stage.Stage;
  *
  * @author Administrator
  */
-public class CreditsController implements Initializable{
-    
-    @FXML
-    private Label label;
-    
+public class TutorialController implements Initializable{
 
-        
-    @FXML
+    
+   @FXML
     private void handleBackButtonAction(ActionEvent event) throws IOException {
         Button button = (Button) event.getSource();
         Stage stage = (Stage) button.getScene().getWindow();
@@ -46,7 +38,6 @@ public class CreditsController implements Initializable{
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-      }
+    }
     
-
 }

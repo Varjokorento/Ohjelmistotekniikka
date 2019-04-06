@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.escapetrain.GameObjects.Inventory;
+package com.mycompany.escapetrain.gameobjects.inventory;
 
-import com.mycompany.escapetrain.Engine.GameObject;
+import com.mycompany.escapetrain.engine.GameObject;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -39,7 +39,7 @@ public class Inventory implements GameObject {
     }
     
     public void removeItem(Item item) {
-        if(this.items.contains(item)) {
+        if (this.items.contains(item)) {
             this.items.remove(item);
         }
     }
@@ -51,7 +51,7 @@ public class Inventory implements GameObject {
 
     @Override
     public String getObjectType() {
-       return this.objectType;
+        return this.objectType;
     }
 
     @Override

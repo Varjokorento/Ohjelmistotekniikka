@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.escapetrain.Controller;
+package com.mycompany.escapetrain.controller;
 
-import com.mycompany.escapetrain.Engine.GameEngine;
-import com.mycompany.escapetrain.Engine.GameObject;
-import com.mycompany.escapetrain.GameObjects.Area.Area;
-import com.mycompany.escapetrain.GameObjects.Events.Event;
-import com.mycompany.escapetrain.GameObjects.Inventory.Inventory;
-import com.mycompany.escapetrain.GameObjects.Inventory.InventoryMessage;
-import com.mycompany.escapetrain.GameObjects.Inventory.Item;
+import com.mycompany.escapetrain.engine.GameEngine;
+import com.mycompany.escapetrain.engine.GameObject;
+import com.mycompany.escapetrain.gameobjects.area.Area;
+import com.mycompany.escapetrain.gameobjects.events.Event;
+import com.mycompany.escapetrain.gameobjects.inventory.Inventory;
+import com.mycompany.escapetrain.gameobjects.inventory.InventoryMessage;
+import com.mycompany.escapetrain.gameobjects.inventory.Item;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.mycompany.escapetrain.Controller;
+package com.mycompany.escapetrain.controller;
 
 import java.io.IOException;
 import java.net.URL;

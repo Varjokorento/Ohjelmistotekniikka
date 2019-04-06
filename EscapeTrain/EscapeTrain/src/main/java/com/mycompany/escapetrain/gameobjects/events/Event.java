@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.escapetrain.GameObjects.Events;
+package com.mycompany.escapetrain.gameobjects.events;
 
-import com.mycompany.escapetrain.Engine.GameObject;
+import com.mycompany.escapetrain.engine.GameObject;
 
 /**
  *
  * @author Administrator
  */
-public class Event implements GameObject{
+public class Event implements GameObject {
     private  String objectType;
     private String eventMessage;
     

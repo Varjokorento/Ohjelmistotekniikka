@@ -5,8 +5,8 @@
     "http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
 
 <suppressions>
-    <suppress files="main.java.com.mycompany.escapetrain.Controller.CreditsController" checks="[a-zA-Z0-9]*"/>
-    <suppress files="main.java.com.mycompany.escapetrain.Controller.FXMLController" checks="[a-zA-Z0-9]*"/>
-    <suppress files="main.java.com.mycompany.escapetrain.Controller.GameController" checks="[a-zA-Z0-9]*"/>
-    <suppress files="main.java.com.mycompany.escapetrain.Controller.TutorialController" checks="[a-zA-Z0-9]*"/>
+    <suppress files="main.java.com.mycompany.escapetrain.controller.CreditsController" checks="[a-zA-Z0-9]*"/>
+    <suppress files="main.java.com.mycompany.escapetrain.controller.FXMLController" checks="[a-zA-Z0-9]*"/>
+    <suppress files="main.java.com.mycompany.escapetrain.controller.GameController" checks="[a-zA-Z0-9]*"/>
+    <suppress files="main.java.com.mycompany.escapetrain.controller.TutorialController" checks="[a-zA-Z0-9]*"/>
 </suppressions>

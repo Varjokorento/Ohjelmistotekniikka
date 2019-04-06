@@ -1,6 +1,6 @@
 
-import com.mycompany.escapetrain.Engine.AreaParser;
-import com.mycompany.escapetrain.GameObjects.Area.Area;
+import com.mycompany.escapetrain.engine.AreaParser;
+import com.mycompany.escapetrain.gameobjects.area.Area;
 import java.io.IOException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;

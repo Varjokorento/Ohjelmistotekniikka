@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.escapetrain.Engine;
+package com.mycompany.escapetrain.engine;
 
-import com.mycompany.escapetrain.GameObjects.Area.Area;
-import com.mycompany.escapetrain.GameObjects.Inventory.Inventory;
+import com.mycompany.escapetrain.gameobjects.area.Area;
+import com.mycompany.escapetrain.gameobjects.inventory.Inventory;
 
 /**
  *
@@ -50,7 +50,7 @@ public class GameState {
     }
 
     public void incrementTurns() {
-        this.turns = turns +1;
+        this.turns = turns + 1;
     }
 
     public Inventory getInventory() {

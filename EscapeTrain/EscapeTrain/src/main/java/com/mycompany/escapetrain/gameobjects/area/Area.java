@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.escapetrain.GameObjects.Area;
+package com.mycompany.escapetrain.gameobjects.area;
 
-import com.mycompany.escapetrain.Engine.GameObject;
-import java.util.List;
+import com.mycompany.escapetrain.engine.GameObject;
 
 /**
  *
@@ -24,7 +23,7 @@ public class Area implements GameObject {
         this.description = description;
         this.surroundingAreas = surroundingAreas;
         this.itemsInRoom = itemsInRoom;
-        this.objectType= "AREA";
+        this.objectType = "AREA";
     }
 
     public String getAreaName() {
