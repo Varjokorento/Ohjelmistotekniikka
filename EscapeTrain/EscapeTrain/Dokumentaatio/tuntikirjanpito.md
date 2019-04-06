@@ -6,5 +6,6 @@
 | 23.3. | 2    | Aloin rakentamaan näkymiä peliin. Opettelin JavaFX:ää. |
 | 25.3. | 3    | Pelinäkymän runko aloitettu. Pelimoottorin osia tehty |
 | 30.3  | 3    | Pelimoottorin rakentelua. Testien kirjoittamista. Plugineiden lisäämistä.|
-| Summa:| 10   |
+| 6.4   | 4    | Pelimoottorin rakentelua. Testien kirjoittamista. Plugineiden lisäämistä. Toiminnot liikkuminen ja esineiden nostaminen valmiita|
+| Summa:| 14   |
 
