@@ -30,6 +30,9 @@ public class Inventory implements GameObject {
     }
 
     public void setItems(List<Item> items) {
+        for(Item item: items) {
+            itemNames.add(item.getName());
+        }
         this.items = items;
     }
     
@@ -41,6 +44,7 @@ public class Inventory implements GameObject {
     public void removeItem(Item item) {
         if (this.items.contains(item)) {
             this.items.remove(item);
+            this.itemNames.remove(item.getName());
         }
     }
     
@@ -56,7 +60,7 @@ public class Inventory implements GameObject {
 
     @Override
     public void setObjectType(String type) {
-        this.objectType = this.objectType;
+        this.objectType = type;
     }
     
     
