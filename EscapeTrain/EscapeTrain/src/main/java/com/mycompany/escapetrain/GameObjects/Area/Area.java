@@ -17,11 +17,13 @@ public class Area implements GameObject {
     private String areaName;
     private String description;
     private String surroundingAreas;
+    private String itemsInRoom;
 
-    public Area(String areaName, String description, String surroundingAreas) {
+    public Area(String areaName, String description, String surroundingAreas, String itemsInRoom) {
         this.areaName = areaName;
         this.description = description;
         this.surroundingAreas = surroundingAreas;
+        this.itemsInRoom = itemsInRoom;
         this.objectType= "AREA";
     }
 
@@ -51,6 +53,14 @@ public class Area implements GameObject {
 
     public Boolean doesBorder(String targetArea) {
         return true;
+    }
+    
+    public String getItemsInRoom() {
+        return this.itemsInRoom;
+    }
+    
+    public void setItemsInRoom(String itemsInRoom) {
+        this.itemsInRoom = itemsInRoom;
     }
     
     public void setObjectType(String type) {

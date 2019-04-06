@@ -6,6 +6,7 @@
 package com.mycompany.escapetrain.Engine;
 
 import com.mycompany.escapetrain.GameObjects.Area.Area;
+import com.mycompany.escapetrain.GameObjects.Inventory.Inventory;
 import com.mycompany.escapetrain.GameObjects.Inventory.InventoryMessage;
 import com.mycompany.escapetrain.GameObjects.Inventory.Item;
 import java.io.IOException;
@@ -77,8 +78,10 @@ public class GameEngine {
         return invmessage;
     }
     
-    //TODO 
-    //Return gameState which controller uses to update view.
+    public Inventory getInventoryState() {
+        return gameState.getInventory();
+    }
+    
     public Area parseGoToCommand(String target) {
         if(target.trim().length() == 0) {
              return null;
@@ -98,5 +101,9 @@ public class GameEngine {
            return gameState.getCurrentArea(); 
         }
         return areaParser.getErrorRoom();
+    }
+    
+    public Area getCurrentRoom() {
+        return gameState.getCurrentArea();
     }
 }

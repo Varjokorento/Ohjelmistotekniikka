@@ -48,9 +48,11 @@ public class AreaParser {
         }
         
         if(appProps.getProperty(possibleArea.concat("_AREANAME")) != null) {
-            return new Area(appProps.getProperty(possibleArea.concat("_AREANAME")), 
+            Area area = new Area(appProps.getProperty(possibleArea.concat("_AREANAME")), 
                     appProps.getProperty(possibleArea.concat("_DESCRIPTION")), 
-                    appProps.getProperty(possibleArea.concat("_BORDER_AREAS")));
+                    appProps.getProperty(possibleArea.concat("_BORDER_AREAS")),
+            appProps.getProperty(possibleArea.concat("_ITEMS")));
+            return area;
         }
         return null;
     }
@@ -61,18 +63,27 @@ public class AreaParser {
     }
 
     public Area getFirstRoom() { 
-      Area firstArea = new Area(appProps.getProperty("FIRST_ROOM_AREANAME"), appProps.getProperty("FIRST_ROOM_DESCRIPTION"), appProps.getProperty("FIRST_ROOM_BORDER_AREAS"));
+      Area firstArea = new Area(appProps.getProperty("FIRST_ROOM_AREANAME"), 
+              appProps.getProperty("FIRST_ROOM_DESCRIPTION"), 
+              appProps.getProperty("FIRST_ROOM_BORDER_AREAS"),
+              appProps.getProperty("FIRST_ROOM_ITEMS"));
       return firstArea;
     }
 
     public Area getLastRoom() {
-      Area firstArea = new Area(appProps.getProperty("LAST_ROOM_AREANAME"), appProps.getProperty("LAST_ROOM_DESCRIPTION"), appProps.getProperty("LAST_ROOM_BORDER_AREAS"));
-      return firstArea;
+      Area lastArea = new Area(appProps.getProperty("LAST_ROOM_AREANAME"), 
+              appProps.getProperty("LAST_ROOM_DESCRIPTION"), 
+              appProps.getProperty("LAST_ROOM_BORDER_AREAS"),
+              appProps.getProperty("LAST_ROOM_ITEMS"));
+      return lastArea;
     }
     
     public Area getErrorRoom() {
-      Area firstArea = new Area(appProps.getProperty("ERROR_ROOM_AREANAME"), appProps.getProperty("ERROR_ROOM_DESCRIPTION"), appProps.getProperty("ERROR_ROOM_BORDER_AREAS"));
-      return firstArea;
+      Area errorArea = new Area(appProps.getProperty("ERROR_ROOM_AREANAME"), 
+              appProps.getProperty("ERROR_ROOM_DESCRIPTION"), 
+              appProps.getProperty("ERROR_ROOM_BORDER_AREAS"),
+              appProps.getProperty("ERROR_ROOM_ITEMS"));
+      return errorArea;
     }
 
     boolean hasItem(Area currentArea, String target) {

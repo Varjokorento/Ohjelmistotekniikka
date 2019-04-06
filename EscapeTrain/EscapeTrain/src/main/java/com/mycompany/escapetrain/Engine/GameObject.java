@@ -11,6 +11,7 @@ package com.mycompany.escapetrain.Engine;
  */
 public interface GameObject {
     String getObjectType();
+    void setObjectType(String type);
     
     
 }

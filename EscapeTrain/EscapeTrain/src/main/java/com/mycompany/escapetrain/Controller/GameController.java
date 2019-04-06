@@ -8,7 +8,9 @@ package com.mycompany.escapetrain.Controller;
 import com.mycompany.escapetrain.Engine.GameEngine;
 import com.mycompany.escapetrain.Engine.GameObject;
 import com.mycompany.escapetrain.GameObjects.Area.Area;
+import com.mycompany.escapetrain.GameObjects.Inventory.Inventory;
 import com.mycompany.escapetrain.GameObjects.Inventory.InventoryMessage;
+import com.mycompany.escapetrain.GameObjects.Inventory.Item;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Map;
@@ -37,11 +39,13 @@ public class GameController implements Initializable{
     Color locationColor = Color.web("#E3AB59");
     
     private GameEngine engine;
-    private Map<Integer, Area> areas;
  
     
     @FXML
     private TextFlow output;
+    
+    @FXML
+    private TextFlow inventory;
     
     @FXML
     private TextField commandInput;
@@ -74,11 +78,16 @@ public class GameController implements Initializable{
          String input = commandInput.getText();
          commandInput.setText("");
          GameObject gameObject = engine.parseCommand(input);  
-         
-         if(gameObject.getObjectType().equals("AREA")) {
+         updateInventoryView();
+         updateDisplay(gameObject);
+    }
+    
+    private void updateDisplay(GameObject gameObject) {
+        if(gameObject.getObjectType().equals("AREA")) {
             displayArea((Area) gameObject);
          } else if(gameObject.getObjectType().equals("ITEM")){
              displayItemEvent((InventoryMessage) gameObject);
+             displayCurrentRoom();
          } else {
             displayNotAValidCommand();
          }
@@ -98,10 +107,17 @@ public class GameController implements Initializable{
         output.getChildren().addAll(text1, new Text("\n\n"));
     }
     
+    private void displayCurrentRoom() {
+        displayArea(engine.getCurrentRoom());
+    }
+    
     private void displayArea(Area displayedArea) {
         Text text1 = new Text("\nYou are in: ");
         Text text3 = new Text("Adjacent areas: ");
+        Text text4 = new Text("Items in room: ");
         Text areaStyling = new Text(displayedArea.getSurroundingAreas() + "\n\n");
+        String filteredItems = filterItems(displayedArea.getItemsInRoom());
+        Text itemStyling = new Text(filteredItems + "\n\n");
         Text text5 = new Text(displayedArea.getAreaName() + "\n\n");
         Text text2 = new Text(displayedArea.getDescription() + "\n\n");
         text1.setFill(Color.BLACK);
@@ -109,7 +125,26 @@ public class GameController implements Initializable{
         text5.setStyle("-fx-font-weight: bold;");
         text2.setFill(Color.BLACK);
         areaStyling.setFill(locationColor);
-        output.getChildren().addAll(text1, text5, text3, areaStyling, text2, new Text("\n\n"));
+        output.getChildren().addAll(text1, text5, text3, areaStyling, text4, itemStyling, text2, new Text("\n\n"));
     }
     
+    private String filterItems(String itemsInRoom) {
+       Inventory gameInventory = engine.getInventoryState();
+       String itemsToBeDisplayed ="";
+       String[] items = itemsInRoom.split(",");
+       for(String item : items) {
+           if(!gameInventory.isItemInInventory(item)) {
+               itemsToBeDisplayed = itemsToBeDisplayed.concat("," + item);
+           }
+       }
+       return itemsToBeDisplayed;
+    }
+    
+    private void updateInventoryView() {
+        Inventory gameInventory = engine.getInventoryState();
+        inventory.getChildren().clear();
+        for (Item item : gameInventory.getItems()) {
+            inventory.getChildren().addAll(new Text(item.getName()+"\n"));
+        }
+    }
 }
