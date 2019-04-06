@@ -5,13 +5,15 @@
  */
 package com.mycompany.escapetrain.GameObjects.Area;
 
+import com.mycompany.escapetrain.Engine.GameObject;
 import java.util.List;
 
 /**
  *
  * @author Administrator
  */
-public class Area {
+public class Area implements GameObject {
+    private String objectType;
     private String areaName;
     private String description;
     private String surroundingAreas;
@@ -20,6 +22,7 @@ public class Area {
         this.areaName = areaName;
         this.description = description;
         this.surroundingAreas = surroundingAreas;
+        this.objectType= "AREA";
     }
 
     public String getAreaName() {
@@ -50,6 +53,15 @@ public class Area {
         return true;
     }
     
+    public void setObjectType(String type) {
+        this.objectType = type;
+    }
+    @Override
+    public String getObjectType() {
+        return this.objectType;
+    }
+
+   
     
     
     

@@ -6,6 +6,7 @@
 package com.mycompany.escapetrain.Engine;
 
 import com.mycompany.escapetrain.GameObjects.Area.Area;
+import com.mycompany.escapetrain.GameObjects.Inventory.Inventory;
 
 /**
  *
@@ -13,12 +14,14 @@ import com.mycompany.escapetrain.GameObjects.Area.Area;
  */
 public class GameState {
     private Area currentArea;
+    private Inventory inventory;
     private int turns;
     private boolean error;
     public GameState() {
         this.currentArea = null;
         this.turns = 0;
         this.error = false;
+        this.inventory = new Inventory();
     }
 
     public boolean isError() {
@@ -49,7 +52,16 @@ public class GameState {
     public void incrementTurns() {
         this.turns = turns +1;
     }
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
    
+    
     
     
     

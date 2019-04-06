@@ -74,5 +74,21 @@ public class AreaParser {
       Area firstArea = new Area(appProps.getProperty("ERROR_ROOM_AREANAME"), appProps.getProperty("ERROR_ROOM_DESCRIPTION"), appProps.getProperty("ERROR_ROOM_BORDER_AREAS"));
       return firstArea;
     }
+
+    boolean hasItem(Area currentArea, String target) {
+       String itemsInRoom = appProps.getProperty(currentArea.getAreaName().concat("_ITEMS"));
+       return checkItemsInRoom(itemsInRoom, target);
+       
+    }
+    
+    private boolean checkItemsInRoom(String itemsInRoom, String target) {
+        String[] itemList = itemsInRoom.split(",");
+        for(String item : itemList) {
+            if(item.equals(target)) {
+                return true;
+            } 
+        }
+        return false;
+    }
     
 }

@@ -6,7 +6,9 @@
 package com.mycompany.escapetrain.Controller;
 
 import com.mycompany.escapetrain.Engine.GameEngine;
+import com.mycompany.escapetrain.Engine.GameObject;
 import com.mycompany.escapetrain.GameObjects.Area.Area;
+import com.mycompany.escapetrain.GameObjects.Inventory.InventoryMessage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Map;
@@ -71,24 +73,30 @@ public class GameController implements Initializable{
     private void parseCommand(ActionEvent event)  {
          String input = commandInput.getText();
          commandInput.setText("");
-         Area area = engine.parseGoToCommand(input);         
-         if(area != null) {
-            displayArea(area);
+         GameObject gameObject = engine.parseCommand(input);  
+         
+         if(gameObject.getObjectType().equals("AREA")) {
+            displayArea((Area) gameObject);
+         } else if(gameObject.getObjectType().equals("ITEM")){
+             displayItemEvent((InventoryMessage) gameObject);
          } else {
             displayNotAValidCommand();
          }
     }
     
-    private void displayNotAValidCommand() {
-        Area displayedArea = new Area("not a valid command", null, null);
-        Text text1 = new Text("\nYou are in: ");
-        Text text5 = new Text(displayedArea.getAreaName() + "\n\n");
+    private void displayItemEvent(InventoryMessage inventoryMessage) {
+        Text text1 = new Text(inventoryMessage.getMessage());
         text1.setFill(Color.BLACK);
         text1.setStyle("-fx-font-weight: bold;");
-        text5.setStyle("-fx-font-weight: bold;");
-        output.getChildren().addAll(text1, text5, new Text("\n\n"));
+        output.getChildren().addAll(text1, new Text("\n\n"));
     }
     
+    private void displayNotAValidCommand() {
+        Text text1 = new Text("\nNot a valid command");
+        text1.setFill(Color.BLACK);
+        text1.setStyle("-fx-font-weight: bold;");
+        output.getChildren().addAll(text1, new Text("\n\n"));
+    }
     
     private void displayArea(Area displayedArea) {
         Text text1 = new Text("\nYou are in: ");
