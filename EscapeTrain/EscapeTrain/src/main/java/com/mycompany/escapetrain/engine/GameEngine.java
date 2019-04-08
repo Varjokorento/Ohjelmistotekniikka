@@ -5,12 +5,14 @@
  */
 package com.mycompany.escapetrain.engine;
 
+import com.mycompany.escapetrain.gameobjects.events.Victory;
 import com.mycompany.escapetrain.gameobjects.area.Area;
 import com.mycompany.escapetrain.gameobjects.events.Event;
 import com.mycompany.escapetrain.gameobjects.events.GameOver;
 import com.mycompany.escapetrain.gameobjects.inventory.Inventory;
 import com.mycompany.escapetrain.gameobjects.inventory.InventoryMessage;
 import com.mycompany.escapetrain.gameobjects.inventory.Item;
+import com.mycompany.escapetrain.gameobjects.message.Message;
 import java.io.IOException;
 
 /**
@@ -44,21 +46,44 @@ public class GameEngine {
             return parseGoToCommand(target);
         } else if (command.equalsIgnoreCase("TAKE")) {
             return parseTakeCommand(target);
-        } /*else if (command.equalsIgnoreCase("USE")) {
-            
+        } else if (command.equalsIgnoreCase("USE")) {
+            return parseUseCommand(target);
         } else {
-            
-        }*/
-        return null;
+            return null;
+        }
+      
     }
     
+    public GameObject parseUseCommand(String target) {
+        if(target.equalsIgnoreCase("lever") 
+                && gameState.getCurrentArea().getAreaName().equals("ENGINE_ROOM")) {
+            gameState.getFlags().setGameWon(true);
+            return new Victory("You managed to stop the train! You have survived!");
+        }    
+        if(!gameState.isInInventory(target)) {
+            return new Event("You don't have that on you!");
+        }
+        if(target.equalsIgnoreCase("pillow")) {
+            gameState.getFlags().setEngineDoorOpen(true);
+            return new Event("Something opened somewhere.");
+        }
+      
+        return new Event("Nothing happens.");
+        
+    }
+    
+    
     public GameObject checkSpecialCasesAndErrors(String input) {
+        GameObject flagOutcomes = checkFlags();
+        if(flagOutcomes != null) {
+            return flagOutcomes;
+        }
         if (gameState.getTurns() == 0) {
             gameState.incrementTurns();
             gameState.setCurrentArea(areaParser.getFirstRoom());
             return areaParser.getFirstRoom();
         }
-        if (gameState.getTurns() == 3) {
+        if (gameState.getTurns() == 50) {
             return gameOver();
         }
         if (input == null || input.trim().length() == 0) {
@@ -66,6 +91,14 @@ public class GameEngine {
         }
         return null;
     }
+    
+    private GameObject checkFlags() {
+        if(gameState.getFlags().isGameOver() || gameState.getFlags().isGameWon()) {
+            return new Event("The game is now over. Please quit by clicking X.");
+        }
+        return null;
+    }
+    
     
     private GameObject gameOver() {
         Event event = new GameOver();
@@ -90,13 +123,14 @@ public class GameEngine {
         return gameState.getInventory();
     }
     
-    public Area parseGoToCommand(String target) {
-        if (target.trim().length() == 0) {
-            return null;
-        }
-        if (gameState.isError()) {
-            gameState.setError(false);
-            return gameState.getCurrentArea();
+    public GameObject parseGoToCommand(String target) {
+        Message message = (Message) checkErrors(target);
+        if(!message.isOK()) {
+            return new Event("You can't go there");
+        } 
+        GameObject specialEvent = checkForSpecialAreaCases(target);
+        if(specialEvent != null) {
+            return specialEvent;
         }
         Area area = areaParser.parseArea(target);   
         if (area == null) {
@@ -113,5 +147,23 @@ public class GameEngine {
     
     public Area getCurrentRoom() {
         return gameState.getCurrentArea();
+    }
+    
+    private GameObject checkForSpecialAreaCases(String target) {
+        if(target.equals("ENGINE_ROOM") && !gameState.getFlags().isEngineDoorOpen()) {
+            return new Event("The door is locked and looks very sturdy.");
+        } 
+        return null;
+    }
+    
+    private GameObject checkErrors(String target) {
+        if (target.trim().length() == 0) {
+            return null;
+        }
+        if (gameState.isError()) {
+            gameState.setError(false);
+            return gameState.getCurrentArea();
+        }
+        return new Message(true);
     }
 }

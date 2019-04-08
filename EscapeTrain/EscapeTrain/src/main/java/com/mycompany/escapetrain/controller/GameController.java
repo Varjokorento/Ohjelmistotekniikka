@@ -76,6 +76,7 @@ public class GameController implements Initializable{
     
     @FXML
     private void parseCommand(ActionEvent event)  {
+         output.getChildren().clear();
          String input = commandInput.getText();
          commandInput.setText("");
          GameObject gameObject = engine.parseCommand(input);  
@@ -91,6 +92,7 @@ public class GameController implements Initializable{
              displayCurrentRoom();
          } else if (gameObject.getObjectType().equals("EVENT")) {
              displayEvent((Event) gameObject);
+             displayCurrentRoom();
          } else {
             displayNotAValidCommand();
          }

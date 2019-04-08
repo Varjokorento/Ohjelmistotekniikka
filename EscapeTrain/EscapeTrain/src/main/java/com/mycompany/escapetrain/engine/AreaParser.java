@@ -63,10 +63,10 @@ public class AreaParser {
     }
 
     public Area getFirstRoom() { 
-        Area firstArea = new Area(appProps.getProperty("FIRST_ROOM_AREANAME"), 
-                appProps.getProperty("FIRST_ROOM_DESCRIPTION"), 
-                appProps.getProperty("FIRST_ROOM_BORDER_AREAS"),
-                appProps.getProperty("FIRST_ROOM_ITEMS"));
+        Area firstArea = new Area(appProps.getProperty("LUGGAGE_ROOM_AREANAME"), 
+                appProps.getProperty("LUGGAGE_ROOM_DESCRIPTION"), 
+                appProps.getProperty("LUGGAGE_ROOM_BORDER_AREAS"),
+                appProps.getProperty("LUGGAGE_ROOM_ITEMS"));
         return firstArea;
     }
 

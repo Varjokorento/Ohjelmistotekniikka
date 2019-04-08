@@ -17,11 +17,14 @@ public class GameState {
     private Inventory inventory;
     private int turns;
     private boolean error;
+    private FlagStates flagStates;
+    
     public GameState() {
         this.currentArea = null;
         this.turns = 0;
         this.error = false;
         this.inventory = new Inventory();
+        this.flagStates = new FlagStates();
     }
 
     public boolean isError() {
@@ -32,7 +35,11 @@ public class GameState {
         this.error = error;
     }
     
-
+    public FlagStates getFlags() {
+        return this.flagStates;
+    }
+    
+    
     public Area getCurrentArea() {
         return currentArea;
     }
@@ -61,6 +68,9 @@ public class GameState {
         this.inventory = inventory;
     }
    
+    public boolean isInInventory(String item) {
+        return this.inventory.isItemInInventory(item);
+    }
     
     
     

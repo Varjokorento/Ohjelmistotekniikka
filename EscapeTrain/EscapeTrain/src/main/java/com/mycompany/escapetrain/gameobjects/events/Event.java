@@ -18,6 +18,11 @@ public class Event implements GameObject {
     public Event() {
         this.objectType = "EVENT";
     }
+    
+    public Event(String message) {
+        this.eventMessage = message;
+        this.objectType = "EVENT";
+    }
 
     public String getEventMessage() {
         return eventMessage;
