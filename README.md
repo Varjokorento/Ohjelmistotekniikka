@@ -8,18 +8,9 @@ Sovelluksen tarkoitus on olla pelattava seikkailupeli nimeltä "Escape Train." P
 
 [Tuntikirjanpito](https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/EscapeTrain/EscapeTrain/Dokumentaatio/tuntikirjanpito.md)
 
-<<<<<<< HEAD
 [Arkkitehtuuri](https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/EscapeTrain/EscapeTrain/Dokumentaatio/arkkitehtuuri.md)
 
 [Käyttöohje](https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/EscapeTrain/EscapeTrain/Dokumentaatio/kayttoohje.md)
-
-=======
-[Arkkitehtuuri]
-(https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/EscapeTrain/EscapeTrain/Dokumentaatio/arkkitehtuuri.md)
-
-[Käyttöohje]
-(https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/EscapeTrain/EscapeTrain/Dokumentaatio/kayttoohje.md)
->>>>>>> f0bf5c1f7413b90a7f12a6e720ff353fb7099b91
 
 ## Komentorivitoiminnot
 
