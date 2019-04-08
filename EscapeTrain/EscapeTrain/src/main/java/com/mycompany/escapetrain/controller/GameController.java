@@ -6,7 +6,7 @@
 package com.mycompany.escapetrain.controller;
 
 import com.mycompany.escapetrain.engine.GameEngine;
-import com.mycompany.escapetrain.engine.GameObject;
+import com.mycompany.escapetrain.gameobjects.GameObject;
 import com.mycompany.escapetrain.gameobjects.area.Area;
 import com.mycompany.escapetrain.gameobjects.events.Event;
 import com.mycompany.escapetrain.gameobjects.inventory.Inventory;

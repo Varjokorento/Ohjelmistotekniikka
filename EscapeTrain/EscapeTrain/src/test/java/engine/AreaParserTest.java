@@ -1,7 +1,7 @@
 package engine;
 
 
-import com.mycompany.escapetrain.engine.AreaParser;
+import com.mycompany.escapetrain.engine.parsers.AreaParser;
 import com.mycompany.escapetrain.gameobjects.area.Area;
 import java.io.IOException;
 import static org.junit.Assert.assertEquals;

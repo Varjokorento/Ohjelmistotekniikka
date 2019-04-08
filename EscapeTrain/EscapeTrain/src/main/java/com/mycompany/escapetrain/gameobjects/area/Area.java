@@ -5,7 +5,7 @@
  */
 package com.mycompany.escapetrain.gameobjects.area;
 
-import com.mycompany.escapetrain.engine.GameObject;
+import com.mycompany.escapetrain.gameobjects.GameObject;
 
 /**
  *

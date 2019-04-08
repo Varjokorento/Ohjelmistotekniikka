@@ -7,10 +7,10 @@
 
 package engine;
 
-import com.mycompany.escapetrain.engine.AreaParser;
-import com.mycompany.escapetrain.engine.CommandParser;
+import com.mycompany.escapetrain.engine.parsers.AreaParser;
+import com.mycompany.escapetrain.engine.parsers.CommandParser;
 import com.mycompany.escapetrain.engine.GameEngine;
-import com.mycompany.escapetrain.engine.GameState;
+import com.mycompany.escapetrain.engine.gamestateutils.GameState;
 import com.mycompany.escapetrain.gameobjects.area.Area;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;

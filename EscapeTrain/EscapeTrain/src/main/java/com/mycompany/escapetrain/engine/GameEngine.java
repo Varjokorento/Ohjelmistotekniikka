@@ -5,6 +5,10 @@
  */
 package com.mycompany.escapetrain.engine;
 
+import com.mycompany.escapetrain.gameobjects.GameObject;
+import com.mycompany.escapetrain.engine.gamestateutils.GameState;
+import com.mycompany.escapetrain.engine.parsers.CommandParser;
+import com.mycompany.escapetrain.engine.parsers.AreaParser;
 import com.mycompany.escapetrain.gameobjects.events.Victory;
 import com.mycompany.escapetrain.gameobjects.area.Area;
 import com.mycompany.escapetrain.gameobjects.events.Event;

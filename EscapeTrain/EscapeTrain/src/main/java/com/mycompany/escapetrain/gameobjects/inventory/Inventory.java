@@ -5,7 +5,7 @@
  */
 package com.mycompany.escapetrain.gameobjects.inventory;
 
-import com.mycompany.escapetrain.engine.GameObject;
+import com.mycompany.escapetrain.gameobjects.GameObject;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;

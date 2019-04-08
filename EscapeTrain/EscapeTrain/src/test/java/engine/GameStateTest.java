@@ -6,7 +6,7 @@
 package engine;
 
 import com.mycompany.escapetrain.engine.GameEngine;
-import com.mycompany.escapetrain.engine.GameState;
+import com.mycompany.escapetrain.engine.gamestateutils.GameState;
 import com.mycompany.escapetrain.gameobjects.area.Area;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
