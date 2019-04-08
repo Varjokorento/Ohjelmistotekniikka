@@ -55,15 +55,15 @@ public class GameEngine {
     }
     
     public GameObject parseUseCommand(String target) {
-        if(target.equalsIgnoreCase("lever") 
+        if (target.equalsIgnoreCase("lever") 
                 && gameState.getCurrentArea().getAreaName().equals("ENGINE_ROOM")) {
             gameState.getFlags().setGameWon(true);
             return new Victory("You managed to stop the train! You have survived!");
         }    
-        if(!gameState.isInInventory(target)) {
+        if (!gameState.isInInventory(target)) {
             return new Event("You don't have that on you!");
         }
-        if(target.equalsIgnoreCase("pillow")) {
+        if (target.equalsIgnoreCase("pillow")) {
             gameState.getFlags().setEngineDoorOpen(true);
             return new Event("Something opened somewhere.");
         }
@@ -75,7 +75,7 @@ public class GameEngine {
     
     public GameObject checkSpecialCasesAndErrors(String input) {
         GameObject flagOutcomes = checkFlags();
-        if(flagOutcomes != null) {
+        if (flagOutcomes != null) {
             return flagOutcomes;
         }
         if (gameState.getTurns() == 0) {
@@ -93,7 +93,7 @@ public class GameEngine {
     }
     
     private GameObject checkFlags() {
-        if(gameState.getFlags().isGameOver() || gameState.getFlags().isGameWon()) {
+        if (gameState.getFlags().isGameOver() || gameState.getFlags().isGameWon()) {
             return new Event("The game is now over. Please quit by clicking X.");
         }
         return null;
@@ -123,13 +123,9 @@ public class GameEngine {
         return gameState.getInventory();
     }
     
-    public GameObject parseGoToCommand(String target) {
-        Message message = (Message) checkErrors(target);
-        if(!message.isOK()) {
-            return new Event("You can't go there");
-        } 
+    public GameObject parseGoToCommand(String target) {   
         GameObject specialEvent = checkForSpecialAreaCases(target);
-        if(specialEvent != null) {
+        if  (specialEvent != null) {
             return specialEvent;
         }
         Area area = areaParser.parseArea(target);   
@@ -150,8 +146,12 @@ public class GameEngine {
     }
     
     private GameObject checkForSpecialAreaCases(String target) {
-        if(target.equals("ENGINE_ROOM") && !gameState.getFlags().isEngineDoorOpen()) {
+        if (target.equals("ENGINE_ROOM") && !gameState.getFlags().isEngineDoorOpen()) {
             return new Event("The door is locked and looks very sturdy.");
+        } 
+        Message message = (Message) checkErrors(target);
+        if (!message.isOK()) {
+            return new Event("You can't go there");
         } 
         return null;
     }

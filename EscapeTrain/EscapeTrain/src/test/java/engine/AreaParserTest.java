@@ -1,9 +1,12 @@
+package engine;
+
 
 import com.mycompany.escapetrain.engine.AreaParser;
 import com.mycompany.escapetrain.gameobjects.area.Area;
 import java.io.IOException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -49,5 +52,21 @@ public class AreaParserTest {
         assertEquals("LUGGAGE_ROOM", expectedArea.getAreaName());
     }
     
+    @Test
+    public void getErrorRoomReturnsErrorRoom() {
+        Area errorRoom = parser.getErrorRoom();
+        assertEquals("ERROR_ROOM", errorRoom.getAreaName());
+    }
   
+    @Test
+    public void canGoToAreaReturnTrueWithValidInput() {
+        Area currentArea = new Area("LUGGAGE_ROOM", null,null,null);
+        assertTrue(parser.canGoToArea(currentArea, "CABIN"));
+    }
+    
+    @Test
+    public void hasItemReturnsTrueForValidInput() {
+        Area currentArea = new Area("CABIN", null,null,null);
+        assertTrue(parser.hasItem(currentArea, "pillow"));
+    }
 }

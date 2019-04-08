@@ -70,13 +70,6 @@ public class AreaParser {
         return firstArea;
     }
 
-    public Area getLastRoom() {
-        Area lastArea = new Area(appProps.getProperty("LAST_ROOM_AREANAME"), 
-            appProps.getProperty("LAST_ROOM_DESCRIPTION"), 
-            appProps.getProperty("LAST_ROOM_BORDER_AREAS"),
-            appProps.getProperty("LAST_ROOM_ITEMS"));
-        return lastArea;
-    }
     
     public Area getErrorRoom() {
         Area errorArea = new Area(appProps.getProperty("ERROR_ROOM_AREANAME"), 
@@ -86,7 +79,7 @@ public class AreaParser {
         return errorArea;
     }
 
-    boolean hasItem(Area currentArea, String target) {
+    public boolean hasItem(Area currentArea, String target) {
         String itemsInRoom = appProps.getProperty(currentArea.getAreaName().concat("_ITEMS"));
         return checkItemsInRoom(itemsInRoom, target);
        
@@ -101,5 +94,6 @@ public class AreaParser {
         }
         return false;
     }
+    
     
 }

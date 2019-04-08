@@ -27,18 +27,15 @@ public class Message implements GameObject {
         this.isOK = isOK;
     }
     
-    
-    
-    
     @Override
     public String getObjectType() {
         return "OK";
-      }
+    }
 
     @Override
     public void setObjectType(String type) {
         this.objectType = type;
-     }
+    }
     
     
     

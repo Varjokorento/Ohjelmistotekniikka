@@ -30,7 +30,7 @@ public class Inventory implements GameObject {
     }
 
     public void setItems(List<Item> items) {
-        for(Item item: items) {
+        for (Item item: items) {
             itemNames.add(item.getName());
         }
         this.items = items;
