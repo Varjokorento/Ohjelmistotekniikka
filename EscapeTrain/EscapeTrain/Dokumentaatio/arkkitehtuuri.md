@@ -20,9 +20,7 @@ Käyttöliittymä on pyritty eristämään sovelluslogiikasta, se ainoastaan kut
 
 ## Sovelluslogiikka
 
-
-
-Toiminnallisista kokonaisuuksista vastaa luokkan GameEngine ainoa olio. Luokka tarjoaa kaikille käyttäliittymän toiminnoille oman metodin. Näitä ovat esim.
+Toiminnallisista kokonaisuuksista vastaa luokkan GameEngine. 
 
 
 
