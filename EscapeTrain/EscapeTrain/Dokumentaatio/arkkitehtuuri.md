@@ -4,6 +4,8 @@
 
 Sovelluksen päätoiminnallisuus koostuu GameControllerista, joka kutsuuu pelimoottoria, joka on Java-luokka GameEngine. GameEngine ottaa käyttäjän syötteen, tekee sen perusteella päätöksiä ja palauttaa controllerille GameObject-luokan toteuttavan olion, joka on se, mitä käyttäjälle näytetään. 
 
+Sovelluksen lopullinen rakenne tulee hyödyntämään Parser-luokkia enemmän. Esimerkiksi kaikki tapahtumat käsiteltäisiin niin, että EventParser palauttaisi kaikki Event-tapahtumat. 
+
 ## Käyttöliittymä
 
 Käyttöliittymä sisältää kolme erillistä näkymää
@@ -24,21 +26,4 @@ Käyttöliittymä on pyritty eristämään sovelluslogiikasta, se ainoastaan kut
 ## Sovelluslogiikka
 
 Toiminnallisista kokonaisuuksista vastaa luokkan GameEngine. 
-
-## Tietojen pysyväistallennus
-
-
-### Tiedostot
-
-
-### Päätoiminnallisuudet
-
-
-#### Pelin pelaaminen
-
-
-
-## Ohjelman rakenteeseen jääneet heikkoudet
-
-
 
