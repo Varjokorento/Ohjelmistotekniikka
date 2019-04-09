@@ -21,7 +21,7 @@ Käyttöliittymä on pyritty eristämään sovelluslogiikasta, se ainoastaan kut
 
 ## Luokkakaavio
 
-![luokkakaavio][https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/EscapeTrain/EscapeTrain/Dokumentaatio/77507036.jpg]
+[luokkakaavio][https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/EscapeTrain/EscapeTrain/Dokumentaatio/77507036.jpg]
 
 ## Sovelluslogiikka
 
@@ -43,8 +43,5 @@ Toiminnallisista kokonaisuuksista vastaa luokkan GameEngine.
 
 ## Ohjelman rakenteeseen jääneet heikkoudet
 
-### käyttöliittymä
 
-
-### DAO-luokat
 
