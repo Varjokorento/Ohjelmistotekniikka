@@ -21,7 +21,7 @@ Käyttöliittymä on pyritty eristämään sovelluslogiikasta, se ainoastaan kut
 
 ## Luokkakaavio
 
-[luokkakaavio][https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/EscapeTrain/EscapeTrain/Dokumentaatio/77507036.jpg]
+<img src="https://raw.githubusercontent.com/Varjokorento/Ohjelmistotekniikka/master/EscapeTrain/EscapeTrain/Dokumentaatio/77507036.jpg" width="700">
 
 ## Sovelluslogiikka
 
