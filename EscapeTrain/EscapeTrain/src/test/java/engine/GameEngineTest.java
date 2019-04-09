@@ -11,8 +11,10 @@ import com.mycompany.escapetrain.engine.parsers.AreaParser;
 import com.mycompany.escapetrain.engine.parsers.CommandParser;
 import com.mycompany.escapetrain.engine.GameEngine;
 import com.mycompany.escapetrain.engine.gamestateutils.GameState;
+import com.mycompany.escapetrain.gameobjects.GameObject;
 import com.mycompany.escapetrain.gameobjects.area.Area;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import org.junit.Before;
 import org.junit.Test;
 import static org.mockito.Matchers.anyString;
@@ -39,6 +41,12 @@ public class GameEngineTest {
     public void init() {
         initMocks(this);
         this.engine = new GameEngine();
+    }
+    
+    @Test
+    public void parseCommandReturnsAreaWithNullFieldsForInvalidCOmmand() {
+        Area returnedObject = (Area) engine.parseCommand("INVALID COMMAND INVALID");
+        assertEquals(null, returnedObject.getAreaName());
     }
     
   /*  @Test

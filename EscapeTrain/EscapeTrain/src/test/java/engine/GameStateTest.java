@@ -8,6 +8,8 @@ package engine;
 import com.mycompany.escapetrain.engine.GameEngine;
 import com.mycompany.escapetrain.engine.gamestateutils.GameState;
 import com.mycompany.escapetrain.gameobjects.area.Area;
+import com.mycompany.escapetrain.gameobjects.inventory.Inventory;
+import com.mycompany.escapetrain.gameobjects.inventory.Item;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
@@ -51,7 +53,26 @@ public class GameStateTest {
         assertEquals("new_area", state.getCurrentArea().getAreaName());
     }
     
+    @Test
+    public void incrementingTurnsIncrementTurns() {
+        assertTrue(state.getTurns() == 0);
+        state.incrementTurns();
+        assertTrue(state.getTurns() == 1);
+    }
     
+    @Test
+    public void setTurnsSetsTurns() {
+       state.setTurns(10);
+       assertTrue(state.getTurns() == 10);
+    }
+    
+    @Test
+    public void isInInventoryReturnsTrueIfItemInInventory() {
+        Inventory inventory = new Inventory();
+        inventory.addItem(new Item("Test"));
+        state.setInventory(inventory);
+        assertTrue(state.isInInventory("Test"));
+    }
     
     
 }
