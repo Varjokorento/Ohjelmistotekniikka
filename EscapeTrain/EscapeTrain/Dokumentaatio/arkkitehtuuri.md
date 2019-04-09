@@ -2,9 +2,7 @@
 
 ## Rakenne
 
-Ohjelman rakenne noudattelee kolmitasoista kerrosarkkitehtuuria, ja koodin pakkausrakenne on seuraava:
-
-Pakkaus _todoapp.ui_ sisältää JavaFX:llä toteutetun käyttöliittymän _todoapp.domain_ sovelluslogiikan ja _todoapp.dao_ tietojen pysyväistallennuksesta vastaavan koodin.
+Sovelluksen päätoiminnallisuus koostuu GameControllerista, joka kutsuuu pelimoottoria, joka on Java-luokka GameEngine. GameEngine ottaa käyttäjän syötteen, tekee sen perusteella päätöksiä ja palauttaa controllerille GameObject-luokan toteuttavan olion, joka on se, mitä käyttäjälle näytetään. 
 
 ## Käyttöliittymä
 
@@ -26,7 +24,6 @@ Käyttöliittymä on pyritty eristämään sovelluslogiikasta, se ainoastaan kut
 ## Sovelluslogiikka
 
 Toiminnallisista kokonaisuuksista vastaa luokkan GameEngine. 
-
 
 ## Tietojen pysyväistallennus
 
