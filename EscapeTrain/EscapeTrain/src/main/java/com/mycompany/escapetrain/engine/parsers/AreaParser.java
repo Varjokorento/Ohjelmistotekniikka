@@ -88,7 +88,8 @@ public class AreaParser {
     private boolean checkItemsInRoom(String itemsInRoom, String target) {
         String[] itemList = itemsInRoom.split(",");
         for (String item : itemList) {
-            if (item.equals(target)) {
+            item = item.replaceAll("\\s","");
+            if (item.equalsIgnoreCase(target.trim())) {
                 return true;
             } 
         }

@@ -24,7 +24,11 @@ public class CommandParser {
         if (parts.length < 2) {
             return null;
         }
-        return parts[1];
+        String item = "";
+        for(int i=1; i < parts.length; i++) {
+            item = item.concat(parts[i]);
+        }
+        return item;
     }
     
 }

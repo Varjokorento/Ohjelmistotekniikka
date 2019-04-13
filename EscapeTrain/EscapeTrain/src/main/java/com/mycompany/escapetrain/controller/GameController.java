@@ -25,6 +25,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
@@ -50,13 +52,17 @@ public class GameController implements Initializable{
     
     @FXML
     private TextField commandInput;
+    
+    @FXML
+    private ImageView imageResolve;
+
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         this.engine = new GameEngine(); 
         try {
             engine.init();
-            //this.areas = GameDataProcessor.initializeAreas();
         } catch (IOException ex) {
             Logger.getLogger(GameController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -85,7 +91,10 @@ public class GameController implements Initializable{
     }
     
     private void updateDisplay(GameObject gameObject) {
-        if(gameObject.getObjectType().equals("AREA")) {
+        if(gameObject == null) {
+            displayNotAValidCommand();
+            displayCurrentRoom();
+        } else if(gameObject.getObjectType().equals("AREA")) {
             displayArea((Area) gameObject);
          } else if(gameObject.getObjectType().equals("ITEM")){
              displayItemEvent((InventoryMessage) gameObject);
@@ -136,6 +145,7 @@ public class GameController implements Initializable{
         text1.setStyle("-fx-font-weight: bold;");
         text5.setStyle("-fx-font-weight: bold;");
         text2.setFill(Color.BLACK);
+        //imageResolve.setImage(new Image("main/resources/assets/pictures/train.jpg"));
         areaStyling.setFill(locationColor);
         output.getChildren().addAll(text1, text5, text3, areaStyling, text4, itemStyling, text2, new Text("\n\n"));
     }
@@ -146,7 +156,7 @@ public class GameController implements Initializable{
        String[] items = itemsInRoom.split(",");
        for(String item : items) {
            if(!gameInventory.isItemInInventory(item)) {
-               itemsToBeDisplayed = itemsToBeDisplayed.concat("," + item);
+               itemsToBeDisplayed = itemsToBeDisplayed.concat(item + ", ");
            }
        }
        return itemsToBeDisplayed;

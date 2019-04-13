@@ -64,7 +64,7 @@ public class FXMLController implements Initializable {
         Stage stage = (Stage) label.getScene().getWindow();
         stage.setTitle("Tutorial"); 
         Pane myPane = null;
-        myPane = FXMLLoader.load(getClass().getResource("/fxml/credits.fxml"));
+        myPane = FXMLLoader.load(getClass().getResource("/fxml/tutorial.fxml"));
         Scene scene = new Scene(myPane);
         stage.setScene(scene);
         stage.show();

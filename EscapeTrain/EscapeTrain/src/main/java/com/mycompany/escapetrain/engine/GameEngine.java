@@ -9,6 +9,7 @@ import com.mycompany.escapetrain.gameobjects.GameObject;
 import com.mycompany.escapetrain.engine.gamestateutils.GameState;
 import com.mycompany.escapetrain.engine.parsers.CommandParser;
 import com.mycompany.escapetrain.engine.parsers.AreaParser;
+import com.mycompany.escapetrain.engine.parsers.EventHandler;
 import com.mycompany.escapetrain.gameobjects.events.Victory;
 import com.mycompany.escapetrain.gameobjects.area.Area;
 import com.mycompany.escapetrain.gameobjects.events.Event;
@@ -28,11 +29,13 @@ public class GameEngine {
     private CommandParser commandParser;
     private AreaParser areaParser;
     private GameState gameState;
+    private EventHandler eventHandler;
     
     public GameEngine() {
         this.commandParser = new CommandParser();
         this.areaParser = new AreaParser();
         this.gameState = new GameState();
+        this.eventHandler = new EventHandler();
     }
     
     public void init() throws IOException {
@@ -64,16 +67,14 @@ public class GameEngine {
             gameState.getFlags().setGameWon(true);
             return new Victory("You managed to stop the train! You have survived!");
         }    
-        if (!gameState.isInInventory(target)) {
+        if (!gameState.isInInventory(target)) {          
             return new Event("You don't have that on you!");
         }
         if (target.equalsIgnoreCase("pillow")) {
             gameState.getFlags().setEngineDoorOpen(true);
             return new Event("Something opened somewhere.");
         }
-      
         return new Event("Nothing happens.");
-        
     }
     
     

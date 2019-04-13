@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
-<StackPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="804.0" prefWidth="1379.0" style="-fx-background-color: #040d1b" styleClass="main" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.escapetrain.controller.GameController">
+<StackPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="804.0" prefWidth="1379.0" style="-fx-background-color: #040d1b" styleClass="main" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.escapetrain.controller.TutorialController">
  <children>
        <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="804.0" prefWidth="1379.0" style="-fx-fill: white;" styleClass="mainWindow" xmlns="http://javafx.com/javafx/2.2" xmlns:fx="http://javafx.com/fxml/1">
            <children>     
@@ -35,7 +35,7 @@
                    <content>
                        <TextFlow fx:id="output" prefHeight="396.0" prefWidth="523.0" style="-fx-fill: black;">
                      <children>
-                        <Text fill="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Espace Train! Press Enter or click Command to begin!">
+                        <Text fill="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Escape Train Tutorial! Write anything to start!">
                            <font>
                               <Font size="17.0" />
                            </font>
