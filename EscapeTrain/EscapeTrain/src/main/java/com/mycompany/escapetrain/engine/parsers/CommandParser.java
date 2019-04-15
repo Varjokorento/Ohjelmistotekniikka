@@ -25,7 +25,7 @@ public class CommandParser {
             return null;
         }
         String item = "";
-        for(int i=1; i < parts.length; i++) {
+        for (int i = 1; i < parts.length; i++) {
             item = item.concat(parts[i]);
         }
         return item;

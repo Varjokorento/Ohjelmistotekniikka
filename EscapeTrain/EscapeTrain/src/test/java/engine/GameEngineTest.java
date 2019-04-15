@@ -15,12 +15,10 @@ import com.mycompany.escapetrain.gameobjects.GameObject;
 import com.mycompany.escapetrain.gameobjects.area.Area;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
-import static org.mockito.Matchers.anyString;
 import org.mockito.Mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 /**
@@ -48,15 +46,18 @@ public class GameEngineTest {
         Area returnedObject = (Area) engine.parseCommand("INVALID COMMAND INVALID");
         assertEquals(null, returnedObject.getAreaName());
     }
+       
+    @Test
+    public void setTutorialModeSetsTutorial() {
+        engine.setTutorialMode();
+        assertTrue(engine.getGameState().isIsTutorial());
+    }
     
-  /*  @Test
-    public void parseGotoCommandReturnsARoomForValidCommand() {
-        String command = "GOTO CABIN";
-        engine.parseCommand(command);
-        when(commandParser.parseCommand(command)).thenReturn("GOTO");   
-        when(commandParser.parseTarget(command)).thenReturn("CABIN");
-        when(gameState.isError()).thenReturn(false);
-        verify(areaParser).parseArea(anyString());
-    }*/
+    @Test
+    public void getCurrentAreaGetCurrentArea() {
+        Area area = new Area("Test", null,null,null);
+        engine.getGameState().setCurrentArea(area);
+        assertEquals(area.getAreaName(), engine.getCurrentRoom().getAreaName());
+    }
     
 }

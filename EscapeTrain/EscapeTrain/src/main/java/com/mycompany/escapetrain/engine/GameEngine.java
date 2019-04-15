@@ -69,15 +69,11 @@ public class GameEngine {
         if (flagOutcomes != null) {
             return flagOutcomes;
         }
-        if(gameState.isIsTutorial() && gameState.getTurns() == 0) {
-            gameState.incrementTurns();
-            gameState.setCurrentArea(areaParser.getTutorialRoom());
-            return areaParser.getTutorialRoom();
+        if (gameState.isIsTutorial() && gameState.getTurns() == 0) {
+            return getStartTutorial();
         }
         if (gameState.getTurns() == 0) {
-            gameState.incrementTurns();
-            gameState.setCurrentArea(areaParser.getFirstRoom());
-            return areaParser.getFirstRoom();
+            return getFirstArea();
         }
         if (gameState.getTurns() == 50) {
             return gameOver();
@@ -87,6 +83,20 @@ public class GameEngine {
         }
         return null;
     }
+    
+    private GameObject getFirstArea() {
+        gameState.incrementTurns();
+        gameState.setCurrentArea(areaParser.getFirstRoom());
+        return areaParser.getFirstRoom();
+    }
+    
+    private GameObject getStartTutorial() {
+        gameState.incrementTurns();
+        gameState.setCurrentArea(areaParser.getTutorialRoom());
+        return areaParser.getTutorialRoom();
+    }
+    
+    
     
     private GameObject checkFlags() {
         if (gameState.getFlags().isGameOver() || gameState.getFlags().isGameWon()) {
@@ -166,4 +176,14 @@ public class GameEngine {
     public void setTutorialMode() {
         gameState.setIsTutorial(true);
     }
+
+    public GameState getGameState() {
+        return gameState;
+    }
+
+    public void setGameState(GameState gameState) {
+        this.gameState = gameState;
+    }
+    
+    
 }

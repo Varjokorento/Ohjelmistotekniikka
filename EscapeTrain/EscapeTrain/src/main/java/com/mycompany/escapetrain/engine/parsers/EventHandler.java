@@ -17,7 +17,7 @@ import com.mycompany.escapetrain.gameobjects.events.Event;
 public class EventHandler {
 
     public GameObject handleUsageEvent(String target, GameState gameState) {
-        if(gameState.isIsTutorial()) {
+        if (gameState.isIsTutorial()) {
             return handleTutorialEvent(target, gameState);
         }
         
@@ -37,7 +37,7 @@ public class EventHandler {
     }
     
     private GameObject handleTutorialEvent(String target, GameState gameState) {
-        if(target.equalsIgnoreCase("lever") && gameState.getCurrentArea().getAreaName().equals("NEXT_ROOM")) {
+        if (target.equalsIgnoreCase("lever") && gameState.getCurrentArea().getAreaName().equals("NEXT_ROOM")) {
             return new Event("You have managed to finish the tutorial! Now press back button and start the game!");
         } else {
             return new Event("Absolutely nothing happens");
