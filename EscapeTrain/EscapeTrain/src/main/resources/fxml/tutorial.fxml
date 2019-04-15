@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
-<StackPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="804.0" prefWidth="1379.0" style="-fx-background-color: #040d1b" styleClass="main" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.escapetrain.controller.TutorialController">
+<StackPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="804.0" prefWidth="1379.0" style="-fx-background-color: #040d1b" styleClass="main" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.escapetrain.controller.GameController">
  <children>
        <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="804.0" prefWidth="1379.0" style="-fx-fill: white;" styleClass="mainWindow" xmlns="http://javafx.com/javafx/2.2" xmlns:fx="http://javafx.com/fxml/1">
            <children>     
@@ -19,6 +19,7 @@
                        <Font name="System Bold" size="30.0" />
                    </font>
                </Label>
+               <Button layoutX="76.0" layoutY="10.0" text="Exit" onAction="#handleBackButtonAction" fx:id="backCredits" />
                <ScrollPane fx:id="inventoryScroll" layoutX="607.0" layoutY="518.0" prefHeight="286" prefWidth="250">
                   <content>
                   <TextFlow fx:id="inventory" layoutX="607.0" layoutY="518.0" prefHeight="286.0" prefWidth="250.0" />

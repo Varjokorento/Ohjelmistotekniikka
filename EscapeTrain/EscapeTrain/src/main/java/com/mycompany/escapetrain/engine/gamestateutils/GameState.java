@@ -17,6 +17,7 @@ public class GameState {
     private Inventory inventory;
     private int turns;
     private boolean error;
+    private boolean isTutorial;
     private FlagStates flagStates;
     
     public GameState() {
@@ -51,6 +52,24 @@ public class GameState {
     public int getTurns() {
         return turns;
     }
+
+    public boolean isIsTutorial() {
+        return isTutorial;
+    }
+
+    public void setIsTutorial(boolean isTutorial) {
+        this.isTutorial = isTutorial;
+    }
+
+    public FlagStates getFlagStates() {
+        return flagStates;
+    }
+
+    public void setFlagStates(FlagStates flagStates) {
+        this.flagStates = flagStates;
+    }
+    
+    
 
     public void setTurns(int turns) {
         this.turns = turns;

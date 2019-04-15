@@ -10,10 +10,8 @@ import com.mycompany.escapetrain.engine.gamestateutils.GameState;
 import com.mycompany.escapetrain.engine.parsers.CommandParser;
 import com.mycompany.escapetrain.engine.parsers.AreaParser;
 import com.mycompany.escapetrain.engine.parsers.EventHandler;
-import com.mycompany.escapetrain.gameobjects.events.Victory;
 import com.mycompany.escapetrain.gameobjects.area.Area;
 import com.mycompany.escapetrain.gameobjects.events.Event;
-import com.mycompany.escapetrain.gameobjects.events.GameOver;
 import com.mycompany.escapetrain.gameobjects.inventory.Inventory;
 import com.mycompany.escapetrain.gameobjects.inventory.InventoryMessage;
 import com.mycompany.escapetrain.gameobjects.inventory.Item;
@@ -62,19 +60,7 @@ public class GameEngine {
     }
     
     public GameObject parseUseCommand(String target) {
-        if (target.equalsIgnoreCase("lever") 
-                && gameState.getCurrentArea().getAreaName().equals("ENGINE_ROOM")) {
-            gameState.getFlags().setGameWon(true);
-            return new Victory("You managed to stop the train! You have survived!");
-        }    
-        if (!gameState.isInInventory(target)) {          
-            return new Event("You don't have that on you!");
-        }
-        if (target.equalsIgnoreCase("pillow")) {
-            gameState.getFlags().setEngineDoorOpen(true);
-            return new Event("Something opened somewhere.");
-        }
-        return new Event("Nothing happens.");
+        return eventHandler.handleUsageEvent(target, gameState);
     }
     
     
@@ -82,6 +68,11 @@ public class GameEngine {
         GameObject flagOutcomes = checkFlags();
         if (flagOutcomes != null) {
             return flagOutcomes;
+        }
+        if(gameState.isIsTutorial() && gameState.getTurns() == 0) {
+            gameState.incrementTurns();
+            gameState.setCurrentArea(areaParser.getTutorialRoom());
+            return areaParser.getTutorialRoom();
         }
         if (gameState.getTurns() == 0) {
             gameState.incrementTurns();
@@ -106,7 +97,7 @@ public class GameEngine {
     
     
     private GameObject gameOver() {
-        Event event = new GameOver();
+        Event event = new Event();
         event.setEventMessage("Game over. You lost. Press X to quit. Thank you for playing!");
         return event;
     }
@@ -170,5 +161,9 @@ public class GameEngine {
             return gameState.getCurrentArea();
         }
         return new Message(true);
+    }
+
+    public void setTutorialMode() {
+        gameState.setIsTutorial(true);
     }
 }

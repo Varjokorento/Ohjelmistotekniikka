@@ -63,6 +63,9 @@ public class GameController implements Initializable{
         this.engine = new GameEngine(); 
         try {
             engine.init();
+            if(location.toString().contains("tutorial")) {
+                engine.setTutorialMode();
+            }
         } catch (IOException ex) {
             Logger.getLogger(GameController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -137,7 +140,10 @@ public class GameController implements Initializable{
         Text text3 = new Text("Adjacent areas: ");
         Text text4 = new Text("Items in room: ");
         Text areaStyling = new Text(displayedArea.getSurroundingAreas() + "\n\n");
-        String filteredItems = filterItems(displayedArea.getItemsInRoom());
+        String filteredItems = "";
+        if(displayedArea.getItemsInRoom() != null) {
+        filteredItems = filterItems(displayedArea.getItemsInRoom());
+        }
         Text itemStyling = new Text(filteredItems + "\n\n");
         Text text5 = new Text(displayedArea.getAreaName() + "\n\n");
         Text text2 = new Text(displayedArea.getDescription() + "\n\n");

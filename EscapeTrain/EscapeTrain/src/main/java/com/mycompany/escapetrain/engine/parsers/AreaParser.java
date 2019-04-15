@@ -78,6 +78,14 @@ public class AreaParser {
             appProps.getProperty("ERROR_ROOM_ITEMS"));
         return errorArea;
     }
+    
+    public Area getTutorialRoom() {
+        Area tutorialArea = new Area(appProps.getProperty("TUTORIAL_ROOM_AREANAME"), 
+            appProps.getProperty("TUTORIAL_ROOM_DESCRIPTION"), 
+            appProps.getProperty("TUTORIAL_ROOM_BORDER_AREAS"),
+            appProps.getProperty("TUTORIAL_ROOM_ITEMS"));
+        return tutorialArea;
+    }
 
     public boolean hasItem(Area currentArea, String target) {
         String itemsInRoom = appProps.getProperty(currentArea.getAreaName().concat("_ITEMS"));
