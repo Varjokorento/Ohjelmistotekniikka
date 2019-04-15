@@ -11,5 +11,5 @@
 | 9.4   | 2    | Testejä ja dokumentaation tekemistä |
 | 13.4  | 3    |Tutoriaalin rakentamista. Bugien korjaamista.
 | 15.4  | 3    |Tutoriaali valmis. Testejä ja refaktorointia.|
-| Summa:| 21  |
+| Summa:| 24  |
 
