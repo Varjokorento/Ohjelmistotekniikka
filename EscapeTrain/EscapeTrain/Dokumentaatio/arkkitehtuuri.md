@@ -25,5 +25,13 @@ Käyttöliittymä on pyritty eristämään sovelluslogiikasta, se ainoastaan kut
 
 ## Sovelluslogiikka
 
-Toiminnallisista kokonaisuuksista vastaa luokkan GameEngine. 
+Toiminnallisista kokonaisuuksista vastaa luokkan GameEngine. GameEngine saa käyttäjän kirjoittaman käskyn ja sen perusteella näyttää muuttuneen tilanteen käyttäjälle. 
+
+Seuraavaksi käskyjen GOTO, TAKE ja USE sekvenssikaaviot:
+
+### GOTO-KÄSKY
+
+### TAKE-KÄSKY
+
+### USE-KÄSKY
 
