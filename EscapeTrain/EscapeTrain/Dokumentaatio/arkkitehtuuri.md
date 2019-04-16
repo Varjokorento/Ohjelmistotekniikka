@@ -33,7 +33,7 @@ Seuraavaksi käskyjen GOTO, TAKE ja USE sekvenssikaaviot:
 <img src="https://raw.githubusercontent.com/Varjokorento/Ohjelmistotekniikka/master/EscapeTrain/EscapeTrain/Dokumentaatio/GOTO%20SEQUENCE%20(1).png" width="700">
 
 ### TAKE-KÄSKY
-<img src="https://raw.githubusercontent.com/Varjokorento/Ohjelmistotekniikka/master/EscapeTrain/EscapeTrain/Dokumentaatio/GOTO%20SEQUENCE%20(1).png" width="700">
+<img src="https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/EscapeTrain/EscapeTrain/Dokumentaatio/TAKE%20%20ITEM%20SEQUENCE.png" width="700">
 
 ### USE-KÄSKY
-<img src="https://raw.githubusercontent.com/Varjokorento/Ohjelmistotekniikka/master/EscapeTrain/EscapeTrain/Dokumentaatio/GOTO%20SEQUENCE%20(1).png" width="700">
+<img src="https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/EscapeTrain/EscapeTrain/Dokumentaatio/USE%20TARGET%20SEQUENCE.png" width="700">
