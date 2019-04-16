@@ -10,5 +10,6 @@
 | 8.4   | 3    | Pelin rautalankamalli valmis. |
 | 9.4   | 2    | Testejä ja dokumentaation tekemistä |
 | 13.4  | 3    |Tutoriaalin rakentamista. Bugien korjaamista.
-| Summa:| 21  |
+| 15.4  | 3    |Tutoriaali valmis. Testejä ja refaktorointia.|
+| Summa:| 24  |
 

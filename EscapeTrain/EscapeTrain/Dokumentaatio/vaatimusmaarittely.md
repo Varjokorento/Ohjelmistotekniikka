@@ -26,7 +26,8 @@ Pelaajalle näkyy hänen esineensä, yksinkertainen kuva sekä kartta, missä pe
 
 ### Tutoriaali
 
-Tässä vaiheessa tarkoitus on luoda vain näkymä, jossa on pelin ohjeet. Myöhemmässä vaiheessa tarkoitus olisi saada kokeilutaso pelille.
+Pelissä on hyvin lyhyt tutoriaaliosa, jossa pelaaja voi kokeilla pelin kolmea käskyä, eli GOTO, TAKE ja USE käskyjä. Tutoriaalin pääsee 
+päävalikosta. 
 
 ### Credits
 
@@ -41,5 +42,4 @@ Näkymä lopputeksteistä, kun pelin voitto on saavutettu. Lopputeksteissä on t
 Perusversion jälkeen järjestelmää täydennetään ajan salliessa esim. seuraavilla toiminnallisuuksilla
 
 - Pelaajan tilanteen tallentaminen
-- Tutoriaalitason luominen
 - Äänimaailman lisääminen
