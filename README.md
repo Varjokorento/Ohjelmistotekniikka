@@ -4,8 +4,7 @@ Sovelluksen tarkoitus on olla pelattava seikkailupeli nimeltä "Escape Train." P
 
 ## Releaset
 
-[v.1.0]
-(https://github.com/Varjokorento/Ohjelmistotekniikka/releases/tag/v1.0)
+[v.1.0](https://github.com/Varjokorento/Ohjelmistotekniikka/releases/tag/v1.0)
 
 ## Dokumentaatio
 
@@ -44,8 +43,9 @@ mvn jxr:jxr checkstyle:checkstyle
 
 ### Jar-tiedoston luonti
 
-Jar-tiedosto luodaan komennolla
+Jar-tiedosto luodaan komennolla. Ajaminen täytyy tehdä Java 8 -versiolla. 
 
-...
+
+```
 mvn package
-...
+```
