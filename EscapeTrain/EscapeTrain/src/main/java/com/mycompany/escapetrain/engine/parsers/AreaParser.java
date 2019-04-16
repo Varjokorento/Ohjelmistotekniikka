@@ -9,6 +9,7 @@ import com.mycompany.escapetrain.gameobjects.area.Area;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 /**
@@ -24,8 +25,8 @@ public class AreaParser {
     }
     
     public void init() throws FileNotFoundException, IOException {
-        String appConfigPath = "./src/main/resources/area.properties";
-        appProps.load(new FileInputStream(appConfigPath));
+        InputStream input = AreaParser.class.getClassLoader().getResourceAsStream("area.properties");
+        appProps.load(input);
     }
 
     
