@@ -76,6 +76,12 @@ public class FXMLController implements Initializable {
         stage.show();
     }
     
+    @FXML
+    private void handleExitButtonAction(ActionEvent event) {
+        Stage stage = (Stage) label.getScene().getWindow();
+        stage.close();
+    }
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

@@ -41,6 +41,11 @@ public class Inventory implements GameObject {
         this.itemNames.add(item.getName());
     }
     
+    public void addItem(String item) {
+        this.items.add(new Item(item));
+        this.itemNames.add(item);
+    }
+    
     public void removeItem(String itemName) {
         Item item = new Item(itemName);
         if (this.items.contains(item)) {

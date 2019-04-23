@@ -14,14 +14,25 @@ public class FlagStates {
     private boolean windowOpen;
     private boolean gameOver;
     private boolean gameWon;
+    private boolean dynamiteSet;
 
     public FlagStates() {
         this.engineDoorOpen = false;
         this.windowOpen = false;
     }
+    
 
     public boolean isEngineDoorOpen() {
         return engineDoorOpen;
+    }
+
+    public boolean isDynamiteSet() {
+        return dynamiteSet;
+    }
+   
+    
+    public void setDynamiteSet(boolean dynamiteSet) {
+        this.dynamiteSet = dynamiteSet;
     }
 
     public void setEngineDoorOpen(boolean engineDoorOpen) {
