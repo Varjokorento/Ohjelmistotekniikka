@@ -6,7 +6,6 @@
 package com.mycompany.escapetrain.engine.parsers;
 
 import com.mycompany.escapetrain.gameobjects.area.Area;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;

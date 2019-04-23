@@ -4,14 +4,36 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<StackPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="804.0" prefWidth="1379.0" style="-fx-background-color: #040d1b" styleClass="main" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.escapetrain.controller.CreditsController">
-<children> 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320">
-    <children>
-        <Label layoutX="400" layoutY="10" minHeight="16" minWidth="69" fx:id="credits" />
-        <Label layoutX="400" layoutY="10" minHeight="16" maxWidth="10" minWidth="70" fx:id="creditsText"/> 
-        <Button layoutX="400" layoutY="40" text="Exit" onAction="#handleBackButtonAction" fx:id="backCredits" />
-    </children>
-</AnchorPane>
-</children>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<StackPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="804.0" prefWidth="1379.0" style="-fx-background-color: #040d1b" styleClass="main" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.escapetrain.controller.CreditsController">
+ <children>
+       <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="804.0" prefWidth="1379.0" style="-fx-fill: white;" styleClass="mainWindow" xmlns="http://javafx.com/javafx/2.2" xmlns:fx="http://javafx.com/fxml/1">
+           <children>     
+                <ImageView fx:id="ImageResolve" fitHeight="460" fitWidth="751.0" layoutX="607.0" layoutY="14.0" pickOnBounds="true" preserveRatio="false">
+                   <image>
+                   </image>
+               </ImageView>
+               <Label layoutX="176.0" layoutY="-20.0" prefHeight="106.0" prefWidth="368.0" text="ESCAPE TRAIN" textFill="#dfdfdf">
+                   <font>
+                       <Font name="System Bold" size="30.0" />
+                   </font>
+               </Label>
+               <Button layoutX="76.0" layoutY="10.0" text="Exit" onAction="#handleBackButtonAction" fx:id="backCredits" />
+               <ScrollPane fx:id="Scroll" layoutX="24.0" layoutY="67.0" prefHeight="634.0" prefWidth="545.0" visible="true">
+                   <content>
+                       <TextFlow fx:id="output" prefHeight="396.0" prefWidth="523.0" style="-fx-fill: black;">
+                     <children>
+                        <Text fill="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="This game was made with Java 8. The GUI uses JavaFX. The IDE used was Netbeans with TMC 1.2.1. All content by Varjokorento (https://github.com/Varjokorento)">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </TextFlow>
+                   </content>
+               </ScrollPane>        
+           </children>
+       </AnchorPane>
+   </children>
 </StackPane>

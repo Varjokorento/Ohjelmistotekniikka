@@ -48,12 +48,6 @@ public class FXMLController implements Initializable {
         stage.setTitle("Credits"); 
         Pane myPane = null;
         myPane = FXMLLoader.load(getClass().getResource("/fxml/credits.fxml"));
-        ObservableList<Node> nodes = myPane.getChildren();
-        AnchorPane anchorPane = (AnchorPane) nodes.get(0);
-        ObservableList<Node> anchorPaneNodes = anchorPane.getChildren();
-        Label creditsText = (Label) anchorPaneNodes.get(1);
-        creditsText.setWrapText(true);
-        creditsText.setText("test test test test test testtest test  test test testtest test ");
         Scene scene = new Scene(myPane);
         stage.setScene(scene);
         stage.show();
