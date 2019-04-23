@@ -5,17 +5,19 @@
  */
 package com.mycompany.escapetrain.gameobjects.inventory;
 
+import java.util.Objects;
+
 /**
  *
  * @author Administrator
  */
 public class Item {
     private String name; 
+    private Boolean hasBeenUsed;
 
     public Item(String name) {
         this.name = name;
     }
-    
    
 
     public String getName() {
@@ -26,5 +28,25 @@ public class Item {
         this.name = name;
     }
     
+    public Boolean getHasBeenUsed() {
+        return hasBeenUsed;
+    }
+
+    public void setHasBeenUsed(Boolean hasBeenUsed) {
+        this.hasBeenUsed = hasBeenUsed;
+    }
+    
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Item item = (Item) o;
+        return Objects.equals(name, item.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
+    }
     
 }

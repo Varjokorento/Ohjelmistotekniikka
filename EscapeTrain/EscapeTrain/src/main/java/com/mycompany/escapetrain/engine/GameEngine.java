@@ -115,7 +115,7 @@ public class GameEngine {
     public InventoryMessage parseTakeCommand(String target) {
         InventoryMessage invmessage = new InventoryMessage();
         String message = "Error has occurred";
-        if (areaParser.hasItem(gameState.getCurrentArea(), target)) {
+        if (areaParser.hasItem(gameState.getCurrentArea(), target) && gameState.getInventory().isItemInInventory(target) == false) {
             message = "You picked up " + target;
             gameState.getInventory().addItem(new Item(target));
         } else {
@@ -129,6 +129,10 @@ public class GameEngine {
         return gameState.getInventory();
     }
     
+    public boolean hasBeenPicked(String name) {
+        return gameState.getInventory().hasBeenPicked(name);
+    }
+    
     public GameObject parseGoToCommand(String target) {   
         GameObject specialEvent = checkForSpecialAreaCases(target);
         if  (specialEvent != null) {
@@ -136,15 +140,14 @@ public class GameEngine {
         }
         Area area = areaParser.parseArea(target);   
         if (area == null) {
-            gameState.setError(true); 
-            return areaParser.getErrorRoom(); 
+            return eventHandler.handleInvalidGoToCommand();
         }
         if (areaParser.canGoToArea(gameState.getCurrentArea(), area.getAreaName())) {
             gameState.setCurrentArea(area);
             gameState.incrementTurns();
             return gameState.getCurrentArea(); 
         }
-        return areaParser.getErrorRoom();
+        return eventHandler.handleInvalidGoToCommand();
     }
     
     public Area getCurrentRoom() {

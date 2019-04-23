@@ -161,7 +161,7 @@ public class GameController implements Initializable{
        String itemsToBeDisplayed ="";
        String[] items = itemsInRoom.split(",");
        for(String item : items) {
-           if(!gameInventory.isItemInInventory(item)) {
+           if(!gameInventory.isItemInInventory(item) &&  gameInventory.hasBeenPicked(item) == false) {
                itemsToBeDisplayed = itemsToBeDisplayed.concat(item + ", ");
            }
        }
@@ -171,7 +171,7 @@ public class GameController implements Initializable{
     private void updateInventoryView() {
         Inventory gameInventory = engine.getInventoryState();
         inventory.getChildren().clear();
-        for (Item item : gameInventory.getItems()) {
+        for (Item item : gameInventory.getItems()) {   
             inventory.getChildren().addAll(new Text(item.getName()+"\n"));
         }
     }

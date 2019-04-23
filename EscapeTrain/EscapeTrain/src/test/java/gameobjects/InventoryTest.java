@@ -38,14 +38,14 @@ public class InventoryTest {
     @Test
     public void removingItemRemovesItem() {
         inventory.addItem(item);
-        inventory.removeItem(item);
+        inventory.removeItem("Test");
         assertFalse(inventory.isItemInInventory("Test"));
     }
     
     @Test
     public void removingNonExistingItemDoesNothing() {
         inventory.addItem(item);
-        inventory.removeItem(new Item("New"));
+        inventory.removeItem("New");
         assertTrue(inventory.isItemInInventory("Test"));
     }
     

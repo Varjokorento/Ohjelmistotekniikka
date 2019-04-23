@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  *
@@ -57,7 +58,10 @@ public class AreaParser {
         return null;
     }
     
-    public Boolean canGoToArea(Area currentArea, String targetArea) {     
+    public Boolean canGoToArea(Area currentArea, String targetArea) {    
+        if(currentArea == null || targetArea == null || currentArea.getAreaName() == null) {
+            return false;
+        }
         String borderingAreas = appProps.getProperty(currentArea.getAreaName().concat("_BORDER_AREAS"));
         return borderingAreas.contains(targetArea);
     }

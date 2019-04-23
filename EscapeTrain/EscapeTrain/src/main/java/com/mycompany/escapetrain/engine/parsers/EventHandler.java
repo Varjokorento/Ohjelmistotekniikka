@@ -31,6 +31,7 @@ public class EventHandler {
         }
         if (target.equalsIgnoreCase("pillow")) {
             gameState.getFlags().setEngineDoorOpen(true);
+            gameState.getInventory().removeItem("pillow");
             return new Event("Something opened somewhere.");
         }
         return new Event("Nothing happens.");
@@ -42,6 +43,10 @@ public class EventHandler {
         } else {
             return new Event("Absolutely nothing happens");
         }
+    }
+    
+    public GameObject handleInvalidGoToCommand() {
+        return new Event("Can't go there.");
     }
     
 }
