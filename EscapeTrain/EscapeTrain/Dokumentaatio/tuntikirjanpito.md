@@ -12,5 +12,6 @@
 | 13.4  | 3    |Tutoriaalin rakentamista. Bugien korjaamista.
 | 15.4  | 3    |Tutoriaali valmis. Testejä ja refaktorointia.|
 | 16.4  | 2    |Resurssien lataamisen korjaus niin, että jar-tiedosto saa oikean polun. |
-| Summa:| 26  |
+| 23.4  | 2    |Bugien korjaamista. Koodikatselmuksen kommenttien myötä refaktorointia. |
+| Summa:| 28  |
 
