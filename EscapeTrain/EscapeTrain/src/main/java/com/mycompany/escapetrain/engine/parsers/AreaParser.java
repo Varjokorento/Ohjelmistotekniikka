@@ -59,7 +59,7 @@ public class AreaParser {
     }
     
     public Boolean canGoToArea(Area currentArea, String targetArea) {    
-        if(currentArea == null || targetArea == null || currentArea.getAreaName() == null) {
+        if (currentArea == null || targetArea == null || currentArea.getAreaName() == null) {
             return false;
         }
         String borderingAreas = appProps.getProperty(currentArea.getAreaName().concat("_BORDER_AREAS"));

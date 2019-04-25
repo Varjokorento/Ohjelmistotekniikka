@@ -38,10 +38,10 @@ public class EventHandler {
         }
         
         if (target.equalsIgnoreCase("dynamite") && gameState.getCurrentArea().getAreaName().equals("STAFF_QUARTERS")) {
-           return this.useDynamite(gameState);
+            return this.useDynamite(gameState);
         }       
         
-        if(target.equals("matches")) {
+        if (target.equals("matches")) {
             return this.useMatches(gameState);
         }
         if (target.equalsIgnoreCase("pillow")) {
