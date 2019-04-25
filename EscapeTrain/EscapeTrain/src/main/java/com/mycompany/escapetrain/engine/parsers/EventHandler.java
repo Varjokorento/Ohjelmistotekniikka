@@ -21,12 +21,18 @@ public class EventHandler {
         if (gameState.isIsTutorial()) {
             return handleTutorialEvent(target, gameState);
         }
-        
         if (target.equalsIgnoreCase("lever") 
                 && gameState.getCurrentArea().getAreaName().equals("ENGINE_ROOM")) {
             gameState.getFlags().setGameWon(true);
             return  new Event("You managed to stop the train! You have survived!");
         }    
+        
+        return handleItemEvent(target, gameState);
+        
+    }
+    
+    private GameObject handleItemEvent(String target, GameState gameState) {
+        
         if (!gameState.isInInventory(target)) {          
             return new Event("You don't have that on you!");
         }
@@ -38,8 +44,6 @@ public class EventHandler {
         if(target.equals("matches")) {
             return this.useMatches(gameState);
         }
-        
-     
         if (target.equalsIgnoreCase("pillow")) {
             return this.usePillow(gameState);
         }
