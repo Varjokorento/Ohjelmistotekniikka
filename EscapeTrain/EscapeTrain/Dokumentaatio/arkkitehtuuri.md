@@ -4,11 +4,11 @@
 
 Sovelluksen päätoiminnallisuus koostuu GameControllerista, joka kutsuuu pelimoottoria, joka on Java-luokka GameEngine. GameEngine ottaa käyttäjän syötteen, tekee sen perusteella päätöksiä ja palauttaa controllerille GameObject-luokan toteuttavan olion, joka on se, mitä käyttäjälle näytetään. 
 
-Sovelluksen lopullinen rakenne tulee hyödyntämään Parser-luokkia enemmän. Esimerkiksi kaikki tapahtumat käsiteltäisiin niin, että EventParser palauttaisi kaikki Event-tapahtumat. 
+GameEngine on yhteydessä AreaParseriin, EventHandleriin sekä CommandParseriin. Pelin tiedot, inventaario sekä tapahtuneet tapahtumat, säilötään ja kutsutaan GameState-olion kautta. 
 
 ## Käyttöliittymä
 
-Käyttöliittymä sisältää kolme erillistä näkymää
+Käyttöliittymä sisältää neljä erillistä näkymää
 - pelinäkymä
 - tutoriaalinäkymä
 - credits
@@ -25,15 +25,23 @@ Käyttöliittymä on pyritty eristämään sovelluslogiikasta, se ainoastaan kut
 
 ## Sovelluslogiikka
 
-Toiminnallisista kokonaisuuksista vastaa luokkan GameEngine. GameEngine saa käyttäjän kirjoittaman käskyn ja sen perusteella näyttää muuttuneen tilanteen käyttäjälle. 
+Sovellus toimii siten, että käyttäjä syöttää kaksisanaisen käskyn käyttöliittymän komentoriville. Tämän käskyn käsittelee GameEngine, joka lopulta palauttaa GameObject-rajapinnan toteuttavan objektin käyttöliittymälle ja käyttöliittymä näyttää tämän perusteella tapahtuman.
+
+Käskyjä on kolmenlaisia: GOTO, TAKE ja USE
 
 Seuraavaksi käskyjen GOTO, TAKE ja USE sekvenssikaaviot:
 
 ### GOTO-KÄSKY
 <img src="https://raw.githubusercontent.com/Varjokorento/Ohjelmistotekniikka/master/EscapeTrain/EscapeTrain/Dokumentaatio/GOTO%20SEQUENCE%20(1).png" width="700">
 
+GOTO AREA-käsky tarkastaa voiko paikkaan mennä ja sitten palauttaa käyttöliittymälle sen paikan, mihin pelaaja siirtyy. 
+
 ### TAKE-KÄSKY
 <img src="https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/EscapeTrain/EscapeTrain/Dokumentaatio/TAKE%20%20ITEM%20SEQUENCE.png" width="700">
 
+TAKE ITEM -käsky tarkistaa onko kyseistä tavaraa huoneessa ja sen jälkeen lisää sen käyttäjän inventaarioon, jos mahdollista. 
+
 ### USE-KÄSKY
 <img src="https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/EscapeTrain/EscapeTrain/Dokumentaatio/USE%20TARGET%20SEQUENCE.png" width="700">
+
+USE ITEM -käsky tarkistaa käskyn toteutettavuuden (eli onko pelaaja esimerkiksi tietyssä huoneessa ja onko hänellä tietty esine) jonka jälkeen palauttaa USE -käskyyn liittyvän eventin, jonka käyttöliittymä näyttää. 
