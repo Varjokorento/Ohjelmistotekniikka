@@ -19,7 +19,9 @@ import com.mycompany.escapetrain.gameobjects.message.Message;
 import java.io.IOException;
 
 /**
- *
+ * The engine of the game. 
+ * All commands and events go from here 
+ * and all events and object to the controller come from here.
  * @author Administrator
  */
 public class GameEngine {
@@ -35,10 +37,19 @@ public class GameEngine {
         this.gameState = new GameState();
         this.eventHandler = new EventHandler();
     }
-    
+    /**
+     * Initializes areaparse that uses properties files
+     * @throws IOException 
+     */
     public void init() throws IOException {
         areaParser.init();
     }
+    
+    /**
+     * Parses user commands and returns either events or areas based on the commands
+     * @param input
+     * @return GameObject
+     */
     
     public GameObject parseCommand(String input) {
         GameObject gameObject = this.checkSpecialCasesAndErrors(input);
@@ -59,12 +70,12 @@ public class GameEngine {
       
     }
     
-    public GameObject parseUseCommand(String target) {
+    private GameObject parseUseCommand(String target) {
         return eventHandler.handleUsageEvent(target, gameState);
     }
     
     
-    public GameObject checkSpecialCasesAndErrors(String input) {
+    private GameObject checkSpecialCasesAndErrors(String input) {
         GameObject flagOutcomes = checkFlags();
         if (flagOutcomes != null) {
             return flagOutcomes;
@@ -111,8 +122,8 @@ public class GameEngine {
         event.setEventMessage("Game over. You lost. Press X to quit. Thank you for playing!");
         return event;
     }
-    
-    public InventoryMessage parseTakeCommand(String target) {
+     
+    private InventoryMessage parseTakeCommand(String target) {
         InventoryMessage invmessage = new InventoryMessage();
         String message = "Error has occurred";
         if (areaParser.hasItem(gameState.getCurrentArea(), target) && gameState.getInventory().isItemInInventory(target) == false) {
@@ -125,15 +136,25 @@ public class GameEngine {
         return invmessage;
     }
     
+    /**
+     * Returns the current inventory state
+     * @return Inventory
+     */
     public Inventory getInventoryState() {
         return gameState.getInventory();
     }
+    
+    /**
+     * Returns boolean on whether an item has been picked in the game already. True if has.
+     * @param name
+     * @return boolean
+     */
     
     public boolean hasBeenPicked(String name) {
         return gameState.getInventory().hasBeenPicked(name);
     }
     
-    public GameObject parseGoToCommand(String target) {   
+    private GameObject parseGoToCommand(String target) {   
         GameObject specialEvent = checkForSpecialAreaCases(target);
         if  (specialEvent != null) {
             return specialEvent;
@@ -149,6 +170,10 @@ public class GameEngine {
         }
         return eventHandler.handleInvalidGoToCommand();
     }
+    /**
+     * Returns current room
+     * @return current room
+     */
     
     public Area getCurrentRoom() {
         return gameState.getCurrentArea();
@@ -176,14 +201,26 @@ public class GameEngine {
         return new Message(true);
     }
 
+    /**
+     * Sets tutorial mode
+     */
     public void setTutorialMode() {
         gameState.setIsTutorial(true);
     }
+    
+    /**
+     * returns current game state
+     * @return GameState
+     */
 
     public GameState getGameState() {
         return gameState;
     }
 
+    /**
+     * sets current gamestate
+     * @param gameState 
+     */
     public void setGameState(GameState gameState) {
         this.gameState = gameState;
     }

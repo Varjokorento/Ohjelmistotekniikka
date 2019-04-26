@@ -14,7 +14,6 @@ import com.mycompany.escapetrain.gameobjects.inventory.InventoryMessage;
 import com.mycompany.escapetrain.gameobjects.inventory.Item;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,7 +24,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -34,7 +32,7 @@ import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
 /**
- *
+ * The controller for the game view.
  * @author Administrator
  */
 public class GameController implements Initializable{

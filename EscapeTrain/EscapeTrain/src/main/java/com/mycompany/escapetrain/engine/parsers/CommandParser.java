@@ -6,7 +6,7 @@
 package com.mycompany.escapetrain.engine.parsers;
 
 /**
- *
+ * Command parser that parses user inputs
  * @author Administrator
  */
 public class CommandParser {
@@ -14,10 +14,22 @@ public class CommandParser {
     public CommandParser() {
     }
     
+    /**
+     * Parses the command part of the command. For example GOTO AREA -> return "GOTO" command
+     * @param commandToBeParsed
+     * @return command
+     */
+    
     public String parseCommand(String commandToBeParsed) {
         String[] parts = commandToBeParsed.split(" ");
         return parts[0];
     }
+    
+    /**
+     * Parses the target part of the command. For example GOTO AREA -> return AREA target. 
+     * @param commandToBeParsed
+     * @return target
+     */
             
     public String parseTarget(String commandToBeParsed) {
         String[] parts = commandToBeParsed.split(" ");

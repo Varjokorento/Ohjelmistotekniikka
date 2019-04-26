@@ -9,13 +9,20 @@ import com.mycompany.escapetrain.engine.gamestateutils.GameState;
 import com.mycompany.escapetrain.gameobjects.GameObject;
 
 import com.mycompany.escapetrain.gameobjects.events.Event;
-import java.util.HashSet;
+
 
 /**
- *
+ * This handler returns event for USE ITEM events and other game events such as game over. 
  * @author Administrator
  */
 public class EventHandler {
+    
+    /**
+     * This method returns event based on the current gamestate and the target.
+     * @param target
+     * @param gameState
+     * @return GameObject
+     */
 
     public GameObject handleUsageEvent(String target, GameState gameState) {
         if (gameState.isIsTutorial()) {
@@ -78,6 +85,11 @@ public class EventHandler {
             return new Event("Absolutely nothing happens");
         }
     }
+    
+    /**
+     * This returns invalid command event
+     * @return Event
+     */
     
     public GameObject handleInvalidGoToCommand() {
         return new Event("Can't go there.");
