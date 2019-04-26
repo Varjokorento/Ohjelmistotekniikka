@@ -19,9 +19,9 @@ Jokainen näistä on toteutettu omana controller-olionaan. Syy tähän on se, et
 Käyttöliittymä on pyritty eristämään sovelluslogiikasta, se ainoastaan kutsuu sopivin parametrein sovelluslogiikan toteuttavan olion gameEnginen metodeja ja reagoi saatujen tietojen mukaan. 
 
 
-## Luokkakaavio
+## Luokkakaavio pelitoiminnallisuudelle
 
-<img src="https://raw.githubusercontent.com/Varjokorento/Ohjelmistotekniikka/master/EscapeTrain/EscapeTrain/Dokumentaatio/77507036.jpg" width="700">
+<img src="https://raw.githubusercontent.com/Varjokorento/Ohjelmistotekniikka/master/EscapeTrain/EscapeTrain/Dokumentaatio/kaaviot/2078bd53.jpg">
 
 ## Sovelluslogiikka
 
@@ -51,3 +51,23 @@ USE ITEM -käsky tarkistaa käskyn toteutettavuuden (eli onko pelaaja esimerkiks
 ### GAMESTATE-toiminnallisuus
 
 Käskyt ja muu toiminnallisuus perustuvat GameState-luokassa oleviin tietoihin. GameState-luokka injektoidaan GameEngine-konstruktorissa ja se määrittelee tällä hetkellä pelattavan pelin tilan. 
+
+GameState on GameEngineen injektoitu riippuvuus. Muut luokat (kuten esimerkiksi EventHandler) saavat sen funktiokutsuissaan, jolloin ne voivat kutsua GameEnginen metodeita ja käsitellä sen tilaa. 
+
+#### Pelialueen määritys
+
+<img src="https://raw.githubusercontent.com/Varjokorento/Ohjelmistotekniikka/master/EscapeTrain/EscapeTrain/Dokumentaatio/kaaviot/GAMESTATE%20SEQUENCE.png">
+
+GameEngine kysyy GameStatelta, mikä on nykyinen tilanne. Nykyinen tilanne määräytyy sen perusteella, mitä on tapahtunut pelissä aikaisemmin. GameState palauttaa GameEnginelle tämänhetkisen pelialueen. 
+
+#### USE ITEM -käsky gamestatessa
+
+<img src="https://raw.githubusercontent.com/Varjokorento/Ohjelmistotekniikka/master/EscapeTrain/EscapeTrain/Dokumentaatio/kaaviot/GAMESTATE%20USE%20ITEM%20SEQUENCE.png">
+
+USE ITEM -tilanteessa GameStatessa säilötyn inventaarion perusteella EventHandler suorittaa käskyn. 
+
+#### Pelitilanteen määritys
+<img src="https://raw.githubusercontent.com/Varjokorento/Ohjelmistotekniikka/master/EscapeTrain/EscapeTrain/Dokumentaatio/kaaviot/GAMESTATE%20GAME%20OVER%20SEQUENCE.png">
+
+GameEngine kysyy GameStatelta jotain tiettyä tilannetta, tässä kaaviossa isGameOver, jonka jälkeen GameState selvittää sen FlagState-luokan avulla. 
+
