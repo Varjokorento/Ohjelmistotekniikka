@@ -27,6 +27,11 @@ Käyttöliittymä on pyritty eristämään sovelluslogiikasta, se ainoastaan kut
 
 Sovellus toimii siten, että käyttäjä syöttää kaksisanaisen käskyn käyttöliittymän komentoriville. Tämän käskyn käsittelee GameEngine, joka lopulta palauttaa GameObject-rajapinnan toteuttavan objektin käyttöliittymälle ja käyttöliittymä näyttää tämän perusteella tapahtuman.
 
+Kuvaus GameEngine-luokasta:
+
+<img src="https://raw.githubusercontent.com/Varjokorento/Ohjelmistotekniikka/master/EscapeTrain/EscapeTrain/Dokumentaatio/kaaviot/05032726.jpg">
+
+
 ### Käskytoiminnallisuus
 
 Käskyjä on kolmenlaisia: GOTO, TAKE ja USE
@@ -49,6 +54,8 @@ TAKE ITEM -käsky tarkistaa onko kyseistä tavaraa huoneessa ja sen jälkeen lis
 USE ITEM -käsky tarkistaa käskyn toteutettavuuden (eli onko pelaaja esimerkiksi tietyssä huoneessa ja onko hänellä tietty esine) jonka jälkeen palauttaa USE -käskyyn liittyvän eventin, jonka käyttöliittymä näyttää. 
 
 ### GAMESTATE-toiminnallisuus
+
+<img src="https://raw.githubusercontent.com/Varjokorento/Ohjelmistotekniikka/master/EscapeTrain/EscapeTrain/Dokumentaatio/kaaviot/49875d51.jpg">
 
 Käskyt ja muu toiminnallisuus perustuvat GameState-luokassa oleviin tietoihin. GameState-luokka injektoidaan GameEngine-konstruktorissa ja se määrittelee tällä hetkellä pelattavan pelin tilan. 
 
