@@ -4,7 +4,7 @@
 
 Sovelluksen päätoiminnallisuus koostuu GameControllerista, joka kutsuuu pelimoottoria, joka on Java-luokka GameEngine. GameEngine ottaa käyttäjän syötteen, tekee sen perusteella päätöksiä ja palauttaa controllerille GameObject-luokan toteuttavan olion, joka on se, mitä käyttäjälle näytetään. 
 
-GameEngine on yhteydessä AreaParseriin, EventHandleriin sekä CommandParseriin. Pelin tiedot, inventaario sekä tapahtuneet tapahtumat, säilötään ja kutsutaan GameState-olion kautta. 
+GameEngine on yhteydessä AreaParseriin, EventHandleriin sekä CommandParseriin, jotka on injektoitut siihen. Pelin tiedot, inventaario sekä tapahtuneet tapahtumat, säilötään ja kutsutaan GameState-olion kautta. 
 
 ## Käyttöliittymä
 
