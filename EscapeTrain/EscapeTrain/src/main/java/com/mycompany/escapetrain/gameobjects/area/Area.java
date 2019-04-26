@@ -8,7 +8,7 @@ package com.mycompany.escapetrain.gameobjects.area;
 import com.mycompany.escapetrain.gameobjects.GameObject;
 
 /**
- *
+ * Represents the game area
  * @author Administrator
  */
 public class Area implements GameObject {

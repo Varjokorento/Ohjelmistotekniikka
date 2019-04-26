@@ -6,7 +6,7 @@
 package com.mycompany.escapetrain.gameobjects;
 
 /**
- *
+ * Interface for game object
  * @author Administrator
  */
 public interface GameObject {

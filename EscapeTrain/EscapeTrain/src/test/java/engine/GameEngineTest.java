@@ -13,6 +13,8 @@ import com.mycompany.escapetrain.engine.GameEngine;
 import com.mycompany.escapetrain.engine.gamestateutils.GameState;
 import com.mycompany.escapetrain.gameobjects.GameObject;
 import com.mycompany.escapetrain.gameobjects.area.Area;
+import com.mycompany.escapetrain.gameobjects.inventory.Inventory;
+import com.mycompany.escapetrain.gameobjects.inventory.Item;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
@@ -59,5 +61,16 @@ public class GameEngineTest {
         engine.getGameState().setCurrentArea(area);
         assertEquals(area.getAreaName(), engine.getCurrentRoom().getAreaName());
     }
+    
+    @Test
+    public void hasBeenPickedReturnsCorrectValue() {
+        GameState gameState = new GameState();
+        Inventory inventory = new Inventory();
+        inventory.addItem(new Item("item"));
+        gameState.setInventory(inventory);
+        engine.setGameState(gameState);
+        assertTrue(engine.hasBeenPicked("item"));
+    }
+    
     
 }

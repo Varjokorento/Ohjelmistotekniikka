@@ -11,7 +11,7 @@ import java.util.HashSet;
 import java.util.List;
 
 /**
- *
+ * The game inventory
  * @author Administrator
  */
 public class Inventory implements GameObject {

@@ -8,7 +8,7 @@ package com.mycompany.escapetrain.gameobjects.events;
 import com.mycompany.escapetrain.gameobjects.GameObject;
 
 /**
- *
+ * Represents certain events that occur in game
  * @author Administrator
  */
 public class Event implements GameObject {
