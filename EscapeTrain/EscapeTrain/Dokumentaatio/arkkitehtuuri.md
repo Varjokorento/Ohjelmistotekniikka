@@ -19,9 +19,9 @@ Jokainen näistä on toteutettu omana controller-olionaan. Syy tähän on se, et
 Käyttöliittymä on pyritty eristämään sovelluslogiikasta, se ainoastaan kutsuu sopivin parametrein sovelluslogiikan toteuttavan olion gameEnginen metodeja ja reagoi saatujen tietojen mukaan. 
 
 
-## Luokkakaavio
+## Luokkakaavio pelitoiminnallisuudelle
 
-<img src="https://raw.githubusercontent.com/Varjokorento/Ohjelmistotekniikka/master/EscapeTrain/EscapeTrain/Dokumentaatio/77507036.jpg" width="700">
+<img src="https://raw.githubusercontent.com/Varjokorento/Ohjelmistotekniikka/master/EscapeTrain/EscapeTrain/Dokumentaatio/kaaviot/2078bd53.jpg">
 
 ## Sovelluslogiikka
 
@@ -51,3 +51,10 @@ USE ITEM -käsky tarkistaa käskyn toteutettavuuden (eli onko pelaaja esimerkiks
 ### GAMESTATE-toiminnallisuus
 
 Käskyt ja muu toiminnallisuus perustuvat GameState-luokassa oleviin tietoihin. GameState-luokka injektoidaan GameEngine-konstruktorissa ja se määrittelee tällä hetkellä pelattavan pelin tilan. 
+
+<img src="https://raw.githubusercontent.com/Varjokorento/Ohjelmistotekniikka/master/EscapeTrain/EscapeTrain/Dokumentaatio/kaaviot/GAMESTATE%20GAME%20OVER%20SEQUENCE.png">
+
+<img src="https://raw.githubusercontent.com/Varjokorento/Ohjelmistotekniikka/master/EscapeTrain/EscapeTrain/Dokumentaatio/kaaviot/GAMESTATE%20SEQUENCE.png">
+
+<img src="https://raw.githubusercontent.com/Varjokorento/Ohjelmistotekniikka/master/EscapeTrain/EscapeTrain/Dokumentaatio/kaaviot/GAMESTATE%20USE%20ITEM%20SEQUENCE.png">
+
