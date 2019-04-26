@@ -55,3 +55,13 @@ Jar-tiedosto luodaan komennolla. Ajaminen täytyy tehdä Java 8 -versiolla.
 ```
 mvn package
 ```
+
+### Javadoc-generointi
+
+Javadoc-dokumentin saa generoitua komennolla
+
+
+```
+mvn javadoc:javadoc
+```
+
