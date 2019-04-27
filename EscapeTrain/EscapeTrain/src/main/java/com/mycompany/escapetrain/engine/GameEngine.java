@@ -5,6 +5,7 @@
  */
 package com.mycompany.escapetrain.engine;
 
+import com.mycompany.escapetrain.dataHandling.DataService;
 import com.mycompany.escapetrain.gameobjects.GameObject;
 import com.mycompany.escapetrain.engine.gamestateutils.GameState;
 import com.mycompany.escapetrain.engine.parsers.CommandParser;
@@ -38,11 +39,12 @@ public class GameEngine {
         this.eventHandler = new EventHandler();
     }
     /**
-     * Initializes areaparse that uses properties files
+     * Initializes areaparser and dataService that uses properties files
      * @throws IOException 
      */
     public void init() throws IOException {
         areaParser.init();
+        eventHandler.init();
     }
     
     /**

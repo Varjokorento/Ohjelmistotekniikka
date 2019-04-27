@@ -5,10 +5,14 @@
  */
 package com.mycompany.escapetrain.engine.parsers;
 
+import com.mycompany.escapetrain.dataHandling.DataService;
 import com.mycompany.escapetrain.engine.gamestateutils.GameState;
 import com.mycompany.escapetrain.gameobjects.GameObject;
 
 import com.mycompany.escapetrain.gameobjects.events.Event;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -16,6 +20,16 @@ import com.mycompany.escapetrain.gameobjects.events.Event;
  * @author Administrator
  */
 public class EventHandler {
+    private DataService dataService;
+
+    public EventHandler() {
+        this.dataService = new DataService();
+    }
+    
+    public void init() throws IOException {
+        this.dataService.init();
+    }
+    
     
     /**
      * This method returns event based on the current gamestate and the target.
@@ -30,12 +44,20 @@ public class EventHandler {
         }
         if (target.equalsIgnoreCase("lever") 
                 && gameState.getCurrentArea().getAreaName().equals("ENGINE_ROOM")) {
-            gameState.getFlags().setGameWon(true);
-            return  new Event("You managed to stop the train! You have survived!");
+           return gameWonEvent(gameState); 
         }    
         
         return handleItemEvent(target, gameState);
         
+    }
+    
+    private GameObject gameWonEvent(GameState gameState) {
+        gameState.getFlags().setGameWon(true);
+        Integer totalVictories = 1;
+        dataService.addAVictory();
+        totalVictories = dataService.getVictories();
+        String victoryMessage = "You managed to stop the train! You have survived! You have won the game " + totalVictories + " times!";
+        return  new Event(victoryMessage);
     }
     
     private GameObject handleItemEvent(String target, GameState gameState) {
