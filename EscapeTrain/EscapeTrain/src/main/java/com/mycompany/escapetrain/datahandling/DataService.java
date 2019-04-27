@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.escapetrain.dataHandling;
+package com.mycompany.escapetrain.datahandling;
 
-import java.io.IOException;
 
 /**
  *
@@ -23,7 +22,7 @@ public class DataService {
     }
     
  
-    public void init(){
+    public void init() {
         this.dataClient.init();
     }
     

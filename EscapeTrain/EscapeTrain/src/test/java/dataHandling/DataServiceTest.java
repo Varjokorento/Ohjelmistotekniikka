@@ -5,8 +5,8 @@
  */
 package dataHandling;
 
-import com.mycompany.escapetrain.dataHandling.DataClient;
-import com.mycompany.escapetrain.dataHandling.DataService;
+import com.mycompany.escapetrain.datahandling.DataClient;
+import com.mycompany.escapetrain.datahandling.DataService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

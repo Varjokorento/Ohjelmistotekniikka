@@ -5,14 +5,12 @@
  */
 package com.mycompany.escapetrain.engine.parsers;
 
-import com.mycompany.escapetrain.dataHandling.DataService;
+import com.mycompany.escapetrain.datahandling.DataService;
 import com.mycompany.escapetrain.engine.gamestateutils.GameState;
 import com.mycompany.escapetrain.gameobjects.GameObject;
 
 import com.mycompany.escapetrain.gameobjects.events.Event;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 
 /**
@@ -44,7 +42,7 @@ public class EventHandler {
         }
         if (target.equalsIgnoreCase("lever") 
                 && gameState.getCurrentArea().getAreaName().equals("ENGINE_ROOM")) {
-           return gameWonEvent(gameState); 
+            return gameWonEvent(gameState); 
         }    
         
         return handleItemEvent(target, gameState);

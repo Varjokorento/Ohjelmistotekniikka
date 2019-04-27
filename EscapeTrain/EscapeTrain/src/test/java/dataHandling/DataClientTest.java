@@ -5,7 +5,7 @@
  */
 package dataHandling;
 
-import com.mycompany.escapetrain.dataHandling.DataClient;
+import com.mycompany.escapetrain.datahandling.DataClient;
 import java.io.IOException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

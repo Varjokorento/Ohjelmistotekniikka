@@ -31,7 +31,7 @@ public class ItemInfoParser {
     }
     
     public GameObject parseItemInfo(String target, GameState gameState) {
-        if(gameState.isInInventory(target)) {
+        if (gameState.isInInventory(target)) {
             String message = appProps.getProperty(target);
             return new Event(message);
         }

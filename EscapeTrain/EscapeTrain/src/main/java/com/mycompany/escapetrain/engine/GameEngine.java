@@ -5,7 +5,7 @@
  */
 package com.mycompany.escapetrain.engine;
 
-import com.mycompany.escapetrain.dataHandling.DataService;
+import com.mycompany.escapetrain.datahandling.DataService;
 import com.mycompany.escapetrain.gameobjects.GameObject;
 import com.mycompany.escapetrain.engine.gamestateutils.GameState;
 import com.mycompany.escapetrain.engine.parsers.CommandParser;
@@ -41,6 +41,25 @@ public class GameEngine {
         this.eventHandler = new EventHandler();
         this.itemInfoParser = new ItemInfoParser();
     }
+
+    public void setCommandParser(CommandParser commandParser) {
+        this.commandParser = commandParser;
+    }
+
+    public void setAreaParser(AreaParser areaParser) {
+        this.areaParser = areaParser;
+    }
+
+    public void setEventHandler(EventHandler eventHandler) {
+        this.eventHandler = eventHandler;
+    }
+
+    public void setItemInfoParser(ItemInfoParser itemInfoParser) {
+        this.itemInfoParser = itemInfoParser;
+    }
+    
+    
+    
     /**
      * Initializes areaparser and dataService that uses properties files
      * @throws IOException 
