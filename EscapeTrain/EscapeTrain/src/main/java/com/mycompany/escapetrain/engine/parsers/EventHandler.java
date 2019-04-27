@@ -60,16 +60,31 @@ public class EventHandler {
         return  new Event(victoryMessage);
     }
     
-    private GameObject handleItemEvent(String target, GameState gameState) {
-        
+    /**
+     * This returns gameHasEndedEvent and is called when game has either been won or lost
+     * @return GameObject
+     */
+    
+    public GameObject gamehasEndedEvent() {
+        return new Event("The game is now over. Please quit by clicking X.");
+    }
+    
+    /**
+     * This method returns event when the game has been lost
+     * @return GameObject
+     */
+    
+    public GameObject gameOverEvent() {
+        return new Event("The train drives down a broken bridge. You crash down with it and die. Game over. You lost. Press X to quit. Thank you for playing!");
+    }
+    
+    private GameObject handleItemEvent(String target, GameState gameState) { 
         if (!gameState.isInInventory(target)) {          
             return new Event("You don't have that on you!");
-        }
-        
+        }       
         if (target.equalsIgnoreCase("dynamite") && gameState.getCurrentArea().getAreaName().equals("STAFF_QUARTERS")) {
             return this.useDynamite(gameState);
         }       
-        
         if (target.equals("matches")) {
             return this.useMatches(gameState);
         }

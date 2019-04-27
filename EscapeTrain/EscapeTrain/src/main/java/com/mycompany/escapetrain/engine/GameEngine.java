@@ -11,6 +11,7 @@ import com.mycompany.escapetrain.engine.gamestateutils.GameState;
 import com.mycompany.escapetrain.engine.parsers.CommandParser;
 import com.mycompany.escapetrain.engine.parsers.AreaParser;
 import com.mycompany.escapetrain.engine.parsers.EventHandler;
+import com.mycompany.escapetrain.engine.parsers.ItemInfoParser;
 import com.mycompany.escapetrain.gameobjects.area.Area;
 import com.mycompany.escapetrain.gameobjects.events.Event;
 import com.mycompany.escapetrain.gameobjects.inventory.Inventory;
@@ -31,12 +32,14 @@ public class GameEngine {
     private AreaParser areaParser;
     private GameState gameState;
     private EventHandler eventHandler;
+    private ItemInfoParser itemInfoParser;
     
     public GameEngine() {
         this.commandParser = new CommandParser();
         this.areaParser = new AreaParser();
         this.gameState = new GameState();
         this.eventHandler = new EventHandler();
+        this.itemInfoParser = new ItemInfoParser();
     }
     /**
      * Initializes areaparser and dataService that uses properties files
@@ -45,6 +48,7 @@ public class GameEngine {
     public void init() throws IOException {
         areaParser.init();
         eventHandler.init();
+        itemInfoParser.init();
     }
     
     /**
@@ -66,10 +70,16 @@ public class GameEngine {
             return parseTakeCommand(target);
         } else if (command.equalsIgnoreCase("USE")) {
             return parseUseCommand(target);
+        } else if (command.equalsIgnoreCase("INSPECT")) {
+            return parseInspectCommand(target);
         } else {
             return null;
         }
       
+    }
+    
+    private GameObject parseInspectCommand(String target) {
+        return itemInfoParser.parseItemInfo(target, gameState);
     }
     
     private GameObject parseUseCommand(String target) {
@@ -78,6 +88,9 @@ public class GameEngine {
     
     
     private GameObject checkSpecialCasesAndErrors(String input) {
+        if (gameState.getTurns() >= 50) {
+            return gameOver();
+        }
         GameObject flagOutcomes = checkFlags();
         if (flagOutcomes != null) {
             return flagOutcomes;
@@ -87,9 +100,6 @@ public class GameEngine {
         }
         if (gameState.getTurns() == 0) {
             return getFirstArea();
-        }
-        if (gameState.getTurns() == 50) {
-            return gameOver();
         }
         if (input == null || input.trim().length() == 0) {
             return gameState.getCurrentArea();
@@ -113,16 +123,14 @@ public class GameEngine {
     
     private GameObject checkFlags() {
         if (gameState.getFlags().isGameOver() || gameState.getFlags().isGameWon()) {
-            return new Event("The game is now over. Please quit by clicking X.");
+            return eventHandler.gamehasEndedEvent();
         }
         return null;
     }
     
     
     private GameObject gameOver() {
-        Event event = new Event();
-        event.setEventMessage("Game over. You lost. Press X to quit. Thank you for playing!");
-        return event;
+        return eventHandler.gameOverEvent();
     }
      
     private InventoryMessage parseTakeCommand(String target) {
@@ -182,7 +190,9 @@ public class GameEngine {
     }
     
     private GameObject checkForSpecialAreaCases(String target) {
-        if (target.equals("ENGINE_ROOM") && !gameState.getFlags().isEngineDoorOpen()) {
+        if (areaParser.canGoToArea(gameState.getCurrentArea(), "ENGINE_ROOM") 
+                && target.equals("ENGINE_ROOM") 
+                && !gameState.getFlags().isEngineDoorOpen()) {
             return new Event("The door is locked and looks very sturdy.");
         } 
         Message message = (Message) checkErrors(target);
