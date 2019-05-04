@@ -22,6 +22,8 @@ Julkaisussa on mukana pelattava peli, jossa peliä ja sen tutoriaalia voi pelata
 
 [Käyttöohje](https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/EscapeTrain/EscapeTrain/Dokumentaatio/kayttoohje.md)
 
+[Testausdokumentti](https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/EscapeTrain/EscapeTrain/Dokumentaatio/testausdokumentti.md)
+
 ## Komentorivitoiminnot
 
 ### Testaus

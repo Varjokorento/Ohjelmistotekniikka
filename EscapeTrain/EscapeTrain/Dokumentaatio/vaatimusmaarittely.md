@@ -6,7 +6,7 @@ Sovelluksen tarkoitus on olla pelattava seikkailupeli nimeltä "Escape Train." P
 
 ## Käyttäjät
 
-Sovelluksen käyttäjä on tällä hetkellä Guest Player (myöhemmin tässä "Pelaaja"). Jossain vaiheessa olisi tarkoitus pystyä tallentamaan käyttäjän pelitilanne, jolloin pelaaja olisi joku muu kuin Guest Player.
+Sovelluksessa ei ole käyttäjätilejä, joten sovelluksen käyttäjä on tällä hetkellä sen avaaja, eli pelaaja. Jossain vaiheessa olisi tarkoitus pystyä tallentamaan käyttäjän pelitilanne, jolloin pelaaja olisi joku muu kuin Guest Player.
 
 ## Käyttöliittymä
 
@@ -22,7 +22,7 @@ Pelaaja voi valita "Start game", "Credits" and "Tutorial."
 
 ### Pelinäkymä
 
-Pelaajalle näkyy hänen esineensä, yksinkertainen kuva sekä kartta, missä pelaaja liikkuu. Lisäksi näkymässä on komentotulkki, johon pelaaja voi kirjoittaa käskyt, mitä tehdä seuraavaksi. Tässä näkymässä tapahtuu suurin osa ohjelman toiminnallisuudesta. Tavoitteena on, että perusversiossa on kokonainen peli. 
+Pelaajalle näkyy hänen esineensä sekä tekstimuodossa kuvaus paikoista, joissa hän liikkuu. Lisäksi näkymässä on komentotulkki, johon pelaaja voi kirjoittaa käskyt, mitä tehdä seuraavaksi. Tässä näkymässä tapahtuu suurin osa ohjelman toiminnallisuudesta. Tavoitteena on, että perusversiossa on kokonainen peli. 
 
 ### Tutoriaali
 
@@ -35,11 +35,12 @@ Tässä näkyy yksinkertaisesti tekijän tiedot sekä käytetty teknologia.
 
 ## Lopputekstit
 
-Näkymä lopputeksteistä, kun pelin voitto on saavutettu. Lopputeksteissä on tarkoitus myös näyttää, kuinka moni pelaaja on päässyt pelin läpi. Tämä tieto haetaan internetissä olevasta tietokannasta. Tappion kohdalla (juna syöksyy alas) lopputekstien sijaan näytetään pelinäkymän oma tappioruutu.
+Näkymä lopputeksteistä, kun pelin voitto on saavutettu. Lopputeksteissä on tarkoitus myös näyttää, kuinka moni pelaaja tällä tietokoneella on päässyt pelin läpi. Tappion kohdalla (juna syöksyy alas) lopputekstien sijaan näytetään pelinäkymän oma tappioruutu.
 
 ## Jatkokehitysideoita
 
 Perusversion jälkeen järjestelmää täydennetään ajan salliessa esim. seuraavilla toiminnallisuuksilla
 
 - Pelaajan tilanteen tallentaminen
+- Grafiikan parantaminen
 - Äänimaailman lisääminen
