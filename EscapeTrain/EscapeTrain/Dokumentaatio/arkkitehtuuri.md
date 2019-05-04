@@ -54,7 +54,7 @@ TAKE ITEM -käsky tarkistaa onko kyseistä tavaraa huoneessa ja sen jälkeen lis
 USE ITEM -käsky tarkistaa käskyn toteutettavuuden (eli onko pelaaja esimerkiksi tietyssä huoneessa ja onko hänellä tietty esine) jonka jälkeen palauttaa USE -käskyyn liittyvän eventin, jonka käyttöliittymä näyttää. 
 
 #### INSPECT-KÄSKY
-<img src="https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/EscapeTrain/EscapeTrain/Dokumentaatio/USE%20TARGET%20SEQUENCE.png" width="700">
+<img src="https://raw.githubusercontent.com/Varjokorento/Ohjelmistotekniikka/master/EscapeTrain/EscapeTrain/Dokumentaatio/kaaviot/Inspect%20Item%20Sequence.png" width="700">
 
 INSPECT ITEM -käsky tarkistaa käskyn toteutettavuuden, eli onko pelaajalla esinettä hallussaan, jonka jälkeen se palauttaa INSPECT -käskyyn liittyvän esineen tiedon, jonka käyttöliittymä näyttää.
 
