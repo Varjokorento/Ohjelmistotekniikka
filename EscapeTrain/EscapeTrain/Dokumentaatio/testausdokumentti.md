@@ -1,16 +1,16 @@
 # Testausdokumentti
 
-Ohjelmaa on testattu sekä automatisoiduin yksikkö- ja integraatiotestein JUnitilla ja Mockito-testikirjastolla. Lisäksi peli on testattu manuaalisesti. Käyttöliittymää ei ole testattu muuten kuin manuaalisesti.
+Ohjelmaa on testattu sekä automatisoiduin yksikkö- ja integraatiotestein JUnitilla ja Mockito-testikirjastolla. Lisäksi peli on testattu manuaalisesti. 
+
+Käyttöliittymää ei ole testattu muuten kuin manuaalisesti.
 ## Yksikkö- ja integraatiotestaus
 
 ### sovelluslogiikka
 
-Molempien DAO-luokkien toiminnallisuus on testattu luomalla testeissä tilapäinen tiedosto hyödyntäen JUnitin [TemporaryFolder](https://junit.org/junit4/javadoc/4.12/org/junit/rules/TemporaryFolder.html)-ruleja.
 
 ### Testauskattavuus
 
 Käyttöliittymää lukuunottamatta sovelluksen testauksen rivikattavuus on XX ja haarautumakattavuus XX.
-
 
 ## Järjestelmätestaus
 
