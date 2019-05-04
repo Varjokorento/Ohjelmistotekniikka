@@ -21,7 +21,9 @@ Käyttöliittymä on pyritty eristämään sovelluslogiikasta, se ainoastaan kut
 
 ## Luokkakaavio pelitoiminnallisuudelle
 
-<img src="https://raw.githubusercontent.com/Varjokorento/Ohjelmistotekniikka/master/EscapeTrain/EscapeTrain/Dokumentaatio/kaaviot/2078bd53.jpg">
+<img src="https://raw.githubusercontent.com/Varjokorento/Ohjelmistotekniikka/master/EscapeTrain/EscapeTrain/Dokumentaatio/kaaviot/classdiagram.jpg">
+
+[Controller]->[GameEngine],[GameEngine]->[GameState],[GameEngine]->[AreaParser],[GameEngine]->[ItemInfoParser],[GameEngine]->[CommandParser],[GameEngine]->[EventHandler],[EventHandler]->[Event],[ItemInfoParser]->[Event],[GameState]->[FlagStates],[GameState]->[Inventory],[Inventory]->[Item],[AreaParser]->[Area]
 
 ## Sovelluslogiikka
 
