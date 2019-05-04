@@ -4,7 +4,7 @@
 
 Sovelluksen päätoiminnallisuus koostuu GameControllerista, joka kutsuuu pelimoottoria, joka on Java-luokka GameEngine. GameEngine ottaa käyttäjän syötteen, tekee sen perusteella päätöksiä ja palauttaa controllerille GameObject-luokan toteuttavan olion, joka on se, mitä käyttäjälle näytetään. 
 
-GameEngine on yhteydessä AreaParseriin, EventHandleriin sekä CommandParseriin, jotka on injektoitut siihen. Pelin tiedot, inventaario sekä tapahtuneet tapahtumat, säilötään ja kutsutaan GameState-olion kautta. 
+GameEngine on yhteydessä AreaParseriin, EventHandleriin sekä CommandParseriin, jotka on injektoitut siihen. Pelin tiedot, inventaario sekä tapahtuneet tapahtumat säilötään ja kutsutaan GameState-olion kautta. 
 
 ## Käyttöliittymä
 
@@ -52,6 +52,11 @@ TAKE ITEM -käsky tarkistaa onko kyseistä tavaraa huoneessa ja sen jälkeen lis
 <img src="https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/EscapeTrain/EscapeTrain/Dokumentaatio/USE%20TARGET%20SEQUENCE.png" width="700">
 
 USE ITEM -käsky tarkistaa käskyn toteutettavuuden (eli onko pelaaja esimerkiksi tietyssä huoneessa ja onko hänellä tietty esine) jonka jälkeen palauttaa USE -käskyyn liittyvän eventin, jonka käyttöliittymä näyttää. 
+
+#### INSPECT-KÄSKY
+<img src="https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/EscapeTrain/EscapeTrain/Dokumentaatio/USE%20TARGET%20SEQUENCE.png" width="700">
+
+INSPECT ITEM -käsky tarkistaa käskyn toteutettavuuden, eli onko pelaajalla esinettä hallussaan, jonka jälkeen se palauttaa INSPECT -käskyyn liittyvän esineen tiedon, jonka käyttöliittymä näyttää.
 
 ### GAMESTATE-toiminnallisuus
 
