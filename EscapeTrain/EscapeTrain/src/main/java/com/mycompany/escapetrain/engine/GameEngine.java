@@ -214,22 +214,7 @@ public class GameEngine {
                 && !gameState.getFlags().isEngineDoorOpen()) {
             return new Event("The door is locked and looks very sturdy.");
         } 
-        Message message = (Message) checkErrors(target);
-        if (!message.isOK()) {
-            return new Event("You can't go there");
-        } 
         return null;
-    }
-    
-    private GameObject checkErrors(String target) {
-        if (target.trim().length() == 0) {
-            return null;
-        }
-        if (gameState.isError()) {
-            gameState.setError(false);
-            return gameState.getCurrentArea();
-        }
-        return new Message(true);
     }
 
     /**
@@ -249,7 +234,7 @@ public class GameEngine {
     }
 
     /**
-     * sets current gamestate
+     * sets current GameState
      * @param gameState 
      */
     public void setGameState(GameState gameState) {

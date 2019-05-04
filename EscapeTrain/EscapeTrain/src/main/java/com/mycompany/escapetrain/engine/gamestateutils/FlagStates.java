@@ -12,14 +12,15 @@ package com.mycompany.escapetrain.engine.gamestateutils;
  */
 public class FlagStates {
     private boolean engineDoorOpen;
-    private boolean windowOpen;
     private boolean gameOver;
     private boolean gameWon;
     private boolean dynamiteSet;
 
     public FlagStates() {
         this.engineDoorOpen = false;
-        this.windowOpen = false;
+        this.gameOver = false;
+        this.dynamiteSet = false;
+        this.gameWon = false;
     }
     
     /**
@@ -56,22 +57,6 @@ public class FlagStates {
 
     public void setEngineDoorOpen(boolean engineDoorOpen) {
         this.engineDoorOpen = engineDoorOpen;
-    }
-    
-    /**
-     * Checks whether window is open
-     * @return boolean
-     */
-
-    public boolean isWindowOpen() {
-        return windowOpen;
-    }
-    /**
-     * sets window open/close
-     * @param boolean windowOpen 
-     */
-    public void setWindowOpen(boolean windowOpen) {
-        this.windowOpen = windowOpen;
     }
     
     /**

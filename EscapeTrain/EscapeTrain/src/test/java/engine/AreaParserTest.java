@@ -5,6 +5,7 @@ import com.mycompany.escapetrain.engine.parsers.AreaParser;
 import com.mycompany.escapetrain.gameobjects.area.Area;
 import java.io.IOException;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
@@ -69,4 +70,16 @@ public class AreaParserTest {
         Area currentArea = new Area("CABIN", null,null,null);
         assertTrue(parser.hasItem(currentArea, "pillow"));
     }
+    
+    @Test
+    public void hasItemReturnsFalseForInValidInput() {
+        Area currentArea = new Area("CABIN", null,null,null);
+        assertFalse(parser.hasItem(currentArea, "pallow"));
+    }
+    
+    @Test
+    public void canGoToAreaWithNullReturnsFalse() {
+        assertFalse(parser.canGoToArea(null, null));
+    }
+    
 }

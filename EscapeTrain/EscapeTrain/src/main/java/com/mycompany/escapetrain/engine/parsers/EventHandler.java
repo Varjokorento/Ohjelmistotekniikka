@@ -27,10 +27,14 @@ public class EventHandler {
     public void init() throws IOException {
         this.dataService.init();
     }
+
+    public void setDataService(DataService dataService) {
+        this.dataService = dataService;
+    }
     
     
     /**
-     * This method returns event based on the current gamestate and the target.
+     * This method returns event based on the current GameState and the target.
      * @param target
      * @param gameState
      * @return GameObject

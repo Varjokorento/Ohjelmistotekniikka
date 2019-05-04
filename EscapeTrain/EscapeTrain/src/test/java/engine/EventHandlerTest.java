@@ -5,6 +5,7 @@
  */
 package engine;
 
+import com.mycompany.escapetrain.datahandling.DataService;
 import com.mycompany.escapetrain.engine.gamestateutils.GameState;
 import com.mycompany.escapetrain.engine.parsers.EventHandler;
 import com.mycompany.escapetrain.gameobjects.area.Area;
@@ -15,19 +16,30 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import static org.mockito.Mockito.when;
+import static org.mockito.MockitoAnnotations.initMocks;
+import org.mockito.runners.MockitoJUnitRunner;
 
 /**
  *
  * @author Administrator
  */
+@RunWith(MockitoJUnitRunner.class)
 public class EventHandlerTest {
     private EventHandler eventHandler;
     private GameState gameState;
+    
+    @Mock 
+    private DataService dataService;
 
     
     @Before
     public void init() {
+        initMocks(this);
         this.eventHandler = new EventHandler();
+        eventHandler.setDataService(dataService);
         this.gameState = new GameState();
     }
     
@@ -40,10 +52,21 @@ public class EventHandlerTest {
     }
     
     @Test
-    public void usingLeverInCorrectPlaceReturnsVictoryEvent() {
-       /* gameState.setCurrentArea(new Area("ENGINE_ROOM", null,null,null));
+    public void winTutorialReturnsWinTutorialEvent() {
+        this.gameState.setIsTutorial(true);
+        this.gameState.setCurrentArea(new Area("NEXT_ROOM", null,null,null));
         Event event = (Event) eventHandler.handleUsageEvent("lever", gameState);
-        assertTrue(gameState.getFlagStates().isGameWon());*/
+        String expectedEventMessage = "You have managed to finish the tutorial! Now press back button and start the game!";
+        assertEquals(expectedEventMessage, event.getEventMessage());
+    }
+    
+    @Test
+    public void usingLeverInCorrectPlaceReturnsVictoryEvent() {
+        when(dataService.getVictories()).thenReturn(0);
+        gameState.setCurrentArea(new Area("ENGINE_ROOM", "null","null","null"));
+        gameState.setIsTutorial(false);
+        Event event = (Event) eventHandler.handleUsageEvent("lever", gameState);
+        assertTrue(gameState.getFlagStates().isGameWon());
     }
     
     @Test
@@ -93,5 +116,12 @@ public class EventHandlerTest {
         Event event = (Event) eventHandler.handleUsageEvent("vodka", gameState);
         String expectedEventMessage = "Nothing happens.";
         assertEquals(expectedEventMessage, event.getEventMessage());
+    }
+    
+    @Test
+    public void gameHasEndedEventReturnsCorrectEvent() {
+        Event event = (Event) eventHandler.gamehasEndedEvent();
+        String expectedEventMessage = "The game is now over. Please quit by clicking X.";
+        assertEquals(expectedEventMessage, event.getEventMessage());   
     }
 }
