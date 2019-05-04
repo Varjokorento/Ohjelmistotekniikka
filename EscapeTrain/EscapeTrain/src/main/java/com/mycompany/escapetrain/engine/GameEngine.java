@@ -17,7 +17,6 @@ import com.mycompany.escapetrain.gameobjects.events.Event;
 import com.mycompany.escapetrain.gameobjects.inventory.Inventory;
 import com.mycompany.escapetrain.gameobjects.inventory.InventoryMessage;
 import com.mycompany.escapetrain.gameobjects.inventory.Item;
-import com.mycompany.escapetrain.gameobjects.message.Message;
 import java.io.IOException;
 
 /**
@@ -184,6 +183,7 @@ public class GameEngine {
     }
     
     private GameObject parseGoToCommand(String target) {   
+        target = target.replaceAll(" ", "_").toUpperCase();
         GameObject specialEvent = checkForSpecialAreaCases(target);
         if  (specialEvent != null) {
             return specialEvent;

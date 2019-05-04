@@ -38,8 +38,9 @@ public class CommandParser {
         }
         String item = "";
         for (int i = 1; i < parts.length; i++) {
-            item = item.concat(parts[i]);
+            item = item + " " + (parts[i]);
         }
+        item = item.trim();
         return item;
     }
     

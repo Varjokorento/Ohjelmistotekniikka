@@ -19,7 +19,7 @@
                        <Font name="System Bold" size="30.0" />
                    </font>
                </Label>
-               <Button layoutX="76.0" layoutY="10.0" text="Exit" onAction="#handleBackButtonAction" fx:id="backCredits" />
+               <Button layoutX="76.0" layoutY="10.0" text="Back" onAction="#handleBackButtonAction" fx:id="backCredits" />
                <ScrollPane fx:id="inventoryScroll" layoutX="607.0" layoutY="518.0" prefHeight="286" prefWidth="250">
                   <content>
                   <TextFlow fx:id="inventory" layoutX="607.0" layoutY="518.0" prefHeight="286.0" prefWidth="250.0" />

@@ -137,19 +137,18 @@ public class GameController implements Initializable{
         Text text1 = new Text("\nYou are in: ");
         Text text3 = new Text("Adjacent areas: ");
         Text text4 = new Text("Items in room: ");
-        Text areaStyling = new Text(displayedArea.getSurroundingAreas() + "\n\n");
+        Text areaStyling = new Text(displayedArea.getSurroundingAreasFormatted() + "\n\n");
         String filteredItems = "";
         if(displayedArea.getItemsInRoom() != null) {
         filteredItems = filterItems(displayedArea.getItemsInRoom());
         }
         Text itemStyling = new Text(filteredItems + "\n\n");
-        Text text5 = new Text(displayedArea.getAreaName() + "\n\n");
+        Text text5 = new Text(displayedArea.getAreaNameFormatted() + "\n\n");
         Text text2 = new Text(displayedArea.getDescription() + "\n\n");
         text1.setFill(Color.BLACK);
         text1.setStyle("-fx-font-weight: bold;");
         text5.setStyle("-fx-font-weight: bold;");
         text2.setFill(Color.BLACK);
-        //imageResolve.setImage(new Image("main/resources/assets/pictures/train.jpg"));
         areaStyling.setFill(locationColor);
         output.getChildren().addAll(text1, text5, text3, areaStyling, text4, itemStyling, text2, new Text("\n\n"));
     }

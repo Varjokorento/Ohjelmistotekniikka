@@ -29,6 +29,11 @@ public class Area implements GameObject {
     public String getAreaName() {
         return areaName;
     }
+    
+    public String getAreaNameFormatted() {
+        String formattedName = areaName.replaceAll("_", " ").toLowerCase();
+        return formattedName;
+    }
 
     public void setAreaName(String areaName) {
         this.areaName = areaName;
@@ -44,6 +49,17 @@ public class Area implements GameObject {
 
     public String getSurroundingAreas() {
         return surroundingAreas;
+    }
+    
+    public String getSurroundingAreasFormatted() {
+        String[] surrounding = this.surroundingAreas.split(",");
+        String formatted = "";
+        for(String area: surrounding) {
+            area = area.replaceAll("_", " ").toLowerCase();
+            formatted = formatted + " | " + area;
+        }
+        formatted = formatted + " |";
+        return formatted;
     }
 
     public void setSurroundingAreas(String surroundingAreas) {
