@@ -85,3 +85,15 @@ USE ITEM -tilanteessa GameStatessa säilötyn inventaarion perusteella EventHand
 
 GameEngine kysyy GameStatelta jotain tiettyä tilannetta, tässä kaaviossa isGameOver, jonka jälkeen GameState selvittää sen FlagState-luokan avulla. 
 
+## Tiedonhallinta
+
+### Tiedon lukeminen
+
+Pelin tarvitsemia tietoja, esimerkiksi Area-luokkien tietoja, luetaan sovelluksen mukana tulevista .properties -tiedostoista.
+
+### Tiedon kirjoittaminen
+
+Pelissä on hyvin vähän pysyvän tiedon tallentamista. Ainoa tieto, joka tallennetaan on se, että kuinka monta kertaa kyseinen pelitietokoneenkäyttäjä on voittanut pelin. 
+
+Pysyvän tiedon lukeminen ja kirjoittaminen tapahtuvat DataClient ja DataServices -luokkien kautta. DataService -luokka kutsuu DataClient-luokkaa. DataClient-luokka lukee ja kirjoittaa tietoa käyttäen [Javan Preferences -apia](https://docs.oracle.com/javase/8/docs/technotes/guides/preferences/). Preferences tallentaa tiedot käyttäjän hakemistoihin, riippuen siitä, käyttääkö pelaaja Windows-, OSX- vai Linux-ympäristöä.
+
