@@ -14,5 +14,6 @@
 | 16.4  | 2    |Resurssien lataamisen korjaus niin, että jar-tiedosto saa oikean polun. |
 | 23.4  | 2    |Bugien korjaamista. Koodikatselmuksen kommenttien myötä refaktorointia. |
 | 26.4  | 3    |Testejä ja dokumentaatiota|
-| Summa:| 31 |
+| 4.5   | 4    |Testikattavuuden nostamista vaadittavalle tasolle. Dokumentaatiota ja viilailua.|
+| Summa:| 35 |
 
