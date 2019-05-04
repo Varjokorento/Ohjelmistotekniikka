@@ -5,8 +5,9 @@ Ohjelmaa on testattu sekä automatisoiduin yksikkö- ja integraatiotestein JUnit
 Käyttöliittymää ei ole testattu muuten kuin manuaalisesti.
 ## Yksikkö- ja integraatiotestaus
 
-### sovelluslogiikka
+### Sovelluslogiikka
 
+Sovelluslogiikka on testattu kattavasti yksikkötesteillä. 
 
 ### Testauskattavuus
 
