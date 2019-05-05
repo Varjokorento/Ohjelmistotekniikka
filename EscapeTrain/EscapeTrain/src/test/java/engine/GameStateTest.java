@@ -30,17 +30,8 @@ public class GameStateTest {
     public void init() {
         this.state = new GameState();
     }
-    @Test
-    public void isErrorIsFalseInBeginning() {
-        assertFalse(state.isError());
-    }
-    
-    @Test
-    public void settingErrorSetsError() {
-        state.setError(true);
-        assertTrue(state.isError());
-    }
-    
+   
+     
     @Test
     public void currentAreaIsNullInBeginning() {
         assertNull(state.getCurrentArea());

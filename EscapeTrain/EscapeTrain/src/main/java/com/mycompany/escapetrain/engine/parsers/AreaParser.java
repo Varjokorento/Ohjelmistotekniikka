@@ -30,8 +30,8 @@ public class AreaParser {
 
     /**
      * Method returns the target area of a command or null if the parameter is not a valid area
-     * @param possibleArea
-     * @return Area 
+     * @param possibleArea  The Given areaname that is being assessed 
+     * @return Area If null then no area found
      */
     public Area parseArea(String possibleArea) {
         if (possibleArea == null) {
@@ -62,10 +62,10 @@ public class AreaParser {
     }
     
     /**
-     * Method checks whether the player can go from currentarea to targetarea. Returns false if cannot.
-     * @param currentArea
-     * @param targetArea
-     * @return boolean
+     * Method checks whether the player can go from currentArea to targetArea. Returns false if cannot.
+     * @param currentArea   Area where the player currently is
+     * @param targetArea    The area where player is trying to go
+     * @return boolean  Whether player can go there
      */
     
     public Boolean canGoToArea(Area currentArea, String targetArea) {    
@@ -77,8 +77,8 @@ public class AreaParser {
     }
     
     /**
-     * The method returns the first room of the game (LUGGAGE_ROOM)
-     * @return Area
+     * The method returns the first room of the game (LUGGAGE_ROOM). Is called in the very beginning
+     * @return Area The first area of the game
      */
 
     public Area getFirstRoom() { 
@@ -88,19 +88,7 @@ public class AreaParser {
                 appProps.getProperty("LUGGAGE_ROOM_ITEMS"));
         return firstArea;
     }
-
-     /**
-     * The method returns the Error room of the game (Error_ROOM)
-     * @return Area
-     */
-
-    public Area getErrorRoom() {
-        Area errorArea = new Area(appProps.getProperty("ERROR_ROOM_AREANAME"), 
-            appProps.getProperty("ERROR_ROOM_DESCRIPTION"), 
-            appProps.getProperty("ERROR_ROOM_BORDER_AREAS"),
-            appProps.getProperty("ERROR_ROOM_ITEMS"));
-        return errorArea;
-    }
+    
      /**
      * The method returns the tutorial room of the game (tutorial_ROOM)
      * @return Area
@@ -116,9 +104,9 @@ public class AreaParser {
     
     /**
      * The method returns whether a certain item is in room or not. Returns false if not.
-     * @param currentArea 
-     * @param target (the name of the item)
-     * @return boolean
+     * @param currentArea   Area where the player is in 
+     * @param target     the name of the item
+     * @return boolean  Whether the room has the item
      */
 
     public boolean hasItem(Area currentArea, String target) {

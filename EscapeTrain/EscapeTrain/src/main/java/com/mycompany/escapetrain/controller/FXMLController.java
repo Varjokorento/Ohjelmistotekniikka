@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 
 /**
  * The controller for the main menu
- * @author Administrator
+ * @author Varjokorento
  */
 
 public class FXMLController implements Initializable {

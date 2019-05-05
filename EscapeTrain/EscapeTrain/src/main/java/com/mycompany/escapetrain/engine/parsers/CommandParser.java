@@ -15,9 +15,9 @@ public class CommandParser {
     }
     
     /**
-     * Parses the command part of the command. For example GOTO AREA -> return "GOTO" command
-     * @param commandToBeParsed
-     * @return command
+     * Parses the command part of the command. For example GOTO AREA returns "GOTO" command
+     * @param commandToBeParsed The command given by user
+     * @return command  The first part of the command
      */
     
     public String parseCommand(String commandToBeParsed) {
@@ -26,9 +26,9 @@ public class CommandParser {
     }
     
     /**
-     * Parses the target part of the command. For example GOTO AREA -> return AREA target. 
-     * @param commandToBeParsed
-     * @return target
+     * Parses the target part of the command. For example GOTO AREA returns AREA target. 
+     * @param commandToBeParsed The command given by the user
+     * @return target   The last part of the input
      */
             
     public String parseTarget(String commandToBeParsed) {

@@ -15,7 +15,7 @@ import java.util.Properties;
 
 /**
  *
- * @author Administrator
+ * @author Varjokorento
  */
 public class ItemInfoParser {
     
@@ -25,17 +25,28 @@ public class ItemInfoParser {
         this.appProps = new Properties();
     }
     
+    /**
+     * Initialises the item.properties files
+     * @throws FileNotFoundException    If file is not found this is thrown
+     * @throws IOException  general exception for failed or interrupted I/O operation
+     */
+    
     public void init() throws FileNotFoundException, IOException {
         InputStream input = ItemInfoParser.class.getClassLoader().getResourceAsStream("item.properties");
         appProps.load(input);
     }
-    
+    /**
+     * Parse the item info event
+     * @param target    Item that is being used
+     * @param gameState The current game state
+     * @return GameObject   The item information or an default message if no such item in inventory
+     */
     public GameObject parseItemInfo(String target, GameState gameState) {
         if (gameState.isInInventory(target)) {
             String message = appProps.getProperty(target);
             return new Event(message);
         }
-        return new Event("What are you looking at? There's no " + target + " here");
+        return new Event("What are you looking at? You don't have a " + target);
         
     }
     

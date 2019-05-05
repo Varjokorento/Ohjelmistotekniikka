@@ -1,14 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.mycompany.escapetrain.engine.gamestateutils;
 
 /**
  *
  * Class is the representation of what has occurred in the game and what will occur. It also sets the flags when
- * events occurr
+ * events occur
  */
 public class FlagStates {
     private boolean engineDoorOpen;
@@ -26,7 +22,7 @@ public class FlagStates {
     /**
      * Method checks whether the engine door is open
      * 
-     * @return boolean
+     * @return boolean  whether door is open or not
      */
 
     public boolean isEngineDoorOpen() {
@@ -36,7 +32,7 @@ public class FlagStates {
      /**
      * Method checks whether the dynamite has been set
      * 
-     * @return boolean
+     * @return boolean  whether dynamite has been set or not
      */
 
     public boolean isDynamiteSet() {
@@ -44,7 +40,7 @@ public class FlagStates {
     }
     /**
      * sets whether dynamite is set or not
-     * @param dynamiteSet 
+     * @param dynamiteSet   value for whether dynamite is set
      */
     
     public void setDynamiteSet(boolean dynamiteSet) {
@@ -52,7 +48,7 @@ public class FlagStates {
     }
     /**
      * sets whether engine door is open or not
-     * @param engineDoorOpen 
+     * @param engineDoorOpen    value for whether engine door is open or not
      */
 
     public void setEngineDoorOpen(boolean engineDoorOpen) {
@@ -61,7 +57,7 @@ public class FlagStates {
     
     /**
      * checks whether game is over or not
-     * @return boolean
+     * @return boolean value for whether game is over or not
      */
 
     public boolean isGameOver() {
@@ -70,7 +66,7 @@ public class FlagStates {
     
     /**
      * sets whether game is over nor not
-     * @param boolean gameOver 
+     * @param gameOver   is game Over 
      */
 
     public void setGameOver(boolean gameOver) {
@@ -79,14 +75,14 @@ public class FlagStates {
 
     /**
      * checks whether game is won or not
-     * @return boolean
+     * @return boolean  is game won or not
      */
     public boolean isGameWon() {
         return gameWon;
     }
     /**
      * sets whether game is won nor not
-     * @param boolean gameWon
+     * @param gameWon    Is game won
      */
     
     public void setGameWon(boolean gameWon) {

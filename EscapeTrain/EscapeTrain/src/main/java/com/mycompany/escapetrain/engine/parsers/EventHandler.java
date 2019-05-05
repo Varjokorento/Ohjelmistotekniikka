@@ -15,7 +15,7 @@ import java.io.IOException;
 
 /**
  * This handler returns event for USE ITEM events and other game events such as game over. 
- * @author Administrator
+ * @author Varjokorento
  */
 public class EventHandler {
     private DataService dataService;
@@ -35,9 +35,9 @@ public class EventHandler {
     
     /**
      * This method returns event based on the current GameState and the target.
-     * @param target
-     * @param gameState
-     * @return GameObject
+     * @param target    The item that is being used
+     * @param gameState The current game state
+     * @return GameObject   The outcome of the item usage that is displayed
      */
 
     public GameObject handleUsageEvent(String target, GameState gameState) {
@@ -64,7 +64,7 @@ public class EventHandler {
     
     /**
      * This returns gameHasEndedEvent and is called when game has either been won or lost
-     * @return GameObject
+     * @return GameObject   The event that is displayed to the player
      */
     
     public GameObject gamehasEndedEvent() {
@@ -73,7 +73,7 @@ public class EventHandler {
     
     /**
      * This method returns event when the game has been lost
-     * @return GameObject
+     * @return GameObject   The event that is displayed to the user
      */
     
     public GameObject gameOverEvent() {
@@ -127,7 +127,7 @@ public class EventHandler {
     
     /**
      * This returns invalid command event
-     * @return Event
+     * @return Event    Returns the event that is displayed in the case of invalid command
      */
     
     public GameObject handleInvalidGoToCommand() {

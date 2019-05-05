@@ -31,7 +31,7 @@ public class ItemInfoParserTest {
     public void itemInfoParserParsesCorrectValueIfItemNotInInventory() {
         GameState gameState = new GameState();
         Event event = (Event) parser.parseItemInfo("vodka", gameState);
-        String expectedMessage = "What are you looking at? There's no vodka here";
+        String expectedMessage = "What are you looking at? You don't have a vodka";
         assertEquals(expectedMessage, event.getEventMessage());
     }
     

@@ -19,7 +19,7 @@ import org.junit.Test;
 
 /**
  *
- * @author Administrator
+ * @author Varjokorento
  */
 public class AreaParserTest {
     
@@ -51,12 +51,6 @@ public class AreaParserTest {
     public void areaGetFirstRoomReturnsFirstRoom() {
         Area expectedArea = parser.getFirstRoom();
         assertEquals("LUGGAGE_ROOM", expectedArea.getAreaName());
-    }
-    
-    @Test
-    public void getErrorRoomReturnsErrorRoom() {
-        Area errorRoom = parser.getErrorRoom();
-        assertEquals("ERROR_ROOM", errorRoom.getAreaName());
     }
   
     @Test

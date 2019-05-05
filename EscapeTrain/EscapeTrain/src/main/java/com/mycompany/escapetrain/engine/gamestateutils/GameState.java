@@ -14,34 +14,14 @@ public class GameState {
     private Area currentArea;
     private Inventory inventory;
     private int turns;
-    private boolean error;
     private boolean isTutorial;
     private FlagStates flagStates;
     
     public GameState() {
         this.currentArea = null;
         this.turns = 0;
-        this.error = false;
         this.inventory = new Inventory();
         this.flagStates = new FlagStates();
-    }
-    
-    /**
-    * Method returns true if the game is in an error state and false if not
-    *
-    * @return is the Game in Error state
-    */
-
-    public boolean isError() {
-        return error;
-    }
-    /**
-    * Method returns true if the game is in an error state and false if not
-    * @param error the boolean value for error
-    * @return is the Game in Error state
-    */
-    public void setError(boolean error) {
-        this.error = error;
     }
     
     /**
@@ -66,8 +46,8 @@ public class GameState {
     
     /**
     * Method sets the current area
-    * @param the Area
-    * 
+     * @param currentArea   the current area that will be displayed to player
+     * 
     */
     public void setCurrentArea(Area currentArea) {
         this.currentArea = currentArea;
@@ -94,7 +74,7 @@ public class GameState {
 
     /**
     * Method sets tutorial mode on/off
-    * @param boolean isTutorial
+    * @param isTutorial whether the game is in tutorial mode or not
     */
     public void setIsTutorial(boolean isTutorial) {
         this.isTutorial = isTutorial;
@@ -114,9 +94,9 @@ public class GameState {
     
         
     /**
-    * Method sets the flagstates of the game
+    * Method sets the FlagStates of the game
     *
-    * @params the flagstates of the game
+     * @param flagStates    the FlagStates of the game
     */
     
 
@@ -127,7 +107,7 @@ public class GameState {
     /**
     * Method sets the turns for the game
     *
-    * @params int value of the turns
+     * @param turns how many turns has occurred
     */
     public void setTurns(int turns) {
         this.turns = turns;
@@ -151,7 +131,7 @@ public class GameState {
     }
     /**
      * Method sets the current inventory of the game
-     * @param inventory 
+     * @param inventory The inventory that is to be used
      */
 
     public void setInventory(Inventory inventory) {
@@ -160,8 +140,8 @@ public class GameState {
     
     /**
      * Method checks whether certain item is in inventory and returns a boolean
-     * @param item
-     * @return boolean
+     * @param item  The item that is checked
+     * @return boolean  Whether the item is in player's inventory or not
      */
    
     public boolean isInInventory(String item) {

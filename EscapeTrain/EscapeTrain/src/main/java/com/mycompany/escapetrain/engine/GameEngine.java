@@ -5,7 +5,6 @@
  */
 package com.mycompany.escapetrain.engine;
 
-import com.mycompany.escapetrain.datahandling.DataService;
 import com.mycompany.escapetrain.gameobjects.GameObject;
 import com.mycompany.escapetrain.engine.gamestateutils.GameState;
 import com.mycompany.escapetrain.engine.parsers.CommandParser;
@@ -23,7 +22,7 @@ import java.io.IOException;
  * The engine of the game. 
  * All commands and events go from here 
  * and all events and object to the controller come from here.
- * @author Administrator
+ * @author Varjokorento
  */
 public class GameEngine {
     
@@ -60,8 +59,8 @@ public class GameEngine {
     
     
     /**
-     * Initializes areaparser and dataService that uses properties files
-     * @throws IOException 
+     * Initialises AreaParser and dataService that uses properties files
+     * @throws IOException  general exception for failed or interrupted I/O operation 
      */
     public void init() throws IOException {
         areaParser.init();
@@ -71,8 +70,8 @@ public class GameEngine {
     
     /**
      * Parses user commands and returns either events or areas based on the commands
-     * @param input
-     * @return GameObject
+     * @param input User input
+     * @return GameObject   the outcome of the input
      */
     
     public GameObject parseCommand(String input) {
@@ -166,7 +165,7 @@ public class GameEngine {
     
     /**
      * Returns the current inventory state
-     * @return Inventory
+     * @return Inventory    The current inventory
      */
     public Inventory getInventoryState() {
         return gameState.getInventory();
@@ -174,8 +173,8 @@ public class GameEngine {
     
     /**
      * Returns boolean on whether an item has been picked in the game already. True if has.
-     * @param name
-     * @return boolean
+     * @param name  Name of the item
+     * @return boolean  Whether has been picked or not
      */
     
     public boolean hasBeenPicked(String name) {
@@ -201,7 +200,7 @@ public class GameEngine {
     }
     /**
      * Returns current room
-     * @return current room
+     * @return current room The current area where the player is
      */
     
     public Area getCurrentRoom() {
@@ -226,7 +225,7 @@ public class GameEngine {
     
     /**
      * returns current game state
-     * @return GameState
+     * @return GameState    The current gameState
      */
 
     public GameState getGameState() {
@@ -235,7 +234,7 @@ public class GameEngine {
 
     /**
      * sets current GameState
-     * @param gameState 
+     * @param gameState the desired gameState
      */
     public void setGameState(GameState gameState) {
         this.gameState = gameState;

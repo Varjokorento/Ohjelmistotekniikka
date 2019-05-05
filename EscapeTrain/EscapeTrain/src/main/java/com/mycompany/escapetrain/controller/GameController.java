@@ -33,7 +33,7 @@ import javafx.stage.Stage;
 
 /**
  * The controller for the game view.
- * @author Administrator
+ * @author Varjokorento
  */
 public class GameController implements Initializable{
     
