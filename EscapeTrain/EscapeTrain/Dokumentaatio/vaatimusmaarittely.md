@@ -10,10 +10,6 @@ Vuoroksi lasketaan onnistunut siirtymä pelin alueiden välillä. Pelaajalle ei 
 
 Sovellus on toteutettu Java-ohjelmointikielellä. 
 
-## Käyttäjät
-
-Sovelluksessa ei ole käyttäjätilejä, joten sovelluksen käyttäjä on tällä hetkellä sen avaaja, eli pelaaja. Jossain vaiheessa olisi tarkoitus pystyä tallentamaan käyttäjän pelitilanne, jolloin pelaaja olisi joku muu kuin Guest Player.
-
 ## Käyttöliittymä
 
 Sovellus koostuu neljästä näkymästä: aloitusnäkymästä, Credits -näkymästä, tutoriaalinäkymästä (eli pelin ohjeista), pelinäkymästä ja lopputeksteistä. 
@@ -24,11 +20,11 @@ Sovellus aukeaa aloitusnäkymään, josta on mahdollista siirtyä muihin näkymi
 
 ### Aloitusnäkyma
 
-Pelaaja voi valita "Start game", "Credits" and "Tutorial." 
+Pelaaja voi valita "Start game", "Credits", "Tutorial." tai "Exit".  
 
 ### Pelinäkymä
 
-Pelaajalle näkyy hänen esineensä sekä tekstimuodossa kuvaus paikoista, joissa hän liikkuu. Lisäksi näkymässä on komentotulkki, johon pelaaja voi kirjoittaa käskyt, mitä tehdä seuraavaksi. Tässä näkymässä tapahtuu suurin osa ohjelman toiminnallisuudesta. Tavoitteena on, että perusversiossa on kokonainen peli. 
+Pelaajalle näkyy hänen esineensä sekä tekstimuodossa kuvaus paikoista, joissa hän liikkuu. Lisäksi näkymässä on komentotulkki, johon pelaaja voi kirjoittaa käskyt, mitä tehdä seuraavaksi. Tässä näkymässä tapahtuu suurin osa ohjelman toiminnallisuudesta. 
 
 ### Tutoriaali
 
@@ -41,7 +37,7 @@ Tässä näkyy yksinkertaisesti tekijän tiedot sekä käytetty teknologia.
 
 ## Lopputekstit
 
-Näkymä lopputeksteistä, kun pelin voitto on saavutettu. Lopputeksteissä on tarkoitus myös näyttää, kuinka moni pelaaja tällä tietokoneella on päässyt pelin läpi. Tappion kohdalla (juna syöksyy alas) lopputekstien sijaan näytetään pelinäkymän oma tappioruutu.
+Näkymä lopputeksteistä, kun pelin voitto on saavutettu. Lopputeksteissä on tarkoitus myös näyttää, kuinka moni pelaaja tällä tietokoneella on päässyt pelin läpi. Tappion kohdalla (25 vuoroa kuluu ja juna syöksyy alas) lopputekstien sijaan näytetään pelinäkymän oma tappioruutu.
 
 ## Jatkokehitysideoita
 
