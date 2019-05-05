@@ -5,7 +5,7 @@ import com.mycompany.escapetrain.gameobjects.GameObject;
 
 /**
  *
- * @author Administrator
+ * @author Varjokorento
  */
 public class InventoryMessage implements GameObject {
     private String objectType;
@@ -14,8 +14,7 @@ public class InventoryMessage implements GameObject {
     public InventoryMessage() {
         this.objectType = "ITEM";
     }
-
-    
+   
     
     @Override
     public String getObjectType() {

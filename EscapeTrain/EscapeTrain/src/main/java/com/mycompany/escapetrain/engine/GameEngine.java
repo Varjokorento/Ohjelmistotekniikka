@@ -105,7 +105,7 @@ public class GameEngine {
     
     
     private GameObject checkSpecialCasesAndErrors(String input) {
-        if (gameState.getTurns() >= 50) {
+        if (gameState.getTurns() >= 25) {
             return gameOver();
         }
         GameObject flagOutcomes = checkFlags();

@@ -9,11 +9,10 @@ import java.util.Objects;
 
 /**
  *
- * @author Administrator
+ * @author Varjokorento
  */
 public class Item {
     private String name; 
-    private Boolean hasBeenUsed;
 
     public Item(String name) {
         this.name = name;
@@ -27,15 +26,11 @@ public class Item {
     public void setName(String name) {
         this.name = name;
     }
-    
-    public Boolean getHasBeenUsed() {
-        return hasBeenUsed;
-    }
-
-    public void setHasBeenUsed(Boolean hasBeenUsed) {
-        this.hasBeenUsed = hasBeenUsed;
-    }
-    
+    /**
+     * The item equals returns true if the item is exactly the same or it's name is the same
+     * @param o The other item to be compared with
+     * @return boolean  whether it equals or not
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) {

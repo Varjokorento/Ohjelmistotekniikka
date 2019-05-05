@@ -152,7 +152,7 @@ public class GameEngineTest {
     
     @Test
     public void over50TurnsReturnsGameOver() {
-        when(gameState.getTurns()).thenReturn(51);
+        when(gameState.getTurns()).thenReturn(26);
         Event mockEvent = new Event("GAME OVER");
         when(eventHandler.gameOverEvent()).thenReturn(mockEvent);
         Event event = (Event) engine.parseCommand("GOTO TARGET");
