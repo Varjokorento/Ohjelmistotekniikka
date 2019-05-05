@@ -35,7 +35,7 @@
                    <content>
                        <TextFlow fx:id="output" prefHeight="396.0" prefWidth="523.0" style="-fx-fill: black;">
                      <children>
-                        <Text fill="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Espace Train! Press Enter or click Command to begin!">
+                        <Text fill="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Escape Train! If you have not played the game before, it is recommended to play through the tutorial first. Press Enter or click Command to begin!">
                            <font>
                               <Font size="17.0" />
                            </font>
