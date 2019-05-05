@@ -28,7 +28,7 @@ Pelaajalle näkyy hänen esineensä sekä tekstimuodossa kuvaus paikoista, joiss
 
 ### Tutoriaali
 
-Pelissä on hyvin lyhyt tutoriaaliosa, jossa pelaaja voi kokeilla pelin kolmea käskyä, eli GOTO, TAKE, INSPECT ja USE käskyjä. Tutoriaalin pääsee 
+Pelissä on hyvin lyhyt tutoriaaliosa, jossa pelaaja voi kokeilla pelin neljää käskyä, eli GOTO, TAKE, INSPECT ja USE käskyjä. Tutoriaalin pääsee 
 päävalikosta. 
 
 ### Credits
