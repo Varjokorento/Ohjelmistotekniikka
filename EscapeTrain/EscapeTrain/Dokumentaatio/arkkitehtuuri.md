@@ -4,7 +4,7 @@
 
 Sovelluksen päätoiminnallisuus koostuu GameControllerista, joka kutsuu pelimoottoria, joka on Java-luokka GameEngine. GameEngine ottaa käyttäjän syötteen, tekee sen perusteella päätöksiä ja palauttaa controllerille GameObject-luokan toteuttavan olion, joka on se, mitä käyttäjälle näytetään. 
 
-GameEngine on yhteydessä AreaParseriin, EventHandleriin sekä CommandParseriin, jotka on injektoitut siihen. Pelin tiedot, inventaario sekä tapahtuneet tapahtumat säilötään ja kutsutaan GameState-olion kautta. 
+GameEngine on yhteydessä AreaParseriin, EventHandleriin, ItemInfoParseriin sekä CommandParseriin, jotka on injektoitut siihen. Pelin tiedot, inventaario sekä tapahtuneet tapahtumat säilötään ja kutsutaan GameState-olion kautta. 
 
 ## Käyttöliittymä
 
@@ -21,8 +21,6 @@ Käyttöliittymä on pyritty eristämään sovelluslogiikasta, se ainoastaan kut
 ## Luokkakaavio pelitoiminnallisuudelle
 
 <img src="https://raw.githubusercontent.com/Varjokorento/Ohjelmistotekniikka/master/EscapeTrain/EscapeTrain/Dokumentaatio/kaaviot/classdiagram.jpg">
-
-[Controller]->[GameEngine],[GameEngine]->[GameState],[GameEngine]->[AreaParser],[GameEngine]->[ItemInfoParser],[GameEngine]->[CommandParser],[GameEngine]->[EventHandler],[EventHandler]->[Event],[ItemInfoParser]->[Event],[GameState]->[FlagStates],[GameState]->[Inventory],[Inventory]->[Item],[AreaParser]->[Area]
 
 ## Sovelluslogiikka
 
