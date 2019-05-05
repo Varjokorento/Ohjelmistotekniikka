@@ -7,7 +7,6 @@
 ```
 java -jar EscapeTrain-1.1.jar
 ```
-(Pelin ei pitäisi vaatia mitään erillisiä konfiguraatioita)
 
 ## Projektin asentaminen paikallisesti
 ```
