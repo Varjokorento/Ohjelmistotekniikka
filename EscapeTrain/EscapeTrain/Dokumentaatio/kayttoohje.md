@@ -10,13 +10,14 @@ java -jar EscapeTrain-1.1.jar
 (Pelin ei pitäisi vaatia mitään erillisiä konfiguraatioita)
 
 ## Projektin asentaminen paikallisesti
-
+```
 1. git clone https://github.com/Varjokorento/Ohjelmistotekniikka
 2. siirtyminen EscapeTrain-kansioon
 3. mvn install
 4. mvn package
 5. siirtyminen target -kansioon
 6. java -jar EscapeTrain-1.0-SNAPSHOT.jar
+```
 
 # Käyttöohje
 
@@ -34,13 +35,13 @@ Käskyt tulee kirjoittaa text input -kenttään. HUOM: Versiossa 1.1 huoneiden j
 1. Mene cabin-huoneeseen
 2. ota tyyny (take pillow)
 3. Ota ravintola-huoneesta tulitikut (matches)
-3. mene staff quarters -huoneeseen
-4. käytä tyynyä (use pillow)
-5. Nyt sinulla pitäisi olla dynamiitti
-6. Käytä dynamiittia
-7. Käytä tulitikkuja
-8. Mene engine room-huoneeseen (jonka pitäisi nyt olla auki)
-9. Käytä vipua (Use lever)
+4. mene staff quarters -huoneeseen
+5. käytä tyynyä (use pillow)
+6. Nyt sinulla pitäisi olla dynamiitti
+7. Käytä dynamiittia
+8. Käytä tulitikkuja
+9. Mene engine room-huoneeseen (jonka pitäisi nyt olla auki)
+10. Käytä vipua (Use lever)
 ```
 
 ## Käskyt
