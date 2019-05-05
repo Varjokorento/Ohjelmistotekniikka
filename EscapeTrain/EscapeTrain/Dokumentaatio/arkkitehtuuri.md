@@ -2,7 +2,7 @@
 
 ## Rakenne
 
-Sovelluksen päätoiminnallisuus koostuu GameControllerista, joka kutsuuu pelimoottoria, joka on Java-luokka GameEngine. GameEngine ottaa käyttäjän syötteen, tekee sen perusteella päätöksiä ja palauttaa controllerille GameObject-luokan toteuttavan olion, joka on se, mitä käyttäjälle näytetään. 
+Sovelluksen päätoiminnallisuus koostuu GameControllerista, joka kutsuu pelimoottoria, joka on Java-luokka GameEngine. GameEngine ottaa käyttäjän syötteen, tekee sen perusteella päätöksiä ja palauttaa controllerille GameObject-luokan toteuttavan olion, joka on se, mitä käyttäjälle näytetään. 
 
 GameEngine on yhteydessä AreaParseriin, EventHandleriin sekä CommandParseriin, jotka on injektoitut siihen. Pelin tiedot, inventaario sekä tapahtuneet tapahtumat säilötään ja kutsutaan GameState-olion kautta. 
 
@@ -17,7 +17,6 @@ Käyttöliittymä sisältää neljä erillistä näkymää
 Jokainen näistä on toteutettu omana controller-olionaan. Syy tähän on se, ettei näkymien välillä hypitä juuri lainkaan, joten controllereiden injektoimista toisilla controllereilla ei ollut tarkoituksenmukaista tehdä. 
 
 Käyttöliittymä on pyritty eristämään sovelluslogiikasta, se ainoastaan kutsuu sopivin parametrein sovelluslogiikan toteuttavan olion gameEnginen metodeja ja reagoi saatujen tietojen mukaan. 
-
 
 ## Luokkakaavio pelitoiminnallisuudelle
 
@@ -36,9 +35,9 @@ Kuvaus GameEngine-luokasta:
 
 ### Käskytoiminnallisuus
 
-Käskyjä on kolmenlaisia: GOTO, TAKE ja USE
+Käskyjä on kolmenlaisia: GOTO, TAKE, INSPECT ja USE
 
-Seuraavaksi käskyjen GOTO, TAKE ja USE sekvenssikaaviot:
+Seuraavaksi käskyjen GOTO, TAKE, INSPECT ja USE sekvenssikaaviot:
 
 #### GOTO-KÄSKY
 <img src="https://raw.githubusercontent.com/Varjokorento/Ohjelmistotekniikka/master/EscapeTrain/EscapeTrain/Dokumentaatio/GOTO%20SEQUENCE%20(1).png" width="700">
