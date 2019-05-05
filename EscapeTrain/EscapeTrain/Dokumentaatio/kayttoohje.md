@@ -2,10 +2,10 @@
 
 ## Release-version asentaminen
 
-1. Lataa [tiedosto](https://github.com/Varjokorento/Ohjelmistotekniikka/releases/tag/1.1)
+1. Lataa [tiedosto](https://github.com/Varjokorento/Ohjelmistotekniikka/releases/tag/1.2)
 2. Käynnistä tiedosto 
 ```
-java -jar EscapeTrain-1.1.jar
+java -jar EscapeTrain-1.2.jar
 ```
 
 ## Projektin asentaminen paikallisesti
