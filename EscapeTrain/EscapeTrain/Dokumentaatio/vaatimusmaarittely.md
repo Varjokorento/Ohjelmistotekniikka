@@ -1,8 +1,12 @@
 # Vaatimusmäärittely
 
+Nämä vaatimusmäärittelyt vastaavat loppureleasessa olevaa peliä. 
+
 ## Sovelluksen tarkoitus
 
-Sovelluksen tarkoitus on olla pelattava seikkailupeli nimeltä "Escape Train." Pelissä on tarkoitus paeta liikkuvasta junasta, joka 50 vuoron jälkeen syöksyy alas kielekkeeltä. Pelissä ratkotaan ongelmia ja arvoituksia, joilla on tarkoitus saada auki veturin ovi ja pysäytettyä juna. 
+Sovelluksen tarkoitus on olla pelattava seikkailupeli nimeltä "Escape Train." Pelissä on tarkoitus paeta liikkuvasta junasta, joka 25 vuoron jälkeen syöksyy alas kielekkeeltä. Pelissä ratkotaan ongelmia ja arvoituksia, joilla on tarkoitus saada auki veturin ovi ja pysäytettyä juna. 
+
+Vuoroksi lasketaan onnistunut siirtymä pelin alueiden välillä. Pelaajalle ei näytetä vuorojen kulumista, näin ylläpidetään jännitystä. 
 
 Sovellus on toteutettu Java-ohjelmointikielellä. 
 
