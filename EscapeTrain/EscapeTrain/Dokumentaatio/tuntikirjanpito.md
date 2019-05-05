@@ -15,5 +15,6 @@
 | 23.4  | 2    |Bugien korjaamista. Koodikatselmuksen kommenttien myötä refaktorointia. |
 | 26.4  | 3    |Testejä ja dokumentaatiota|
 | 4.5   | 4    |Testikattavuuden nostamista vaadittavalle tasolle. Dokumentaatiota ja viilailua.|
-| Summa:| 35 |
+| 5.5   | 4    | Viimeisiä viilauksia |
+| Summa:| 39 |
 
