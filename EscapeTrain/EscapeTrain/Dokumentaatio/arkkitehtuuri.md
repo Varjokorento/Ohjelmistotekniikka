@@ -96,3 +96,17 @@ Pelissä on hyvin vähän pysyvän tiedon tallentamista. Ainoa tieto, joka talle
 
 Pysyvän tiedon lukeminen ja kirjoittaminen tapahtuvat DataClient ja DataServices -luokkien kautta. DataService -luokka kutsuu DataClient-luokkaa. DataClient-luokka lukee ja kirjoittaa tietoa käyttäen [Javan Preferences -apia](https://docs.oracle.com/javase/8/docs/technotes/guides/preferences/). Preferences tallentaa tiedot käyttäjän hakemistoihin, riippuen siitä, käyttääkö pelaaja Windows-, OSX- vai Linux-ympäristöä.
 
+## Pelin heikkoudet
+
+### GameEngine -luokan kompleksisuus
+
+Käytännössä koko peli perustuu parseCommand-metodiin ja sen erilaisiin haarautumiin. Tämä johti siihen, että GameEngine-luokasta tuli hankalasti testattava ja vaikeaselkoinen. 
+
+### Event-järjestelmä
+
+Erilaisten tapahtumien toteutus pelissä, esimerkiksi niin, että huoneen tiedot muuttuisivat pelin edetessä, jäi ohueksi. Järkevämpää olisi ollut tehdä event.properties -tiedosto, jota olisi käytetty kuten area.properties ja item.properties -tiedostoja. Tämä kuitenkin jäi toteuttamatta, koska ymmärsin sen liian myöhään. 
+
+### JavaFX-toteutus
+
+Pelkän JavaFX:n käyttö projektissa oli mielestäni virhe. Pelin olisi voinut toteuttaa helpommin vaikka Spring-toteutuksena niin, että käyttöliittymä olisi tehty jollain View Enginellä. Tämä olisi helpottanut huomattavasti kehitystä, sillä olisi voinut käyttää Spring-frameworkin ominaisuuksia. 
+

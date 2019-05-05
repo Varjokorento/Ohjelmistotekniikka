@@ -10,9 +10,9 @@ Käyttöliittymää ei ole testattu muuten kuin manuaalisesti.
 
 ### Testauskattavuus
 
-Käyttöliittymää lukuunottamatta sovelluksen testauksen rivikattavuus on 79 % ja haarautumakattavuus 71 %.
+Testauksen rivikattavuus on 80 % ja haarautumakattavuus 71 %. Testikattavuusraportissa ei ole mukana käyttöliittymän koodia.
 
-<img src="https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/EscapeTrain/EscapeTrain/Dokumentaatio/testaustilastot.PNG">
+<img src="https://raw.githubusercontent.com/Varjokorento/Ohjelmistotekniikka/master/EscapeTrain/EscapeTrain/Dokumentaatio/testresults.PNG">
 
 ## Järjestelmätestaus
 
@@ -24,7 +24,7 @@ Sovellus on haettu ja sitä on testattu [käyttöohjeen](https://github.com/Varj
 
 ### Toiminnallisuudet
 
-Kaikki [määrittelydokumentin](https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/EscapeTrain/EscapeTrain/Dokumentaatio/vaatimusmaarittely.md) ja käyttöohjeessa olevat toiminnallisuudet on käyty läpi manuaalisesti. 
+Kaikki [määrittelydokumentin](https://github.com/Varjokorento/Ohjelmistotekniikka/blob/master/EscapeTrain/EscapeTrain/Dokumentaatio/vaatimusmaarittely.md) ja käyttöohjeessa olevat toiminnallisuudet on käyty läpi manuaalisesti sekä Linux- että Windows-ympäristössä. 
 
 ### Laatuongelmat
 

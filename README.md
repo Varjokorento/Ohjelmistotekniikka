@@ -4,6 +4,10 @@ Sovelluksen tarkoitus on olla pelattava seikkailupeli nimeltä "Escape Train." P
 
 ## Releaset
 
+[Viimeinen julkaisu](https://github.com/Varjokorento/Ohjelmistotekniikka/releases/tag/1.2)
+
+Peli on nyt valmis ja se toteuttaa määrittelydokumentin vaatimukset. 
+
 [v.1.1](https://github.com/Varjokorento/Ohjelmistotekniikka/releases/tag/1.1)
 
 Peli on nyt pelattava ja siinä on juoni. Lisäksi pelissä on credits-näkymä eikä pelin pitäisi kaatuilla niin paljoa. 
